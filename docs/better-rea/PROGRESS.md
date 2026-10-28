@@ -263,15 +263,34 @@ Source: master §6 Phase 5 M, source A B4, source B 2.4/2.5/13.x.
 
 ## Commit log (work branch)
 
-| Commit      | Description                                                                               |
-| ----------- | ----------------------------------------------------------------------------------------- |
-| —           | Baseline is `9593bc536`; no Better-REA commits yet.                                       |
-| `45f2e6c66` | `fix(javascript)`: resolve module-level `const` Electron options inside functions (#7227) |
-| `3d48437b1` | `docs(better-rea)`: measure the MCP `tools/list` catalog across output profiles           |
-| `e42f4cbf9` | `test(javascript)`: guard `defineProperty` descriptor overwrite order (#7219)             |
-| `dc6533d16` | `fix(web)`: report out-of-range `generated_position` bounds (#7132)                       |
-| `19838a5ac` | `test(web)`: assert `generated_position` bounds through MCP                               |
-| `caff390de` | `fix(contracts)`: traverse `contentSchema` and keep mixed-enum member types (#7123)       |
+| Commit                   | Description                                                                               |
+| ------------------------ | ----------------------------------------------------------------------------------------- |
+| —                        | Baseline is `9593bc536`; no Better-REA commits yet.                                       |
+| `45f2e6c66`              | `fix(javascript)`: resolve module-level `const` Electron options inside functions (#7227) |
+| `3d48437b1`              | `docs(better-rea)`: measure the MCP `tools/list` catalog across output profiles           |
+| `e42f4cbf9`              | `test(javascript)`: guard `defineProperty` descriptor overwrite order (#7219)             |
+| `dc6533d16`              | `fix(web)`: report out-of-range `generated_position` bounds (#7132)                       |
+| `19838a5ac`              | `test(web)`: assert `generated_position` bounds through MCP                               |
+| `caff390de`              | `fix(contracts)`: traverse `contentSchema` and keep mixed-enum member types (#7123)       |
+| `84ef9d24c`, `de1a2407b` | `docs(better-rea)`: record the workstream I bounds fix; tidy the B table                  |
+| `1c0afcf90`              | `docs(better-rea)`: snapshot the canonical catalog identity (G-1)                         |
+| `1ba831586`              | `docs(better-rea)`: record the baseline and final reports                                 |
+
+### Delivery state
+
+Verified with `git ls-remote --heads origin` and `gh repo view`:
+
+| Item          | Value                                                                            |
+| ------------- | -------------------------------------------------------------------------------- |
+| Remote        | `https://github.com/kritagyadubey/better-rea` (public, not empty)                |
+| `origin/main` | `1ba831586`                                                                      |
+| Work branch   | `better-rea/main-work` at `1ba831586`, tracking `origin/better-rea/main-work`    |
+| Baseline tag  | `baseline-pre-better-rea` pushed to `origin`                                     |
+| Upstream      | `morluto/rea` untouched; its push URL is still `DISABLED`                        |
+| npm           | Nothing published. `npm pack` was only ever run as `--dry-run --ignore-scripts`. |
+
+The GitHub default branch is `better-rea/main-work` because it was pushed first;
+`main` points at the same commit, so either name serves the same tree.
 
 ## Evidence ledger
 
