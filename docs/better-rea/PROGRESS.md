@@ -275,19 +275,21 @@ Source: master §6 Phase 5 M, source A B4, source B 2.4/2.5/13.x.
 | `84ef9d24c`, `de1a2407b` | `docs(better-rea)`: record the workstream I bounds fix; tidy the B table                  |
 | `1c0afcf90`              | `docs(better-rea)`: snapshot the canonical catalog identity (G-1)                         |
 | `1ba831586`              | `docs(better-rea)`: record the baseline and final reports                                 |
+| `454f22d73`              | `docs(better-rea)`: close the commit log and record the delivery state                    |
+| `6a0b83345`              | `docs(readme)`: present Better-REA as its own fork                                        |
 
 ### Delivery state
 
 Verified with `git ls-remote --heads origin` and `gh repo view`:
 
-| Item          | Value                                                                            |
-| ------------- | -------------------------------------------------------------------------------- |
-| Remote        | `https://github.com/kritagyadubey/better-rea` (public, not empty)                |
-| `origin/main` | `1ba831586`                                                                      |
-| Work branch   | `better-rea/main-work` at `1ba831586`, tracking `origin/better-rea/main-work`    |
-| Baseline tag  | `baseline-pre-better-rea` pushed to `origin`                                     |
-| Upstream      | `morluto/rea` untouched; its push URL is still `DISABLED`                        |
-| npm           | Nothing published. `npm pack` was only ever run as `--dry-run --ignore-scripts`. |
+| Item            | Value                                                                                       |
+| --------------- | ------------------------------------------------------------------------------------------- |
+| Remote          | `https://github.com/kritagyadubey/better-rea` (public, not empty)                           |
+| Branches        | `main` and `better-rea/main-work` track the tip of this branch (check with `git ls-remote`) |
+| Baseline tag    | `baseline-pre-better-rea` pushed to `origin`                                                |
+| Upstream        | `morluto/rea` untouched; its push URL is still `DISABLED`                                   |
+| npm             | Nothing published. `npm pack` was only ever run as `--dry-run --ignore-scripts`.            |
+| Handoff prompts | `docs/better-rea/HANDOFF.md` (next coder + owner resume prompt)                             |
 
 The GitHub default branch is `better-rea/main-work` because it was pushed first;
 `main` points at the same commit, so either name serves the same tree.
