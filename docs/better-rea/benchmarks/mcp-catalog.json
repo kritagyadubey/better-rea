@@ -1,0 +1,5278 @@
+{
+  "version": 1,
+  "generated_by": "scripts/better-rea/measure-mcp-catalog.mjs",
+  "method": {
+    "frame": "UTF-8 bytes of the serialized JSON-RPC tools/list response the server transmits, excluding the trailing newline",
+    "token_estimates": [
+      "estimated_tokens_by_four_bytes = ceil(bytes / 4); heuristic, not a tokenizer",
+      "estimated_tokens_structural = count of identifier/punctuation runs after splitting camelCase; heuristic, not a tokenizer"
+    ],
+    "profiles": {
+      "input": ["compact", "full"],
+      "output": ["full", "compact", "off"],
+      "families": true
+    },
+    "server": "dist/server/createServer.js over the SDK in-memory transport (production composition)"
+  },
+  "node_version": "v24.22.1",
+  "variants": [
+    {
+      "input_profile": "compact",
+      "output_profile": "full",
+      "families": null,
+      "tool_count": 231,
+      "tools_with_output_schema": 231,
+      "frame": {
+        "bytes": 3786655,
+        "estimated_tokens_by_four_bytes": 946664,
+        "estimated_tokens_structural": 432565
+      },
+      "result_payload": {
+        "bytes": 3786621,
+        "estimated_tokens_by_four_bytes": 946656,
+        "estimated_tokens_structural": 432559
+      },
+      "tools_array": {
+        "bytes": 3786611,
+        "estimated_tokens_by_four_bytes": 946653,
+        "estimated_tokens_structural": 432558
+      },
+      "input_schemas_total_bytes": 127195,
+      "output_schemas_total_bytes": 3469986,
+      "overhead_bytes": 189440,
+      "output_schema_structure": {
+        "output_schema_definitions": 9995,
+        "unreachable_definitions": 0,
+        "unreachable_definition_bytes": 0,
+        "repeated_subtree_ceiling_bytes": 23415
+      },
+      "largest_tools": [
+        {
+          "name": "inspect_analysis_view",
+          "total": {
+            "bytes": 553083,
+            "estimated_tokens_by_four_bytes": 138271,
+            "estimated_tokens_structural": 61802
+          },
+          "input_schema": {
+            "bytes": 333,
+            "estimated_tokens_by_four_bytes": 84,
+            "estimated_tokens_structural": 42
+          },
+          "output_schema": {
+            "bytes": 537146,
+            "estimated_tokens_by_four_bytes": 134287,
+            "estimated_tokens_structural": 59523
+          },
+          "output_schema_structure": {
+            "bytes": 537146,
+            "definitions": 822,
+            "references": 822,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 8465
+          },
+          "description_bytes": 15323,
+          "input_properties": 2,
+          "has_output_schema": true
+        },
+        {
+          "name": "analyze_javascript_application",
+          "total": {
+            "bytes": 63397,
+            "estimated_tokens_by_four_bytes": 15850,
+            "estimated_tokens_structural": 7109
+          },
+          "input_schema": {
+            "bytes": 2294,
+            "estimated_tokens_by_four_bytes": 574,
+            "estimated_tokens_structural": 318
+          },
+          "output_schema": {
+            "bytes": 59368,
+            "estimated_tokens_by_four_bytes": 14842,
+            "estimated_tokens_structural": 6548
+          },
+          "output_schema_structure": {
+            "bytes": 59368,
+            "definitions": 175,
+            "references": 175,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 1354
+          },
+          "description_bytes": 1501,
+          "input_properties": 12,
+          "has_output_schema": true
+        },
+        {
+          "name": "analyze_web_bundle",
+          "total": {
+            "bytes": 50017,
+            "estimated_tokens_by_four_bytes": 12505,
+            "estimated_tokens_structural": 5630
+          },
+          "input_schema": {
+            "bytes": 3983,
+            "estimated_tokens_by_four_bytes": 996,
+            "estimated_tokens_structural": 589
+          },
+          "output_schema": {
+            "bytes": 45175,
+            "estimated_tokens_by_four_bytes": 11294,
+            "estimated_tokens_structural": 4919
+          },
+          "output_schema_structure": {
+            "bytes": 45175,
+            "definitions": 131,
+            "references": 131,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 458
+          },
+          "description_bytes": 649,
+          "input_properties": 19,
+          "has_output_schema": true
+        },
+        {
+          "name": "capture_browser_scenario",
+          "total": {
+            "bytes": 48331,
+            "estimated_tokens_by_four_bytes": 12083,
+            "estimated_tokens_structural": 5500
+          },
+          "input_schema": {
+            "bytes": 2507,
+            "estimated_tokens_by_four_bytes": 627,
+            "estimated_tokens_structural": 339
+          },
+          "output_schema": {
+            "bytes": 44034,
+            "estimated_tokens_by_four_bytes": 11009,
+            "estimated_tokens_structural": 4906
+          },
+          "output_schema_structure": {
+            "bytes": 44034,
+            "definitions": 116,
+            "references": 116,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 3954
+          },
+          "description_bytes": 1568,
+          "input_properties": 9,
+          "has_output_schema": true
+        },
+        {
+          "name": "binary_session",
+          "total": {
+            "bytes": 47088,
+            "estimated_tokens_by_four_bytes": 11772,
+            "estimated_tokens_structural": 5056
+          },
+          "input_schema": {
+            "bytes": 450,
+            "estimated_tokens_by_four_bytes": 113,
+            "estimated_tokens_structural": 63
+          },
+          "output_schema": {
+            "bytes": 46108,
+            "estimated_tokens_by_four_bytes": 11527,
+            "estimated_tokens_structural": 4924
+          },
+          "output_schema_structure": {
+            "bytes": 46108,
+            "definitions": 87,
+            "references": 87,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 325
+          },
+          "description_bytes": 326,
+          "input_properties": 4,
+          "has_output_schema": true
+        },
+        {
+          "name": "inspect_artifact",
+          "total": {
+            "bytes": 38680,
+            "estimated_tokens_by_four_bytes": 9670,
+            "estimated_tokens_structural": 4459
+          },
+          "input_schema": {
+            "bytes": 250,
+            "estimated_tokens_by_four_bytes": 63,
+            "estimated_tokens_structural": 30
+          },
+          "output_schema": {
+            "bytes": 37225,
+            "estimated_tokens_by_four_bytes": 9307,
+            "estimated_tokens_structural": 4257
+          },
+          "output_schema_structure": {
+            "bytes": 37225,
+            "definitions": 64,
+            "references": 64,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 999,
+          "input_properties": 2,
+          "has_output_schema": true
+        },
+        {
+          "name": "analyze_function",
+          "total": {
+            "bytes": 35112,
+            "estimated_tokens_by_four_bytes": 8778,
+            "estimated_tokens_structural": 3980
+          },
+          "input_schema": {
+            "bytes": 230,
+            "estimated_tokens_by_four_bytes": 58,
+            "estimated_tokens_structural": 26
+          },
+          "output_schema": {
+            "bytes": 33862,
+            "estimated_tokens_by_four_bytes": 8466,
+            "estimated_tokens_structural": 3817
+          },
+          "output_schema_structure": {
+            "bytes": 33862,
+            "definitions": 82,
+            "references": 82,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 813,
+          "input_properties": 2,
+          "has_output_schema": true
+        },
+        {
+          "name": "inspect_android_jni_bindings",
+          "total": {
+            "bytes": 34459,
+            "estimated_tokens_by_four_bytes": 8615,
+            "estimated_tokens_structural": 3850
+          },
+          "input_schema": {
+            "bytes": 4107,
+            "estimated_tokens_by_four_bytes": 1027,
+            "estimated_tokens_structural": 468
+          },
+          "output_schema": {
+            "bytes": 28932,
+            "estimated_tokens_by_four_bytes": 7233,
+            "estimated_tokens_structural": 3192
+          },
+          "output_schema_structure": {
+            "bytes": 28932,
+            "definitions": 97,
+            "references": 97,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 1180,
+          "input_properties": 8,
+          "has_output_schema": true
+        },
+        {
+          "name": "compare_application_versions",
+          "total": {
+            "bytes": 32852,
+            "estimated_tokens_by_four_bytes": 8213,
+            "estimated_tokens_structural": 3734
+          },
+          "input_schema": {
+            "bytes": 631,
+            "estimated_tokens_by_four_bytes": 158,
+            "estimated_tokens_structural": 78
+          },
+          "output_schema": {
+            "bytes": 31571,
+            "estimated_tokens_by_four_bytes": 7893,
+            "estimated_tokens_structural": 3570
+          },
+          "output_schema_structure": {
+            "bytes": 31571,
+            "definitions": 90,
+            "references": 90,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 889
+          },
+          "description_bytes": 419,
+          "input_properties": 4,
+          "has_output_schema": true
+        },
+        {
+          "name": "inspect_managed_members",
+          "total": {
+            "bytes": 32238,
+            "estimated_tokens_by_four_bytes": 8060,
+            "estimated_tokens_structural": 3845
+          },
+          "input_schema": {
+            "bytes": 406,
+            "estimated_tokens_by_four_bytes": 102,
+            "estimated_tokens_structural": 59
+          },
+          "output_schema": {
+            "bytes": 30424,
+            "estimated_tokens_by_four_bytes": 7606,
+            "estimated_tokens_structural": 3581
+          },
+          "output_schema_structure": {
+            "bytes": 30424,
+            "definitions": 67,
+            "references": 67,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 628
+          },
+          "description_bytes": 1185,
+          "input_properties": 3,
+          "has_output_schema": true
+        }
+      ]
+    },
+    {
+      "input_profile": "compact",
+      "output_profile": "compact",
+      "families": null,
+      "tool_count": 231,
+      "tools_with_output_schema": 231,
+      "frame": {
+        "bytes": 567965,
+        "estimated_tokens_by_four_bytes": 141992,
+        "estimated_tokens_structural": 71489
+      },
+      "result_payload": {
+        "bytes": 567931,
+        "estimated_tokens_by_four_bytes": 141983,
+        "estimated_tokens_structural": 71483
+      },
+      "tools_array": {
+        "bytes": 567921,
+        "estimated_tokens_by_four_bytes": 141981,
+        "estimated_tokens_structural": 71482
+      },
+      "input_schemas_total_bytes": 127195,
+      "output_schemas_total_bytes": 251296,
+      "overhead_bytes": 189440,
+      "output_schema_structure": {
+        "output_schema_definitions": 0,
+        "unreachable_definitions": 0,
+        "unreachable_definition_bytes": 0,
+        "repeated_subtree_ceiling_bytes": 0
+      },
+      "largest_tools": [
+        {
+          "name": "inspect_analysis_view",
+          "total": {
+            "bytes": 17096,
+            "estimated_tokens_by_four_bytes": 4274,
+            "estimated_tokens_structural": 2407
+          },
+          "input_schema": {
+            "bytes": 333,
+            "estimated_tokens_by_four_bytes": 84,
+            "estimated_tokens_structural": 42
+          },
+          "output_schema": {
+            "bytes": 1159,
+            "estimated_tokens_by_four_bytes": 290,
+            "estimated_tokens_structural": 128
+          },
+          "output_schema_structure": {
+            "bytes": 1159,
+            "definitions": 0,
+            "references": 0,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 15323,
+          "input_properties": 2,
+          "has_output_schema": true
+        },
+        {
+          "name": "inspect_android_jni_bindings",
+          "total": {
+            "bytes": 6686,
+            "estimated_tokens_by_four_bytes": 1672,
+            "estimated_tokens_structural": 786
+          },
+          "input_schema": {
+            "bytes": 4107,
+            "estimated_tokens_by_four_bytes": 1027,
+            "estimated_tokens_structural": 468
+          },
+          "output_schema": {
+            "bytes": 1159,
+            "estimated_tokens_by_four_bytes": 290,
+            "estimated_tokens_structural": 128
+          },
+          "output_schema_structure": {
+            "bytes": 1159,
+            "definitions": 0,
+            "references": 0,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 1180,
+          "input_properties": 8,
+          "has_output_schema": true
+        },
+        {
+          "name": "capture_process_scenario",
+          "total": {
+            "bytes": 6358,
+            "estimated_tokens_by_four_bytes": 1590,
+            "estimated_tokens_structural": 769
+          },
+          "input_schema": {
+            "bytes": 3789,
+            "estimated_tokens_by_four_bytes": 948,
+            "estimated_tokens_structural": 428
+          },
+          "output_schema": {
+            "bytes": 1159,
+            "estimated_tokens_by_four_bytes": 290,
+            "estimated_tokens_structural": 128
+          },
+          "output_schema_structure": {
+            "bytes": 1159,
+            "definitions": 0,
+            "references": 0,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 1188,
+          "input_properties": 13,
+          "has_output_schema": true
+        },
+        {
+          "name": "analyze_web_bundle",
+          "total": {
+            "bytes": 6001,
+            "estimated_tokens_by_four_bytes": 1501,
+            "estimated_tokens_structural": 839
+          },
+          "input_schema": {
+            "bytes": 3983,
+            "estimated_tokens_by_four_bytes": 996,
+            "estimated_tokens_structural": 589
+          },
+          "output_schema": {
+            "bytes": 1159,
+            "estimated_tokens_by_four_bytes": 290,
+            "estimated_tokens_structural": 128
+          },
+          "output_schema_structure": {
+            "bytes": 1159,
+            "definitions": 0,
+            "references": 0,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 649,
+          "input_properties": 19,
+          "has_output_schema": true
+        },
+        {
+          "name": "open_binary",
+          "total": {
+            "bytes": 5752,
+            "estimated_tokens_by_four_bytes": 1438,
+            "estimated_tokens_structural": 739
+          },
+          "input_schema": {
+            "bytes": 1308,
+            "estimated_tokens_by_four_bytes": 327,
+            "estimated_tokens_structural": 174
+          },
+          "output_schema": {
+            "bytes": 3325,
+            "estimated_tokens_by_four_bytes": 832,
+            "estimated_tokens_structural": 404
+          },
+          "output_schema_structure": {
+            "bytes": 3325,
+            "definitions": 0,
+            "references": 0,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 923,
+          "input_properties": 6,
+          "has_output_schema": true
+        },
+        {
+          "name": "update_analysis_settings",
+          "total": {
+            "bytes": 5477,
+            "estimated_tokens_by_four_bytes": 1370,
+            "estimated_tokens_structural": 655
+          },
+          "input_schema": {
+            "bytes": 4090,
+            "estimated_tokens_by_four_bytes": 1023,
+            "estimated_tokens_structural": 473
+          },
+          "output_schema": {
+            "bytes": 744,
+            "estimated_tokens_by_four_bytes": 186,
+            "estimated_tokens_structural": 88
+          },
+          "output_schema_structure": {
+            "bytes": 744,
+            "definitions": 0,
+            "references": 0,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 420,
+          "input_properties": 2,
+          "has_output_schema": true
+        },
+        {
+          "name": "capture_browser_scenario",
+          "total": {
+            "bytes": 5456,
+            "estimated_tokens_by_four_bytes": 1364,
+            "estimated_tokens_structural": 722
+          },
+          "input_schema": {
+            "bytes": 2507,
+            "estimated_tokens_by_four_bytes": 627,
+            "estimated_tokens_structural": 339
+          },
+          "output_schema": {
+            "bytes": 1159,
+            "estimated_tokens_by_four_bytes": 290,
+            "estimated_tokens_structural": 128
+          },
+          "output_schema_structure": {
+            "bytes": 1159,
+            "definitions": 0,
+            "references": 0,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 1568,
+          "input_properties": 9,
+          "has_output_schema": true
+        },
+        {
+          "name": "analyze_javascript_application",
+          "total": {
+            "bytes": 5188,
+            "estimated_tokens_by_four_bytes": 1297,
+            "estimated_tokens_structural": 689
+          },
+          "input_schema": {
+            "bytes": 2294,
+            "estimated_tokens_by_four_bytes": 574,
+            "estimated_tokens_structural": 318
+          },
+          "output_schema": {
+            "bytes": 1159,
+            "estimated_tokens_by_four_bytes": 290,
+            "estimated_tokens_structural": 128
+          },
+          "output_schema_structure": {
+            "bytes": 1159,
+            "definitions": 0,
+            "references": 0,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 1501,
+          "input_properties": 12,
+          "has_output_schema": true
+        },
+        {
+          "name": "inspect_web_network_capture",
+          "total": {
+            "bytes": 5136,
+            "estimated_tokens_by_four_bytes": 1284,
+            "estimated_tokens_structural": 673
+          },
+          "input_schema": {
+            "bytes": 1707,
+            "estimated_tokens_by_four_bytes": 427,
+            "estimated_tokens_structural": 223
+          },
+          "output_schema": {
+            "bytes": 1159,
+            "estimated_tokens_by_four_bytes": 290,
+            "estimated_tokens_structural": 128
+          },
+          "output_schema_structure": {
+            "bytes": 1159,
+            "definitions": 0,
+            "references": 0,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 2042,
+          "input_properties": 7,
+          "has_output_schema": true
+        },
+        {
+          "name": "decompile_all",
+          "total": {
+            "bytes": 4663,
+            "estimated_tokens_by_four_bytes": 1166,
+            "estimated_tokens_structural": 643
+          },
+          "input_schema": {
+            "bytes": 1800,
+            "estimated_tokens_by_four_bytes": 450,
+            "estimated_tokens_structural": 256
+          },
+          "output_schema": {
+            "bytes": 1159,
+            "estimated_tokens_by_four_bytes": 290,
+            "estimated_tokens_structural": 128
+          },
+          "output_schema_structure": {
+            "bytes": 1159,
+            "definitions": 0,
+            "references": 0,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 1502,
+          "input_properties": 8,
+          "has_output_schema": true
+        }
+      ]
+    },
+    {
+      "input_profile": "compact",
+      "output_profile": "off",
+      "families": null,
+      "tool_count": 231,
+      "tools_with_output_schema": 0,
+      "frame": {
+        "bytes": 312973,
+        "estimated_tokens_by_four_bytes": 78244,
+        "estimated_tokens_structural": 42944
+      },
+      "result_payload": {
+        "bytes": 312939,
+        "estimated_tokens_by_four_bytes": 78235,
+        "estimated_tokens_structural": 42938
+      },
+      "tools_array": {
+        "bytes": 312929,
+        "estimated_tokens_by_four_bytes": 78233,
+        "estimated_tokens_structural": 42937
+      },
+      "input_schemas_total_bytes": 127195,
+      "output_schemas_total_bytes": 0,
+      "overhead_bytes": 185744,
+      "output_schema_structure": {
+        "output_schema_definitions": 0,
+        "unreachable_definitions": 0,
+        "unreachable_definition_bytes": 0,
+        "repeated_subtree_ceiling_bytes": 0
+      },
+      "largest_tools": [
+        {
+          "name": "inspect_analysis_view",
+          "total": {
+            "bytes": 15921,
+            "estimated_tokens_by_four_bytes": 3981,
+            "estimated_tokens_structural": 2277
+          },
+          "input_schema": {
+            "bytes": 333,
+            "estimated_tokens_by_four_bytes": 84,
+            "estimated_tokens_structural": 42
+          },
+          "output_schema": {
+            "bytes": 0,
+            "estimated_tokens_by_four_bytes": 0,
+            "estimated_tokens_structural": 0
+          },
+          "output_schema_structure": null,
+          "description_bytes": 15323,
+          "input_properties": 2,
+          "has_output_schema": false
+        },
+        {
+          "name": "inspect_android_jni_bindings",
+          "total": {
+            "bytes": 5511,
+            "estimated_tokens_by_four_bytes": 1378,
+            "estimated_tokens_structural": 656
+          },
+          "input_schema": {
+            "bytes": 4107,
+            "estimated_tokens_by_four_bytes": 1027,
+            "estimated_tokens_structural": 468
+          },
+          "output_schema": {
+            "bytes": 0,
+            "estimated_tokens_by_four_bytes": 0,
+            "estimated_tokens_structural": 0
+          },
+          "output_schema_structure": null,
+          "description_bytes": 1180,
+          "input_properties": 8,
+          "has_output_schema": false
+        },
+        {
+          "name": "capture_process_scenario",
+          "total": {
+            "bytes": 5183,
+            "estimated_tokens_by_four_bytes": 1296,
+            "estimated_tokens_structural": 639
+          },
+          "input_schema": {
+            "bytes": 3789,
+            "estimated_tokens_by_four_bytes": 948,
+            "estimated_tokens_structural": 428
+          },
+          "output_schema": {
+            "bytes": 0,
+            "estimated_tokens_by_four_bytes": 0,
+            "estimated_tokens_structural": 0
+          },
+          "output_schema_structure": null,
+          "description_bytes": 1188,
+          "input_properties": 13,
+          "has_output_schema": false
+        },
+        {
+          "name": "analyze_web_bundle",
+          "total": {
+            "bytes": 4826,
+            "estimated_tokens_by_four_bytes": 1207,
+            "estimated_tokens_structural": 709
+          },
+          "input_schema": {
+            "bytes": 3983,
+            "estimated_tokens_by_four_bytes": 996,
+            "estimated_tokens_structural": 589
+          },
+          "output_schema": {
+            "bytes": 0,
+            "estimated_tokens_by_four_bytes": 0,
+            "estimated_tokens_structural": 0
+          },
+          "output_schema_structure": null,
+          "description_bytes": 649,
+          "input_properties": 19,
+          "has_output_schema": false
+        },
+        {
+          "name": "update_analysis_settings",
+          "total": {
+            "bytes": 4717,
+            "estimated_tokens_by_four_bytes": 1180,
+            "estimated_tokens_structural": 565
+          },
+          "input_schema": {
+            "bytes": 4090,
+            "estimated_tokens_by_four_bytes": 1023,
+            "estimated_tokens_structural": 473
+          },
+          "output_schema": {
+            "bytes": 0,
+            "estimated_tokens_by_four_bytes": 0,
+            "estimated_tokens_structural": 0
+          },
+          "output_schema_structure": null,
+          "description_bytes": 420,
+          "input_properties": 2,
+          "has_output_schema": false
+        },
+        {
+          "name": "capture_browser_scenario",
+          "total": {
+            "bytes": 4281,
+            "estimated_tokens_by_four_bytes": 1071,
+            "estimated_tokens_structural": 592
+          },
+          "input_schema": {
+            "bytes": 2507,
+            "estimated_tokens_by_four_bytes": 627,
+            "estimated_tokens_structural": 339
+          },
+          "output_schema": {
+            "bytes": 0,
+            "estimated_tokens_by_four_bytes": 0,
+            "estimated_tokens_structural": 0
+          },
+          "output_schema_structure": null,
+          "description_bytes": 1568,
+          "input_properties": 9,
+          "has_output_schema": false
+        },
+        {
+          "name": "analyze_javascript_application",
+          "total": {
+            "bytes": 4013,
+            "estimated_tokens_by_four_bytes": 1004,
+            "estimated_tokens_structural": 559
+          },
+          "input_schema": {
+            "bytes": 2294,
+            "estimated_tokens_by_four_bytes": 574,
+            "estimated_tokens_structural": 318
+          },
+          "output_schema": {
+            "bytes": 0,
+            "estimated_tokens_by_four_bytes": 0,
+            "estimated_tokens_structural": 0
+          },
+          "output_schema_structure": null,
+          "description_bytes": 1501,
+          "input_properties": 12,
+          "has_output_schema": false
+        },
+        {
+          "name": "inspect_web_network_capture",
+          "total": {
+            "bytes": 3961,
+            "estimated_tokens_by_four_bytes": 991,
+            "estimated_tokens_structural": 543
+          },
+          "input_schema": {
+            "bytes": 1707,
+            "estimated_tokens_by_four_bytes": 427,
+            "estimated_tokens_structural": 223
+          },
+          "output_schema": {
+            "bytes": 0,
+            "estimated_tokens_by_four_bytes": 0,
+            "estimated_tokens_structural": 0
+          },
+          "output_schema_structure": null,
+          "description_bytes": 2042,
+          "input_properties": 7,
+          "has_output_schema": false
+        },
+        {
+          "name": "decompile_all",
+          "total": {
+            "bytes": 3488,
+            "estimated_tokens_by_four_bytes": 872,
+            "estimated_tokens_structural": 513
+          },
+          "input_schema": {
+            "bytes": 1800,
+            "estimated_tokens_by_four_bytes": 450,
+            "estimated_tokens_structural": 256
+          },
+          "output_schema": {
+            "bytes": 0,
+            "estimated_tokens_by_four_bytes": 0,
+            "estimated_tokens_structural": 0
+          },
+          "output_schema_structure": null,
+          "description_bytes": 1502,
+          "input_properties": 8,
+          "has_output_schema": false
+        },
+        {
+          "name": "inspect_android_package",
+          "total": {
+            "bytes": 3396,
+            "estimated_tokens_by_four_bytes": 849,
+            "estimated_tokens_structural": 414
+          },
+          "input_schema": {
+            "bytes": 2082,
+            "estimated_tokens_by_four_bytes": 521,
+            "estimated_tokens_structural": 229
+          },
+          "output_schema": {
+            "bytes": 0,
+            "estimated_tokens_by_four_bytes": 0,
+            "estimated_tokens_structural": 0
+          },
+          "output_schema_structure": null,
+          "description_bytes": 1108,
+          "input_properties": 3,
+          "has_output_schema": false
+        }
+      ]
+    },
+    {
+      "input_profile": "full",
+      "output_profile": "full",
+      "families": null,
+      "tool_count": 231,
+      "tools_with_output_schema": 231,
+      "frame": {
+        "bytes": 4383879,
+        "estimated_tokens_by_four_bytes": 1095970,
+        "estimated_tokens_structural": 505033
+      },
+      "result_payload": {
+        "bytes": 4383845,
+        "estimated_tokens_by_four_bytes": 1095962,
+        "estimated_tokens_structural": 505027
+      },
+      "tools_array": {
+        "bytes": 4383835,
+        "estimated_tokens_by_four_bytes": 1095959,
+        "estimated_tokens_structural": 505026
+      },
+      "input_schemas_total_bytes": 724419,
+      "output_schemas_total_bytes": 3469986,
+      "overhead_bytes": 189440,
+      "output_schema_structure": {
+        "output_schema_definitions": 9995,
+        "unreachable_definitions": 0,
+        "unreachable_definition_bytes": 0,
+        "repeated_subtree_ceiling_bytes": 23415
+      },
+      "largest_tools": [
+        {
+          "name": "inspect_analysis_view",
+          "total": {
+            "bytes": 642304,
+            "estimated_tokens_by_four_bytes": 160576,
+            "estimated_tokens_structural": 72034
+          },
+          "input_schema": {
+            "bytes": 89554,
+            "estimated_tokens_by_four_bytes": 22389,
+            "estimated_tokens_structural": 10274
+          },
+          "output_schema": {
+            "bytes": 537146,
+            "estimated_tokens_by_four_bytes": 134287,
+            "estimated_tokens_structural": 59523
+          },
+          "output_schema_structure": {
+            "bytes": 537146,
+            "definitions": 822,
+            "references": 822,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 8465
+          },
+          "description_bytes": 15323,
+          "input_properties": 2,
+          "has_output_schema": true
+        },
+        {
+          "name": "capture_browser_scenario",
+          "total": {
+            "bytes": 75125,
+            "estimated_tokens_by_four_bytes": 18782,
+            "estimated_tokens_structural": 8826
+          },
+          "input_schema": {
+            "bytes": 29301,
+            "estimated_tokens_by_four_bytes": 7326,
+            "estimated_tokens_structural": 3665
+          },
+          "output_schema": {
+            "bytes": 44034,
+            "estimated_tokens_by_four_bytes": 11009,
+            "estimated_tokens_structural": 4906
+          },
+          "output_schema_structure": {
+            "bytes": 44034,
+            "definitions": 116,
+            "references": 116,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 3954
+          },
+          "description_bytes": 1568,
+          "input_properties": 9,
+          "has_output_schema": true
+        },
+        {
+          "name": "analyze_javascript_application",
+          "total": {
+            "bytes": 68291,
+            "estimated_tokens_by_four_bytes": 17073,
+            "estimated_tokens_structural": 7672
+          },
+          "input_schema": {
+            "bytes": 7188,
+            "estimated_tokens_by_four_bytes": 1797,
+            "estimated_tokens_structural": 881
+          },
+          "output_schema": {
+            "bytes": 59368,
+            "estimated_tokens_by_four_bytes": 14842,
+            "estimated_tokens_structural": 6548
+          },
+          "output_schema_structure": {
+            "bytes": 59368,
+            "definitions": 175,
+            "references": 175,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 1354
+          },
+          "description_bytes": 1501,
+          "input_properties": 12,
+          "has_output_schema": true
+        },
+        {
+          "name": "compare_application_versions",
+          "total": {
+            "bytes": 65832,
+            "estimated_tokens_by_four_bytes": 16458,
+            "estimated_tokens_structural": 7693
+          },
+          "input_schema": {
+            "bytes": 33611,
+            "estimated_tokens_by_four_bytes": 8403,
+            "estimated_tokens_structural": 4037
+          },
+          "output_schema": {
+            "bytes": 31571,
+            "estimated_tokens_by_four_bytes": 7893,
+            "estimated_tokens_structural": 3570
+          },
+          "output_schema_structure": {
+            "bytes": 31571,
+            "definitions": 90,
+            "references": 90,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 889
+          },
+          "description_bytes": 419,
+          "input_properties": 4,
+          "has_output_schema": true
+        },
+        {
+          "name": "analyze_web_bundle",
+          "total": {
+            "bytes": 56484,
+            "estimated_tokens_by_four_bytes": 14121,
+            "estimated_tokens_structural": 6364
+          },
+          "input_schema": {
+            "bytes": 10450,
+            "estimated_tokens_by_four_bytes": 2613,
+            "estimated_tokens_structural": 1323
+          },
+          "output_schema": {
+            "bytes": 45175,
+            "estimated_tokens_by_four_bytes": 11294,
+            "estimated_tokens_structural": 4919
+          },
+          "output_schema_structure": {
+            "bytes": 45175,
+            "definitions": 131,
+            "references": 131,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 458
+          },
+          "description_bytes": 649,
+          "input_properties": 19,
+          "has_output_schema": true
+        },
+        {
+          "name": "project_managed_application_graph",
+          "total": {
+            "bytes": 49205,
+            "estimated_tokens_by_four_bytes": 12302,
+            "estimated_tokens_structural": 5738
+          },
+          "input_schema": {
+            "bytes": 24708,
+            "estimated_tokens_by_four_bytes": 6177,
+            "estimated_tokens_structural": 2974
+          },
+          "output_schema": {
+            "bytes": 23816,
+            "estimated_tokens_by_four_bytes": 5954,
+            "estimated_tokens_structural": 2673
+          },
+          "output_schema_structure": {
+            "bytes": 23816,
+            "definitions": 71,
+            "references": 71,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 440,
+          "input_properties": 3,
+          "has_output_schema": true
+        },
+        {
+          "name": "reconcile_javascript_runtime",
+          "total": {
+            "bytes": 48351,
+            "estimated_tokens_by_four_bytes": 12088,
+            "estimated_tokens_structural": 5611
+          },
+          "input_schema": {
+            "bytes": 17159,
+            "estimated_tokens_by_four_bytes": 4290,
+            "estimated_tokens_structural": 2062
+          },
+          "output_schema": {
+            "bytes": 30453,
+            "estimated_tokens_by_four_bytes": 7614,
+            "estimated_tokens_structural": 3452
+          },
+          "output_schema_structure": {
+            "bytes": 30453,
+            "definitions": 81,
+            "references": 81,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 508,
+          "input_properties": 2,
+          "has_output_schema": true
+        },
+        {
+          "name": "trace_application_feature",
+          "total": {
+            "bytes": 47950,
+            "estimated_tokens_by_four_bytes": 11988,
+            "estimated_tokens_structural": 5577
+          },
+          "input_schema": {
+            "bytes": 19679,
+            "estimated_tokens_by_four_bytes": 4920,
+            "estimated_tokens_structural": 2352
+          },
+          "output_schema": {
+            "bytes": 27706,
+            "estimated_tokens_by_four_bytes": 6927,
+            "estimated_tokens_structural": 3149
+          },
+          "output_schema_structure": {
+            "bytes": 27706,
+            "definitions": 73,
+            "references": 73,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 340,
+          "input_properties": 4,
+          "has_output_schema": true
+        },
+        {
+          "name": "binary_session",
+          "total": {
+            "bytes": 47801,
+            "estimated_tokens_by_four_bytes": 11951,
+            "estimated_tokens_structural": 5149
+          },
+          "input_schema": {
+            "bytes": 1163,
+            "estimated_tokens_by_four_bytes": 291,
+            "estimated_tokens_structural": 156
+          },
+          "output_schema": {
+            "bytes": 46108,
+            "estimated_tokens_by_four_bytes": 11527,
+            "estimated_tokens_structural": 4924
+          },
+          "output_schema_structure": {
+            "bytes": 46108,
+            "definitions": 87,
+            "references": 87,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 325
+          },
+          "description_bytes": 326,
+          "input_properties": 4,
+          "has_output_schema": true
+        },
+        {
+          "name": "compare_source_to_bundle",
+          "total": {
+            "bytes": 42118,
+            "estimated_tokens_by_four_bytes": 10530,
+            "estimated_tokens_structural": 4845
+          },
+          "input_schema": {
+            "bytes": 19918,
+            "estimated_tokens_by_four_bytes": 4980,
+            "estimated_tokens_structural": 2345
+          },
+          "output_schema": {
+            "bytes": 20991,
+            "estimated_tokens_by_four_bytes": 5248,
+            "estimated_tokens_structural": 2333
+          },
+          "output_schema_structure": {
+            "bytes": 20991,
+            "definitions": 69,
+            "references": 69,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 986,
+          "input_properties": 3,
+          "has_output_schema": true
+        }
+      ]
+    },
+    {
+      "input_profile": "full",
+      "output_profile": "compact",
+      "families": null,
+      "tool_count": 231,
+      "tools_with_output_schema": 231,
+      "frame": {
+        "bytes": 1165189,
+        "estimated_tokens_by_four_bytes": 291298,
+        "estimated_tokens_structural": 143957
+      },
+      "result_payload": {
+        "bytes": 1165155,
+        "estimated_tokens_by_four_bytes": 291289,
+        "estimated_tokens_structural": 143951
+      },
+      "tools_array": {
+        "bytes": 1165145,
+        "estimated_tokens_by_four_bytes": 291287,
+        "estimated_tokens_structural": 143950
+      },
+      "input_schemas_total_bytes": 724419,
+      "output_schemas_total_bytes": 251296,
+      "overhead_bytes": 189440,
+      "output_schema_structure": {
+        "output_schema_definitions": 0,
+        "unreachable_definitions": 0,
+        "unreachable_definition_bytes": 0,
+        "repeated_subtree_ceiling_bytes": 0
+      },
+      "largest_tools": [
+        {
+          "name": "inspect_analysis_view",
+          "total": {
+            "bytes": 106317,
+            "estimated_tokens_by_four_bytes": 26580,
+            "estimated_tokens_structural": 12639
+          },
+          "input_schema": {
+            "bytes": 89554,
+            "estimated_tokens_by_four_bytes": 22389,
+            "estimated_tokens_structural": 10274
+          },
+          "output_schema": {
+            "bytes": 1159,
+            "estimated_tokens_by_four_bytes": 290,
+            "estimated_tokens_structural": 128
+          },
+          "output_schema_structure": {
+            "bytes": 1159,
+            "definitions": 0,
+            "references": 0,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 15323,
+          "input_properties": 2,
+          "has_output_schema": true
+        },
+        {
+          "name": "compare_application_versions",
+          "total": {
+            "bytes": 35420,
+            "estimated_tokens_by_four_bytes": 8855,
+            "estimated_tokens_structural": 4251
+          },
+          "input_schema": {
+            "bytes": 33611,
+            "estimated_tokens_by_four_bytes": 8403,
+            "estimated_tokens_structural": 4037
+          },
+          "output_schema": {
+            "bytes": 1159,
+            "estimated_tokens_by_four_bytes": 290,
+            "estimated_tokens_structural": 128
+          },
+          "output_schema_structure": {
+            "bytes": 1159,
+            "definitions": 0,
+            "references": 0,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 419,
+          "input_properties": 4,
+          "has_output_schema": true
+        },
+        {
+          "name": "capture_browser_scenario",
+          "total": {
+            "bytes": 32250,
+            "estimated_tokens_by_four_bytes": 8063,
+            "estimated_tokens_structural": 4048
+          },
+          "input_schema": {
+            "bytes": 29301,
+            "estimated_tokens_by_four_bytes": 7326,
+            "estimated_tokens_structural": 3665
+          },
+          "output_schema": {
+            "bytes": 1159,
+            "estimated_tokens_by_four_bytes": 290,
+            "estimated_tokens_structural": 128
+          },
+          "output_schema_structure": {
+            "bytes": 1159,
+            "definitions": 0,
+            "references": 0,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 1568,
+          "input_properties": 9,
+          "has_output_schema": true
+        },
+        {
+          "name": "evaluate_reconstruction_coverage",
+          "total": {
+            "bytes": 28622,
+            "estimated_tokens_by_four_bytes": 7156,
+            "estimated_tokens_structural": 3592
+          },
+          "input_schema": {
+            "bytes": 26033,
+            "estimated_tokens_by_four_bytes": 6509,
+            "estimated_tokens_structural": 3270
+          },
+          "output_schema": {
+            "bytes": 2052,
+            "estimated_tokens_by_four_bytes": 513,
+            "estimated_tokens_structural": 256
+          },
+          "output_schema_structure": {
+            "bytes": 2052,
+            "definitions": 0,
+            "references": 0,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 299,
+          "input_properties": 2,
+          "has_output_schema": true
+        },
+        {
+          "name": "project_managed_application_graph",
+          "total": {
+            "bytes": 26548,
+            "estimated_tokens_by_four_bytes": 6637,
+            "estimated_tokens_structural": 3193
+          },
+          "input_schema": {
+            "bytes": 24708,
+            "estimated_tokens_by_four_bytes": 6177,
+            "estimated_tokens_structural": 2974
+          },
+          "output_schema": {
+            "bytes": 1159,
+            "estimated_tokens_by_four_bytes": 290,
+            "estimated_tokens_structural": 128
+          },
+          "output_schema_structure": {
+            "bytes": 1159,
+            "definitions": 0,
+            "references": 0,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 440,
+          "input_properties": 3,
+          "has_output_schema": true
+        },
+        {
+          "name": "build_reconstruction_obligation_ledger",
+          "total": {
+            "bytes": 24435,
+            "estimated_tokens_by_four_bytes": 6109,
+            "estimated_tokens_structural": 2923
+          },
+          "input_schema": {
+            "bytes": 22530,
+            "estimated_tokens_by_four_bytes": 5633,
+            "estimated_tokens_structural": 2706
+          },
+          "output_schema": {
+            "bytes": 1159,
+            "estimated_tokens_by_four_bytes": 290,
+            "estimated_tokens_structural": 128
+          },
+          "output_schema_structure": {
+            "bytes": 1159,
+            "definitions": 0,
+            "references": 0,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 495,
+          "input_properties": 3,
+          "has_output_schema": true
+        },
+        {
+          "name": "compare_source_to_bundle",
+          "total": {
+            "bytes": 22286,
+            "estimated_tokens_by_four_bytes": 5572,
+            "estimated_tokens_structural": 2640
+          },
+          "input_schema": {
+            "bytes": 19918,
+            "estimated_tokens_by_four_bytes": 4980,
+            "estimated_tokens_structural": 2345
+          },
+          "output_schema": {
+            "bytes": 1159,
+            "estimated_tokens_by_four_bytes": 290,
+            "estimated_tokens_structural": 128
+          },
+          "output_schema_structure": {
+            "bytes": 1159,
+            "definitions": 0,
+            "references": 0,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 986,
+          "input_properties": 3,
+          "has_output_schema": true
+        },
+        {
+          "name": "compare_process_captures",
+          "total": {
+            "bytes": 21734,
+            "estimated_tokens_by_four_bytes": 5434,
+            "estimated_tokens_structural": 2634
+          },
+          "input_schema": {
+            "bytes": 19946,
+            "estimated_tokens_by_four_bytes": 4987,
+            "estimated_tokens_structural": 2424
+          },
+          "output_schema": {
+            "bytes": 1159,
+            "estimated_tokens_by_four_bytes": 290,
+            "estimated_tokens_structural": 128
+          },
+          "output_schema_structure": {
+            "bytes": 1159,
+            "definitions": 0,
+            "references": 0,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 406,
+          "input_properties": 4,
+          "has_output_schema": true
+        },
+        {
+          "name": "trace_application_feature",
+          "total": {
+            "bytes": 21403,
+            "estimated_tokens_by_four_bytes": 5351,
+            "estimated_tokens_structural": 2556
+          },
+          "input_schema": {
+            "bytes": 19679,
+            "estimated_tokens_by_four_bytes": 4920,
+            "estimated_tokens_structural": 2352
+          },
+          "output_schema": {
+            "bytes": 1159,
+            "estimated_tokens_by_four_bytes": 290,
+            "estimated_tokens_structural": 128
+          },
+          "output_schema_structure": {
+            "bytes": 1159,
+            "definitions": 0,
+            "references": 0,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 340,
+          "input_properties": 4,
+          "has_output_schema": true
+        },
+        {
+          "name": "compare_javascript_export_shapes",
+          "total": {
+            "bytes": 20007,
+            "estimated_tokens_by_four_bytes": 5002,
+            "estimated_tokens_structural": 2418
+          },
+          "input_schema": {
+            "bytes": 17827,
+            "estimated_tokens_by_four_bytes": 4457,
+            "estimated_tokens_structural": 2147
+          },
+          "output_schema": {
+            "bytes": 1159,
+            "estimated_tokens_by_four_bytes": 290,
+            "estimated_tokens_structural": 128
+          },
+          "output_schema_structure": {
+            "bytes": 1159,
+            "definitions": 0,
+            "references": 0,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          },
+          "description_bytes": 782,
+          "input_properties": 6,
+          "has_output_schema": true
+        }
+      ]
+    },
+    {
+      "input_profile": "full",
+      "output_profile": "off",
+      "families": null,
+      "tool_count": 231,
+      "tools_with_output_schema": 0,
+      "frame": {
+        "bytes": 910197,
+        "estimated_tokens_by_four_bytes": 227550,
+        "estimated_tokens_structural": 115412
+      },
+      "result_payload": {
+        "bytes": 910163,
+        "estimated_tokens_by_four_bytes": 227541,
+        "estimated_tokens_structural": 115406
+      },
+      "tools_array": {
+        "bytes": 910153,
+        "estimated_tokens_by_four_bytes": 227539,
+        "estimated_tokens_structural": 115405
+      },
+      "input_schemas_total_bytes": 724419,
+      "output_schemas_total_bytes": 0,
+      "overhead_bytes": 185744,
+      "output_schema_structure": {
+        "output_schema_definitions": 0,
+        "unreachable_definitions": 0,
+        "unreachable_definition_bytes": 0,
+        "repeated_subtree_ceiling_bytes": 0
+      },
+      "largest_tools": [
+        {
+          "name": "inspect_analysis_view",
+          "total": {
+            "bytes": 105142,
+            "estimated_tokens_by_four_bytes": 26286,
+            "estimated_tokens_structural": 12509
+          },
+          "input_schema": {
+            "bytes": 89554,
+            "estimated_tokens_by_four_bytes": 22389,
+            "estimated_tokens_structural": 10274
+          },
+          "output_schema": {
+            "bytes": 0,
+            "estimated_tokens_by_four_bytes": 0,
+            "estimated_tokens_structural": 0
+          },
+          "output_schema_structure": null,
+          "description_bytes": 15323,
+          "input_properties": 2,
+          "has_output_schema": false
+        },
+        {
+          "name": "compare_application_versions",
+          "total": {
+            "bytes": 34245,
+            "estimated_tokens_by_four_bytes": 8562,
+            "estimated_tokens_structural": 4121
+          },
+          "input_schema": {
+            "bytes": 33611,
+            "estimated_tokens_by_four_bytes": 8403,
+            "estimated_tokens_structural": 4037
+          },
+          "output_schema": {
+            "bytes": 0,
+            "estimated_tokens_by_four_bytes": 0,
+            "estimated_tokens_structural": 0
+          },
+          "output_schema_structure": null,
+          "description_bytes": 419,
+          "input_properties": 4,
+          "has_output_schema": false
+        },
+        {
+          "name": "capture_browser_scenario",
+          "total": {
+            "bytes": 31075,
+            "estimated_tokens_by_four_bytes": 7769,
+            "estimated_tokens_structural": 3918
+          },
+          "input_schema": {
+            "bytes": 29301,
+            "estimated_tokens_by_four_bytes": 7326,
+            "estimated_tokens_structural": 3665
+          },
+          "output_schema": {
+            "bytes": 0,
+            "estimated_tokens_by_four_bytes": 0,
+            "estimated_tokens_structural": 0
+          },
+          "output_schema_structure": null,
+          "description_bytes": 1568,
+          "input_properties": 9,
+          "has_output_schema": false
+        },
+        {
+          "name": "evaluate_reconstruction_coverage",
+          "total": {
+            "bytes": 26554,
+            "estimated_tokens_by_four_bytes": 6639,
+            "estimated_tokens_structural": 3334
+          },
+          "input_schema": {
+            "bytes": 26033,
+            "estimated_tokens_by_four_bytes": 6509,
+            "estimated_tokens_structural": 3270
+          },
+          "output_schema": {
+            "bytes": 0,
+            "estimated_tokens_by_four_bytes": 0,
+            "estimated_tokens_structural": 0
+          },
+          "output_schema_structure": null,
+          "description_bytes": 299,
+          "input_properties": 2,
+          "has_output_schema": false
+        },
+        {
+          "name": "project_managed_application_graph",
+          "total": {
+            "bytes": 25373,
+            "estimated_tokens_by_four_bytes": 6344,
+            "estimated_tokens_structural": 3063
+          },
+          "input_schema": {
+            "bytes": 24708,
+            "estimated_tokens_by_four_bytes": 6177,
+            "estimated_tokens_structural": 2974
+          },
+          "output_schema": {
+            "bytes": 0,
+            "estimated_tokens_by_four_bytes": 0,
+            "estimated_tokens_structural": 0
+          },
+          "output_schema_structure": null,
+          "description_bytes": 440,
+          "input_properties": 3,
+          "has_output_schema": false
+        },
+        {
+          "name": "build_reconstruction_obligation_ledger",
+          "total": {
+            "bytes": 23260,
+            "estimated_tokens_by_four_bytes": 5815,
+            "estimated_tokens_structural": 2793
+          },
+          "input_schema": {
+            "bytes": 22530,
+            "estimated_tokens_by_four_bytes": 5633,
+            "estimated_tokens_structural": 2706
+          },
+          "output_schema": {
+            "bytes": 0,
+            "estimated_tokens_by_four_bytes": 0,
+            "estimated_tokens_structural": 0
+          },
+          "output_schema_structure": null,
+          "description_bytes": 495,
+          "input_properties": 3,
+          "has_output_schema": false
+        },
+        {
+          "name": "compare_source_to_bundle",
+          "total": {
+            "bytes": 21111,
+            "estimated_tokens_by_four_bytes": 5278,
+            "estimated_tokens_structural": 2510
+          },
+          "input_schema": {
+            "bytes": 19918,
+            "estimated_tokens_by_four_bytes": 4980,
+            "estimated_tokens_structural": 2345
+          },
+          "output_schema": {
+            "bytes": 0,
+            "estimated_tokens_by_four_bytes": 0,
+            "estimated_tokens_structural": 0
+          },
+          "output_schema_structure": null,
+          "description_bytes": 986,
+          "input_properties": 3,
+          "has_output_schema": false
+        },
+        {
+          "name": "compare_process_captures",
+          "total": {
+            "bytes": 20559,
+            "estimated_tokens_by_four_bytes": 5140,
+            "estimated_tokens_structural": 2504
+          },
+          "input_schema": {
+            "bytes": 19946,
+            "estimated_tokens_by_four_bytes": 4987,
+            "estimated_tokens_structural": 2424
+          },
+          "output_schema": {
+            "bytes": 0,
+            "estimated_tokens_by_four_bytes": 0,
+            "estimated_tokens_structural": 0
+          },
+          "output_schema_structure": null,
+          "description_bytes": 406,
+          "input_properties": 4,
+          "has_output_schema": false
+        },
+        {
+          "name": "trace_application_feature",
+          "total": {
+            "bytes": 20228,
+            "estimated_tokens_by_four_bytes": 5057,
+            "estimated_tokens_structural": 2426
+          },
+          "input_schema": {
+            "bytes": 19679,
+            "estimated_tokens_by_four_bytes": 4920,
+            "estimated_tokens_structural": 2352
+          },
+          "output_schema": {
+            "bytes": 0,
+            "estimated_tokens_by_four_bytes": 0,
+            "estimated_tokens_structural": 0
+          },
+          "output_schema_structure": null,
+          "description_bytes": 340,
+          "input_properties": 4,
+          "has_output_schema": false
+        },
+        {
+          "name": "compare_javascript_export_shapes",
+          "total": {
+            "bytes": 18832,
+            "estimated_tokens_by_four_bytes": 4708,
+            "estimated_tokens_structural": 2288
+          },
+          "input_schema": {
+            "bytes": 17827,
+            "estimated_tokens_by_four_bytes": 4457,
+            "estimated_tokens_structural": 2147
+          },
+          "output_schema": {
+            "bytes": 0,
+            "estimated_tokens_by_four_bytes": 0,
+            "estimated_tokens_structural": 0
+          },
+          "output_schema_structure": null,
+          "description_bytes": 782,
+          "input_properties": 6,
+          "has_output_schema": false
+        }
+      ]
+    }
+  ],
+  "per_tool_default": [
+    {
+      "name": "inspect_analysis_view",
+      "total_bytes": 553083,
+      "input_schema_bytes": 333,
+      "output_schema_bytes": 537146,
+      "description_bytes": 15323,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 822
+    },
+    {
+      "name": "analyze_javascript_application",
+      "total_bytes": 63397,
+      "input_schema_bytes": 2294,
+      "output_schema_bytes": 59368,
+      "description_bytes": 1501,
+      "input_properties": 12,
+      "has_output_schema": true,
+      "output_schema_definitions": 175
+    },
+    {
+      "name": "analyze_web_bundle",
+      "total_bytes": 50017,
+      "input_schema_bytes": 3983,
+      "output_schema_bytes": 45175,
+      "description_bytes": 649,
+      "input_properties": 19,
+      "has_output_schema": true,
+      "output_schema_definitions": 131
+    },
+    {
+      "name": "capture_browser_scenario",
+      "total_bytes": 48331,
+      "input_schema_bytes": 2507,
+      "output_schema_bytes": 44034,
+      "description_bytes": 1568,
+      "input_properties": 9,
+      "has_output_schema": true,
+      "output_schema_definitions": 116
+    },
+    {
+      "name": "binary_session",
+      "total_bytes": 47088,
+      "input_schema_bytes": 450,
+      "output_schema_bytes": 46108,
+      "description_bytes": 326,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 87
+    },
+    {
+      "name": "inspect_artifact",
+      "total_bytes": 38680,
+      "input_schema_bytes": 250,
+      "output_schema_bytes": 37225,
+      "description_bytes": 999,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 64
+    },
+    {
+      "name": "analyze_function",
+      "total_bytes": 35112,
+      "input_schema_bytes": 230,
+      "output_schema_bytes": 33862,
+      "description_bytes": 813,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 82
+    },
+    {
+      "name": "inspect_android_jni_bindings",
+      "total_bytes": 34459,
+      "input_schema_bytes": 4107,
+      "output_schema_bytes": 28932,
+      "description_bytes": 1180,
+      "input_properties": 8,
+      "has_output_schema": true,
+      "output_schema_definitions": 97
+    },
+    {
+      "name": "compare_application_versions",
+      "total_bytes": 32852,
+      "input_schema_bytes": 631,
+      "output_schema_bytes": 31571,
+      "description_bytes": 419,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 90
+    },
+    {
+      "name": "inspect_managed_members",
+      "total_bytes": 32238,
+      "input_schema_bytes": 406,
+      "output_schema_bytes": 30424,
+      "description_bytes": 1185,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 67
+    },
+    {
+      "name": "reconcile_javascript_runtime",
+      "total_bytes": 31621,
+      "input_schema_bytes": 429,
+      "output_schema_bytes": 30453,
+      "description_bytes": 508,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 81
+    },
+    {
+      "name": "capture_process_scenario",
+      "total_bytes": 31518,
+      "input_schema_bytes": 3789,
+      "output_schema_bytes": 26319,
+      "description_bytes": 1188,
+      "input_properties": 13,
+      "has_output_schema": true,
+      "output_schema_definitions": 77
+    },
+    {
+      "name": "inspect_web_page",
+      "total_bytes": 30665,
+      "input_schema_bytes": 1428,
+      "output_schema_bytes": 28655,
+      "description_bytes": 376,
+      "input_properties": 12,
+      "has_output_schema": true,
+      "output_schema_definitions": 51
+    },
+    {
+      "name": "annotate_native_function",
+      "total_bytes": 30456,
+      "input_schema_bytes": 289,
+      "output_schema_bytes": 29442,
+      "description_bytes": 504,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 78
+    },
+    {
+      "name": "inspect_web_network_capture",
+      "total_bytes": 30219,
+      "input_schema_bytes": 1707,
+      "output_schema_bytes": 26242,
+      "description_bytes": 2042,
+      "input_properties": 7,
+      "has_output_schema": true,
+      "output_schema_definitions": 74
+    },
+    {
+      "name": "inspect_android_package",
+      "total_bytes": 28961,
+      "input_schema_bytes": 2082,
+      "output_schema_bytes": 25549,
+      "description_bytes": 1108,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 85
+    },
+    {
+      "name": "trace_application_feature",
+      "total_bytes": 28782,
+      "input_schema_bytes": 511,
+      "output_schema_bytes": 27706,
+      "description_bytes": 340,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 73
+    },
+    {
+      "name": "inspect_gpu_code_objects",
+      "total_bytes": 28329,
+      "input_schema_bytes": 858,
+      "output_schema_bytes": 26047,
+      "description_bytes": 1201,
+      "input_properties": 7,
+      "has_output_schema": true,
+      "output_schema_definitions": 86
+    },
+    {
+      "name": "inspect_native_load_image",
+      "total_bytes": 27726,
+      "input_schema_bytes": 175,
+      "output_schema_bytes": 26509,
+      "description_bytes": 817,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 66
+    },
+    {
+      "name": "inspect_apk_signature",
+      "total_bytes": 26924,
+      "input_schema_bytes": 416,
+      "output_schema_bytes": 25436,
+      "description_bytes": 855,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 69
+    },
+    {
+      "name": "inspect_il2cpp_metadata",
+      "total_bytes": 26538,
+      "input_schema_bytes": 1190,
+      "output_schema_bytes": 23585,
+      "description_bytes": 1542,
+      "input_properties": 5,
+      "has_output_schema": true,
+      "output_schema_definitions": 71
+    },
+    {
+      "name": "inspect_native_dispatch_metadata",
+      "total_bytes": 26017,
+      "input_schema_bytes": 397,
+      "output_schema_bytes": 24446,
+      "description_bytes": 935,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 49
+    },
+    {
+      "name": "get_call_graph",
+      "total_bytes": 25308,
+      "input_schema_bytes": 286,
+      "output_schema_bytes": 24301,
+      "description_bytes": 518,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 55
+    },
+    {
+      "name": "project_managed_application_graph",
+      "total_bytes": 25122,
+      "input_schema_bytes": 625,
+      "output_schema_bytes": 23816,
+      "description_bytes": 440,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 71
+    },
+    {
+      "name": "inspect_desktop_application",
+      "total_bytes": 24048,
+      "input_schema_bytes": 584,
+      "output_schema_bytes": 22500,
+      "description_bytes": 735,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 53
+    },
+    {
+      "name": "inspect_model_artifact",
+      "total_bytes": 23954,
+      "input_schema_bytes": 642,
+      "output_schema_bytes": 21743,
+      "description_bytes": 1350,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 75
+    },
+    {
+      "name": "inspect_binary_layout",
+      "total_bytes": 23594,
+      "input_schema_bytes": 1061,
+      "output_schema_bytes": 20866,
+      "description_bytes": 1451,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 55
+    },
+    {
+      "name": "trace_javascript_semantics",
+      "total_bytes": 23439,
+      "input_schema_bytes": 409,
+      "output_schema_bytes": 22538,
+      "description_bytes": 265,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 53
+    },
+    {
+      "name": "inspect_erlang_beam",
+      "total_bytes": 22888,
+      "input_schema_bytes": 796,
+      "output_schema_bytes": 20899,
+      "description_bytes": 980,
+      "input_properties": 6,
+      "has_output_schema": true,
+      "output_schema_definitions": 61
+    },
+    {
+      "name": "inspect_macho",
+      "total_bytes": 22881,
+      "input_schema_bytes": 255,
+      "output_schema_bytes": 21820,
+      "description_bytes": 606,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 50
+    },
+    {
+      "name": "inspect_rust_binary",
+      "total_bytes": 22654,
+      "input_schema_bytes": 605,
+      "output_schema_bytes": 19904,
+      "description_bytes": 1932,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 78
+    },
+    {
+      "name": "compare_source_to_bundle",
+      "total_bytes": 22578,
+      "input_schema_bytes": 378,
+      "output_schema_bytes": 20991,
+      "description_bytes": 986,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 69
+    },
+    {
+      "name": "inspect_python_pyc",
+      "total_bytes": 22342,
+      "input_schema_bytes": 1496,
+      "output_schema_bytes": 19591,
+      "description_bytes": 1044,
+      "input_properties": 7,
+      "has_output_schema": true,
+      "output_schema_definitions": 65
+    },
+    {
+      "name": "trace_web_source_location",
+      "total_bytes": 21884,
+      "input_schema_bytes": 962,
+      "output_schema_bytes": 19756,
+      "description_bytes": 942,
+      "input_properties": 5,
+      "has_output_schema": true,
+      "output_schema_definitions": 43
+    },
+    {
+      "name": "inspect_managed_artifact",
+      "total_bytes": 21206,
+      "input_schema_bytes": 304,
+      "output_schema_bytes": 19949,
+      "description_bytes": 728,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 46
+    },
+    {
+      "name": "inspect_wasm_artifact",
+      "total_bytes": 20998,
+      "input_schema_bytes": 1027,
+      "output_schema_bytes": 18564,
+      "description_bytes": 1189,
+      "input_properties": 5,
+      "has_output_schema": true,
+      "output_schema_definitions": 64
+    },
+    {
+      "name": "trace_call_path",
+      "total_bytes": 20951,
+      "input_schema_bytes": 250,
+      "output_schema_bytes": 20014,
+      "description_bytes": 481,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 41
+    },
+    {
+      "name": "batch_decompile",
+      "total_bytes": 20910,
+      "input_schema_bytes": 173,
+      "output_schema_bytes": 19988,
+      "description_bytes": 544,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 43
+    },
+    {
+      "name": "inspect_android_class",
+      "total_bytes": 20772,
+      "input_schema_bytes": 453,
+      "output_schema_bytes": 19396,
+      "description_bytes": 707,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 39
+    },
+    {
+      "name": "analyze_swift_types",
+      "total_bytes": 20657,
+      "input_schema_bytes": 245,
+      "output_schema_bytes": 19544,
+      "description_bytes": 651,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 42
+    },
+    {
+      "name": "inspect_pcap_capture",
+      "total_bytes": 20079,
+      "input_schema_bytes": 258,
+      "output_schema_bytes": 18912,
+      "description_bytes": 695,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 58
+    },
+    {
+      "name": "compare_managed_members",
+      "total_bytes": 20064,
+      "input_schema_bytes": 490,
+      "output_schema_bytes": 18273,
+      "description_bytes": 1080,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 53
+    },
+    {
+      "name": "trace_web_module_imports",
+      "total_bytes": 19712,
+      "input_schema_bytes": 642,
+      "output_schema_bytes": 17990,
+      "description_bytes": 858,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 42
+    },
+    {
+      "name": "build_reconstruction_obligation_ledger",
+      "total_bytes": 19634,
+      "input_schema_bytes": 448,
+      "output_schema_bytes": 18440,
+      "description_bytes": 495,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 56
+    },
+    {
+      "name": "inspect_android_method",
+      "total_bytes": 19364,
+      "input_schema_bytes": 588,
+      "output_schema_bytes": 18006,
+      "description_bytes": 552,
+      "input_properties": 6,
+      "has_output_schema": true,
+      "output_schema_definitions": 39
+    },
+    {
+      "name": "capture_electron_scenario",
+      "total_bytes": 19089,
+      "input_schema_bytes": 879,
+      "output_schema_bytes": 17101,
+      "description_bytes": 885,
+      "input_properties": 5,
+      "has_output_schema": true,
+      "output_schema_definitions": 57
+    },
+    {
+      "name": "get_evidence_bundle",
+      "total_bytes": 18711,
+      "input_schema_bytes": 537,
+      "output_schema_bytes": 17398,
+      "description_bytes": 564,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 64
+    },
+    {
+      "name": "inspect_go_binary",
+      "total_bytes": 18633,
+      "input_schema_bytes": 740,
+      "output_schema_bytes": 15978,
+      "description_bytes": 1706,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 61
+    },
+    {
+      "name": "compare_javascript_export_shapes",
+      "total_bytes": 18580,
+      "input_schema_bytes": 829,
+      "output_schema_bytes": 16730,
+      "description_bytes": 782,
+      "input_properties": 6,
+      "has_output_schema": true,
+      "output_schema_definitions": 48
+    },
+    {
+      "name": "inspect_evm_interface",
+      "total_bytes": 18503,
+      "input_schema_bytes": 1089,
+      "output_schema_bytes": 15939,
+      "description_bytes": 1257,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 59
+    },
+    {
+      "name": "decode_interface_builder",
+      "total_bytes": 18087,
+      "input_schema_bytes": 361,
+      "output_schema_bytes": 16967,
+      "description_bytes": 536,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 43
+    },
+    {
+      "name": "update_analysis_settings",
+      "total_bytes": 18064,
+      "input_schema_bytes": 4090,
+      "output_schema_bytes": 13331,
+      "description_bytes": 420,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 16
+    },
+    {
+      "name": "inspect_native_exports",
+      "total_bytes": 17834,
+      "input_schema_bytes": 745,
+      "output_schema_bytes": 15797,
+      "description_bytes": 1073,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 54
+    },
+    {
+      "name": "verify_managed_native_boundaries",
+      "total_bytes": 17811,
+      "input_schema_bytes": 471,
+      "output_schema_bytes": 16680,
+      "description_bytes": 421,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 53
+    },
+    {
+      "name": "inspect_apple_ips",
+      "total_bytes": 17575,
+      "input_schema_bytes": 586,
+      "output_schema_bytes": 16107,
+      "description_bytes": 673,
+      "input_properties": 7,
+      "has_output_schema": true,
+      "output_schema_definitions": 38
+    },
+    {
+      "name": "inspect_electron_page",
+      "total_bytes": 17540,
+      "input_schema_bytes": 695,
+      "output_schema_bytes": 16229,
+      "description_bytes": 400,
+      "input_properties": 5,
+      "has_output_schema": true,
+      "output_schema_definitions": 45
+    },
+    {
+      "name": "inspect_recorded_crash",
+      "total_bytes": 17402,
+      "input_schema_bytes": 919,
+      "output_schema_bytes": 15156,
+      "description_bytes": 1109,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 52
+    },
+    {
+      "name": "observe_web_execution",
+      "total_bytes": 17148,
+      "input_schema_bytes": 466,
+      "output_schema_bytes": 15917,
+      "description_bytes": 549,
+      "input_properties": 5,
+      "has_output_schema": true,
+      "output_schema_definitions": 35
+    },
+    {
+      "name": "compare_web_captures",
+      "total_bytes": 17147,
+      "input_schema_bytes": 1123,
+      "output_schema_bytes": 14924,
+      "description_bytes": 885,
+      "input_properties": 5,
+      "has_output_schema": true,
+      "output_schema_definitions": 49
+    },
+    {
+      "name": "inspect_kernel_module",
+      "total_bytes": 17012,
+      "input_schema_bytes": 331,
+      "output_schema_bytes": 15452,
+      "description_bytes": 1012,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 40
+    },
+    {
+      "name": "decompile_all",
+      "total_bytes": 16512,
+      "input_schema_bytes": 1800,
+      "output_schema_bytes": 13008,
+      "description_bytes": 1502,
+      "input_properties": 8,
+      "has_output_schema": true,
+      "output_schema_definitions": 54
+    },
+    {
+      "name": "inspect_sqlite_database",
+      "total_bytes": 16283,
+      "input_schema_bytes": 1476,
+      "output_schema_bytes": 13180,
+      "description_bytes": 1407,
+      "input_properties": 6,
+      "has_output_schema": true,
+      "output_schema_definitions": 44
+    },
+    {
+      "name": "inspect_packet_capture",
+      "total_bytes": 16226,
+      "input_schema_bytes": 1395,
+      "output_schema_bytes": 13876,
+      "description_bytes": 737,
+      "input_properties": 8,
+      "has_output_schema": true,
+      "output_schema_definitions": 61
+    },
+    {
+      "name": "export_web_scripts",
+      "total_bytes": 16166,
+      "input_schema_bytes": 311,
+      "output_schema_bytes": 14934,
+      "description_bytes": 709,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 38
+    },
+    {
+      "name": "observe_native_calls",
+      "total_bytes": 15969,
+      "input_schema_bytes": 982,
+      "output_schema_bytes": 14101,
+      "description_bytes": 672,
+      "input_properties": 8,
+      "has_output_schema": true,
+      "output_schema_definitions": 41
+    },
+    {
+      "name": "inspect_pe_load_config",
+      "total_bytes": 15874,
+      "input_schema_bytes": 604,
+      "output_schema_bytes": 14595,
+      "description_bytes": 456,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 39
+    },
+    {
+      "name": "match_native_functions",
+      "total_bytes": 15670,
+      "input_schema_bytes": 814,
+      "output_schema_bytes": 13870,
+      "description_bytes": 767,
+      "input_properties": 5,
+      "has_output_schema": true,
+      "output_schema_definitions": 43
+    },
+    {
+      "name": "inspect_devicetree",
+      "total_bytes": 15442,
+      "input_schema_bytes": 507,
+      "output_schema_bytes": 14023,
+      "description_bytes": 701,
+      "input_properties": 6,
+      "has_output_schema": true,
+      "output_schema_definitions": 38
+    },
+    {
+      "name": "inspect_managed_native_boundaries",
+      "total_bytes": 15406,
+      "input_schema_bytes": 247,
+      "output_schema_bytes": 14634,
+      "description_bytes": 284,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 36
+    },
+    {
+      "name": "inspect_dart_aot",
+      "total_bytes": 15362,
+      "input_schema_bytes": 337,
+      "output_schema_bytes": 13723,
+      "description_bytes": 1093,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 42
+    },
+    {
+      "name": "observe_javascript_runtime",
+      "total_bytes": 14930,
+      "input_schema_bytes": 440,
+      "output_schema_bytes": 13248,
+      "description_bytes": 1016,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 40
+    },
+    {
+      "name": "extract_firmware",
+      "total_bytes": 14905,
+      "input_schema_bytes": 1475,
+      "output_schema_bytes": 12475,
+      "description_bytes": 748,
+      "input_properties": 8,
+      "has_output_schema": true,
+      "output_schema_definitions": 38
+    },
+    {
+      "name": "extract_artifact",
+      "total_bytes": 14697,
+      "input_schema_bytes": 193,
+      "output_schema_bytes": 13651,
+      "description_bytes": 646,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 47
+    },
+    {
+      "name": "inspect_native_api",
+      "total_bytes": 14662,
+      "input_schema_bytes": 173,
+      "output_schema_bytes": 13965,
+      "description_bytes": 312,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 42
+    },
+    {
+      "name": "trace_dylib_resolution",
+      "total_bytes": 14651,
+      "input_schema_bytes": 499,
+      "output_schema_bytes": 13177,
+      "description_bytes": 756,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "resolve_containing_procedure",
+      "total_bytes": 14550,
+      "input_schema_bytes": 255,
+      "output_schema_bytes": 13676,
+      "description_bytes": 388,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 47
+    },
+    {
+      "name": "decode_signal_recording",
+      "total_bytes": 14457,
+      "input_schema_bytes": 1036,
+      "output_schema_bytes": 12526,
+      "description_bytes": 675,
+      "input_properties": 6,
+      "has_output_schema": true,
+      "output_schema_definitions": 53
+    },
+    {
+      "name": "inspect_pe_imports",
+      "total_bytes": 14418,
+      "input_schema_bytes": 770,
+      "output_schema_bytes": 12520,
+      "description_bytes": 917,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 37
+    },
+    {
+      "name": "project_apple_application_graph",
+      "total_bytes": 14057,
+      "input_schema_bytes": 350,
+      "output_schema_bytes": 12997,
+      "description_bytes": 473,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 39
+    },
+    {
+      "name": "inspect_pe_resources",
+      "total_bytes": 14019,
+      "input_schema_bytes": 606,
+      "output_schema_bytes": 12505,
+      "description_bytes": 693,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 36
+    },
+    {
+      "name": "inspect_electron_fuses",
+      "total_bytes": 14007,
+      "input_schema_bytes": 436,
+      "output_schema_bytes": 12855,
+      "description_bytes": 497,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 46
+    },
+    {
+      "name": "trace_feature",
+      "total_bytes": 13994,
+      "input_schema_bytes": 215,
+      "output_schema_bytes": 13343,
+      "description_bytes": 234,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 49
+    },
+    {
+      "name": "inspect_packet_fields",
+      "total_bytes": 13981,
+      "input_schema_bytes": 474,
+      "output_schema_bytes": 12476,
+      "description_bytes": 815,
+      "input_properties": 5,
+      "has_output_schema": true,
+      "output_schema_definitions": 47
+    },
+    {
+      "name": "inspect_web_event_listeners",
+      "total_bytes": 13973,
+      "input_schema_bytes": 451,
+      "output_schema_bytes": 12875,
+      "description_bytes": 419,
+      "input_properties": 5,
+      "has_output_schema": true,
+      "output_schema_definitions": 34
+    },
+    {
+      "name": "inspect_analysis_settings",
+      "total_bytes": 13924,
+      "input_schema_bytes": 646,
+      "output_schema_bytes": 12656,
+      "description_bytes": 398,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 11
+    },
+    {
+      "name": "observe_web_session",
+      "total_bytes": 13870,
+      "input_schema_bytes": 472,
+      "output_schema_bytes": 12913,
+      "description_bytes": 273,
+      "input_properties": 5,
+      "has_output_schema": true,
+      "output_schema_definitions": 37
+    },
+    {
+      "name": "inspect_pe_certificates",
+      "total_bytes": 13768,
+      "input_schema_bytes": 603,
+      "output_schema_bytes": 12034,
+      "description_bytes": 910,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 36
+    },
+    {
+      "name": "trace_native_ui_action",
+      "total_bytes": 13757,
+      "input_schema_bytes": 353,
+      "output_schema_bytes": 12760,
+      "description_bytes": 425,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 37
+    },
+    {
+      "name": "gdb_console",
+      "total_bytes": 13725,
+      "input_schema_bytes": 479,
+      "output_schema_bytes": 12136,
+      "description_bytes": 914,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 43
+    },
+    {
+      "name": "discover_webmcp_tools",
+      "total_bytes": 13723,
+      "input_schema_bytes": 472,
+      "output_schema_bytes": 12805,
+      "description_bytes": 230,
+      "input_properties": 5,
+      "has_output_schema": true,
+      "output_schema_definitions": 36
+    },
+    {
+      "name": "inspect_asset_catalog",
+      "total_bytes": 13709,
+      "input_schema_bytes": 240,
+      "output_schema_bytes": 13047,
+      "description_bytes": 206,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 47
+    },
+    {
+      "name": "search_strings",
+      "total_bytes": 13695,
+      "input_schema_bytes": 357,
+      "output_schema_bytes": 11562,
+      "description_bytes": 1573,
+      "input_properties": 5,
+      "has_output_schema": true,
+      "output_schema_definitions": 37
+    },
+    {
+      "name": "inspect_native_instruction",
+      "total_bytes": 13622,
+      "input_schema_bytes": 212,
+      "output_schema_bytes": 12695,
+      "description_bytes": 488,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 40
+    },
+    {
+      "name": "compare_functions",
+      "total_bytes": 13585,
+      "input_schema_bytes": 490,
+      "output_schema_bytes": 12580,
+      "description_bytes": 306,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 47
+    },
+    {
+      "name": "inspect_native_data_type",
+      "total_bytes": 13545,
+      "input_schema_bytes": 228,
+      "output_schema_bytes": 12815,
+      "description_bytes": 279,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 35
+    },
+    {
+      "name": "compare_wasm_interfaces",
+      "total_bytes": 13496,
+      "input_schema_bytes": 652,
+      "output_schema_bytes": 12128,
+      "description_bytes": 495,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 45
+    },
+    {
+      "name": "recover_javascript_sources",
+      "total_bytes": 13479,
+      "input_schema_bytes": 569,
+      "output_schema_bytes": 11990,
+      "description_bytes": 693,
+      "input_properties": 5,
+      "has_output_schema": true,
+      "output_schema_definitions": 38
+    },
+    {
+      "name": "import_managed_reconstruction",
+      "total_bytes": 13427,
+      "input_schema_bytes": 475,
+      "output_schema_bytes": 12352,
+      "description_bytes": 367,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 36
+    },
+    {
+      "name": "inspect_byte_entropy",
+      "total_bytes": 13246,
+      "input_schema_bytes": 454,
+      "output_schema_bytes": 11787,
+      "description_bytes": 790,
+      "input_properties": 5,
+      "has_output_schema": true,
+      "output_schema_definitions": 40
+    },
+    {
+      "name": "inspect_with_objdump",
+      "total_bytes": 13237,
+      "input_schema_bytes": 929,
+      "output_schema_bytes": 10450,
+      "description_bytes": 1644,
+      "input_properties": 6,
+      "has_output_schema": true,
+      "output_schema_definitions": 35
+    },
+    {
+      "name": "inspect_signal_decoders",
+      "total_bytes": 13211,
+      "input_schema_bytes": 437,
+      "output_schema_bytes": 11829,
+      "description_bytes": 725,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 46
+    },
+    {
+      "name": "compare_process_captures",
+      "total_bytes": 13125,
+      "input_schema_bytes": 630,
+      "output_schema_bytes": 11866,
+      "description_bytes": 406,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 43
+    },
+    {
+      "name": "procedure_references",
+      "total_bytes": 13103,
+      "input_schema_bytes": 263,
+      "output_schema_bytes": 12321,
+      "description_bytes": 304,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 47
+    },
+    {
+      "name": "decode_android_resources",
+      "total_bytes": 12996,
+      "input_schema_bytes": 709,
+      "output_schema_bytes": 11352,
+      "description_bytes": 713,
+      "input_properties": 6,
+      "has_output_schema": true,
+      "output_schema_definitions": 39
+    },
+    {
+      "name": "search_procedures",
+      "total_bytes": 12987,
+      "input_schema_bytes": 357,
+      "output_schema_bytes": 11395,
+      "description_bytes": 1026,
+      "input_properties": 5,
+      "has_output_schema": true,
+      "output_schema_definitions": 34
+    },
+    {
+      "name": "frida_session_status",
+      "total_bytes": 12979,
+      "input_schema_bytes": 427,
+      "output_schema_bytes": 11933,
+      "description_bytes": 404,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 41
+    },
+    {
+      "name": "capture_web_screenshot",
+      "total_bytes": 12957,
+      "input_schema_bytes": 397,
+      "output_schema_bytes": 12167,
+      "description_bytes": 175,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 39
+    },
+    {
+      "name": "trace_native_values",
+      "total_bytes": 12733,
+      "input_schema_bytes": 605,
+      "output_schema_bytes": 11366,
+      "description_bytes": 549,
+      "input_properties": 8,
+      "has_output_schema": true,
+      "output_schema_definitions": 34
+    },
+    {
+      "name": "inspect_keyed_archive",
+      "total_bytes": 12702,
+      "input_schema_bytes": 328,
+      "output_schema_bytes": 11836,
+      "description_bytes": 321,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 46
+    },
+    {
+      "name": "build_call_path",
+      "total_bytes": 12613,
+      "input_schema_bytes": 398,
+      "output_schema_bytes": 11787,
+      "description_bytes": 223,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 46
+    },
+    {
+      "name": "list_strings",
+      "total_bytes": 12539,
+      "input_schema_bytes": 232,
+      "output_schema_bytes": 11560,
+      "description_bytes": 548,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 37
+    },
+    {
+      "name": "capture_native_ui_scenario",
+      "total_bytes": 12531,
+      "input_schema_bytes": 1001,
+      "output_schema_bytes": 10777,
+      "description_bytes": 527,
+      "input_properties": 7,
+      "has_output_schema": true,
+      "output_schema_definitions": 39
+    },
+    {
+      "name": "project_harmony_application_graph",
+      "total_bytes": 12375,
+      "input_schema_bytes": 350,
+      "output_schema_bytes": 11302,
+      "description_bytes": 482,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 37
+    },
+    {
+      "name": "inspect_elf_notes",
+      "total_bytes": 12349,
+      "input_schema_bytes": 329,
+      "output_schema_bytes": 11193,
+      "description_bytes": 618,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 35
+    },
+    {
+      "name": "compare_web_screenshots",
+      "total_bytes": 12115,
+      "input_schema_bytes": 816,
+      "output_schema_bytes": 10913,
+      "description_bytes": 165,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 40
+    },
+    {
+      "name": "correlate_static_and_runtime",
+      "total_bytes": 12099,
+      "input_schema_bytes": 502,
+      "output_schema_bytes": 11029,
+      "description_bytes": 337,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 35
+    },
+    {
+      "name": "list_procedures",
+      "total_bytes": 12093,
+      "input_schema_bytes": 204,
+      "output_schema_bytes": 11393,
+      "description_bytes": 291,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 34
+    },
+    {
+      "name": "list_names",
+      "total_bytes": 12091,
+      "input_schema_bytes": 232,
+      "output_schema_bytes": 11388,
+      "description_bytes": 276,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 34
+    },
+    {
+      "name": "project_android_application_graph",
+      "total_bytes": 12049,
+      "input_schema_bytes": 350,
+      "output_schema_bytes": 11177,
+      "description_bytes": 281,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 36
+    },
+    {
+      "name": "observe_native_ui",
+      "total_bytes": 11939,
+      "input_schema_bytes": 523,
+      "output_schema_bytes": 10777,
+      "description_bytes": 431,
+      "input_properties": 6,
+      "has_output_schema": true,
+      "output_schema_definitions": 39
+    },
+    {
+      "name": "procedure_callees",
+      "total_bytes": 11788,
+      "input_schema_bytes": 259,
+      "output_schema_bytes": 10861,
+      "description_bytes": 459,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 34
+    },
+    {
+      "name": "procedure_callers",
+      "total_bytes": 11752,
+      "input_schema_bytes": 259,
+      "output_schema_bytes": 10861,
+      "description_bytes": 423,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 34
+    },
+    {
+      "name": "verify_reconstruction",
+      "total_bytes": 11697,
+      "input_schema_bytes": 315,
+      "output_schema_bytes": 10888,
+      "description_bytes": 277,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 42
+    },
+    {
+      "name": "procedure_address",
+      "total_bytes": 11590,
+      "input_schema_bytes": 259,
+      "output_schema_bytes": 10836,
+      "description_bytes": 286,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 34
+    },
+    {
+      "name": "procedure_info",
+      "total_bytes": 11542,
+      "input_schema_bytes": 202,
+      "output_schema_bytes": 10646,
+      "description_bytes": 491,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 41
+    },
+    {
+      "name": "compare_bundles",
+      "total_bytes": 11438,
+      "input_schema_bytes": 590,
+      "output_schema_bytes": 10283,
+      "description_bytes": 360,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 34
+    },
+    {
+      "name": "trace_android_references",
+      "total_bytes": 11432,
+      "input_schema_bytes": 380,
+      "output_schema_bytes": 10268,
+      "description_bytes": 562,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "compare_artifacts",
+      "total_bytes": 11408,
+      "input_schema_bytes": 490,
+      "output_schema_bytes": 10171,
+      "description_bytes": 538,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 35
+    },
+    {
+      "name": "identify_flutter_build",
+      "total_bytes": 11405,
+      "input_schema_bytes": 201,
+      "output_schema_bytes": 10435,
+      "description_bytes": 550,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 35
+    },
+    {
+      "name": "inspect_plist",
+      "total_bytes": 11070,
+      "input_schema_bytes": 261,
+      "output_schema_bytes": 9917,
+      "description_bytes": 692,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 34
+    },
+    {
+      "name": "read_function_instructions",
+      "total_bytes": 11051,
+      "input_schema_bytes": 202,
+      "output_schema_bytes": 10417,
+      "description_bytes": 205,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 45
+    },
+    {
+      "name": "inspect_adb_display",
+      "total_bytes": 10979,
+      "input_schema_bytes": 227,
+      "output_schema_bytes": 10281,
+      "description_bytes": 259,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 34
+    },
+    {
+      "name": "inspect_adb_package",
+      "total_bytes": 10877,
+      "input_schema_bytes": 358,
+      "output_schema_bytes": 9999,
+      "description_bytes": 308,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 34
+    },
+    {
+      "name": "list_javascript_runtime_targets",
+      "total_bytes": 10768,
+      "input_schema_bytes": 205,
+      "output_schema_bytes": 10058,
+      "description_bytes": 269,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 34
+    },
+    {
+      "name": "instrument_with_frida",
+      "total_bytes": 10767,
+      "input_schema_bytes": 1012,
+      "output_schema_bytes": 9243,
+      "description_bytes": 296,
+      "input_properties": 10,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "find_changed_behavior",
+      "total_bytes": 10752,
+      "input_schema_bytes": 404,
+      "output_schema_bytes": 9875,
+      "description_bytes": 256,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 39
+    },
+    {
+      "name": "inspect_firmware_regions",
+      "total_bytes": 10740,
+      "input_schema_bytes": 714,
+      "output_schema_bytes": 9318,
+      "description_bytes": 486,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 35
+    },
+    {
+      "name": "demangle_swift",
+      "total_bytes": 10726,
+      "input_schema_bytes": 946,
+      "output_schema_bytes": 9167,
+      "description_bytes": 411,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "resolve_native_call_targets",
+      "total_bytes": 10678,
+      "input_schema_bytes": 212,
+      "output_schema_bytes": 10030,
+      "description_bytes": 207,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 36
+    },
+    {
+      "name": "search_bytes",
+      "total_bytes": 10677,
+      "input_schema_bytes": 368,
+      "output_schema_bytes": 9710,
+      "description_bytes": 400,
+      "input_properties": 7,
+      "has_output_schema": true,
+      "output_schema_definitions": 43
+    },
+    {
+      "name": "list_segments",
+      "total_bytes": 10643,
+      "input_schema_bytes": 147,
+      "output_schema_bytes": 10089,
+      "description_bytes": 206,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 45
+    },
+    {
+      "name": "pull_adb_package",
+      "total_bytes": 10619,
+      "input_schema_bytes": 452,
+      "output_schema_bytes": 9599,
+      "description_bytes": 361,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "list_architectures",
+      "total_bytes": 10597,
+      "input_schema_bytes": 198,
+      "output_schema_bytes": 9939,
+      "description_bytes": 250,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 34
+    },
+    {
+      "name": "inspect_signature",
+      "total_bytes": 10521,
+      "input_schema_bytes": 198,
+      "output_schema_bytes": 9636,
+      "description_bytes": 479,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 34
+    },
+    {
+      "name": "execute_rizin_command",
+      "total_bytes": 10314,
+      "input_schema_bytes": 326,
+      "output_schema_bytes": 8472,
+      "description_bytes": 1300,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "inspect_adb_window",
+      "total_bytes": 10215,
+      "input_schema_bytes": 227,
+      "output_schema_bytes": 9413,
+      "description_bytes": 365,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "start_adb_activity",
+      "total_bytes": 10186,
+      "input_schema_bytes": 702,
+      "output_schema_bytes": 9000,
+      "description_bytes": 274,
+      "input_properties": 5,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "cutter_command",
+      "total_bytes": 10177,
+      "input_schema_bytes": 550,
+      "output_schema_bytes": 8666,
+      "description_bytes": 759,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 34
+    },
+    {
+      "name": "push_adb_file",
+      "total_bytes": 10146,
+      "input_schema_bytes": 427,
+      "output_schema_bytes": 8929,
+      "description_bytes": 590,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "list_browser_targets",
+      "total_bytes": 10123,
+      "input_schema_bytes": 268,
+      "output_schema_bytes": 9207,
+      "description_bytes": 434,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 34
+    },
+    {
+      "name": "list_adb_directory",
+      "total_bytes": 10046,
+      "input_schema_bytes": 314,
+      "output_schema_bytes": 9236,
+      "description_bytes": 286,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "list_adb_devices",
+      "total_bytes": 9942,
+      "input_schema_bytes": 119,
+      "output_schema_bytes": 9315,
+      "description_bytes": 302,
+      "input_properties": 0,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "rizin_debug_command",
+      "total_bytes": 9910,
+      "input_schema_bytes": 422,
+      "output_schema_bytes": 8380,
+      "description_bytes": 896,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "get_objc_classes",
+      "total_bytes": 9893,
+      "input_schema_bytes": 146,
+      "output_schema_bytes": 9125,
+      "description_bytes": 415,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 34
+    },
+    {
+      "name": "search_android_classes",
+      "total_bytes": 9861,
+      "input_schema_bytes": 235,
+      "output_schema_bytes": 9019,
+      "description_bytes": 389,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "inspect_pcap_client",
+      "total_bytes": 9824,
+      "input_schema_bytes": 119,
+      "output_schema_bytes": 9204,
+      "description_bytes": 289,
+      "input_properties": 0,
+      "has_output_schema": true,
+      "output_schema_definitions": 34
+    },
+    {
+      "name": "resolve_adb_packages",
+      "total_bytes": 9761,
+      "input_schema_bytes": 291,
+      "output_schema_bytes": 9011,
+      "description_bytes": 245,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "list_adb_processes",
+      "total_bytes": 9744,
+      "input_schema_bytes": 227,
+      "output_schema_bytes": 9155,
+      "description_bytes": 152,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "read_adb_logcat",
+      "total_bytes": 9742,
+      "input_schema_bytes": 432,
+      "output_schema_bytes": 8907,
+      "description_bytes": 199,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "list_electron_targets",
+      "total_bytes": 9714,
+      "input_schema_bytes": 193,
+      "output_schema_bytes": 9085,
+      "description_bytes": 220,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 34
+    },
+    {
+      "name": "list_adb_packages",
+      "total_bytes": 9675,
+      "input_schema_bytes": 291,
+      "output_schema_bytes": 8990,
+      "description_bytes": 186,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "start_adb_app",
+      "total_bytes": 9663,
+      "input_schema_bytes": 358,
+      "output_schema_bytes": 8770,
+      "description_bytes": 335,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "install_adb_package",
+      "total_bytes": 9599,
+      "input_schema_bytes": 334,
+      "output_schema_bytes": 8716,
+      "description_bytes": 337,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "open_jeb_project",
+      "total_bytes": 9583,
+      "input_schema_bytes": 201,
+      "output_schema_bytes": 8897,
+      "description_bytes": 278,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "capture_adb_screen",
+      "total_bytes": 9582,
+      "input_schema_bytes": 321,
+      "output_schema_bytes": 8835,
+      "description_bytes": 215,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "inspect_adb_device",
+      "total_bytes": 9558,
+      "input_schema_bytes": 227,
+      "output_schema_bytes": 8782,
+      "description_bytes": 339,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "list_jeb_units",
+      "total_bytes": 9540,
+      "input_schema_bytes": 315,
+      "output_schema_bytes": 8794,
+      "description_bytes": 229,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "address_to_file_offset",
+      "total_bytes": 9528,
+      "input_schema_bytes": 198,
+      "output_schema_bytes": 8676,
+      "description_bytes": 435,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 36
+    },
+    {
+      "name": "pull_adb_file",
+      "total_bytes": 9513,
+      "input_schema_bytes": 408,
+      "output_schema_bytes": 8671,
+      "description_bytes": 233,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "load_frida_script",
+      "total_bytes": 9503,
+      "input_schema_bytes": 531,
+      "output_schema_bytes": 8514,
+      "description_bytes": 250,
+      "input_properties": 4,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "collect_adb_bugreport",
+      "total_bytes": 9487,
+      "input_schema_bytes": 321,
+      "output_schema_bytes": 8678,
+      "description_bytes": 271,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "binary_overview",
+      "total_bytes": 9483,
+      "input_schema_bytes": 119,
+      "output_schema_bytes": 8652,
+      "description_bytes": 507,
+      "input_properties": 0,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "read_adb_setting",
+      "total_bytes": 9435,
+      "input_schema_bytes": 399,
+      "output_schema_bytes": 8646,
+      "description_bytes": 184,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "list_adb_features",
+      "total_bytes": 9418,
+      "input_schema_bytes": 227,
+      "output_schema_bytes": 8867,
+      "description_bytes": 116,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "list_adb_services",
+      "total_bytes": 9315,
+      "input_schema_bytes": 227,
+      "output_schema_bytes": 8796,
+      "description_bytes": 84,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "uninstall_adb_package",
+      "total_bytes": 9305,
+      "input_schema_bytes": 358,
+      "output_schema_bytes": 8557,
+      "description_bytes": 174,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "stop_adb_app",
+      "total_bytes": 9288,
+      "input_schema_bytes": 358,
+      "output_schema_bytes": 8557,
+      "description_bytes": 175,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "decompile_jeb_item",
+      "total_bytes": 9249,
+      "input_schema_bytes": 304,
+      "output_schema_bytes": 8455,
+      "description_bytes": 280,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "read_bytes",
+      "total_bytes": 9212,
+      "input_schema_bytes": 265,
+      "output_schema_bytes": 8525,
+      "description_bytes": 227,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 38
+    },
+    {
+      "name": "inspect_adb_client",
+      "total_bytes": 9009,
+      "input_schema_bytes": 119,
+      "output_schema_bytes": 8445,
+      "description_bytes": 235,
+      "input_properties": 0,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "inspect_jeb_client",
+      "total_bytes": 9007,
+      "input_schema_bytes": 119,
+      "output_schema_bytes": 8416,
+      "description_bytes": 262,
+      "input_properties": 0,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "find_xrefs_to_name",
+      "total_bytes": 8975,
+      "input_schema_bytes": 163,
+      "output_schema_bytes": 8384,
+      "description_bytes": 217,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "procedure_pseudo_code",
+      "total_bytes": 8965,
+      "input_schema_bytes": 202,
+      "output_schema_bytes": 7915,
+      "description_bytes": 631,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "set_addresses_names",
+      "total_bytes": 8925,
+      "input_schema_bytes": 269,
+      "output_schema_bytes": 7982,
+      "description_bytes": 462,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "inspect_apktool_client",
+      "total_bytes": 8844,
+      "input_schema_bytes": 119,
+      "output_schema_bytes": 8286,
+      "description_bytes": 221,
+      "input_properties": 0,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "set_address_name",
+      "total_bytes": 8710,
+      "input_schema_bytes": 230,
+      "output_schema_bytes": 7907,
+      "description_bytes": 367,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "xrefs",
+      "total_bytes": 8678,
+      "input_schema_bytes": 175,
+      "output_schema_bytes": 7931,
+      "description_bytes": 387,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "procedure_assembly",
+      "total_bytes": 8638,
+      "input_schema_bytes": 202,
+      "output_schema_bytes": 7906,
+      "description_bytes": 319,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "set_bookmark",
+      "total_bytes": 8631,
+      "input_schema_bytes": 223,
+      "output_schema_bytes": 7907,
+      "description_bytes": 303,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "list_bookmarks",
+      "total_bytes": 8624,
+      "input_schema_bytes": 147,
+      "output_schema_bytes": 8067,
+      "description_bytes": 207,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "get_objc_protocols",
+      "total_bytes": 8624,
+      "input_schema_bytes": 119,
+      "output_schema_bytes": 8231,
+      "description_bytes": 63,
+      "input_properties": 0,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "goto_address",
+      "total_bytes": 8614,
+      "input_schema_bytes": 198,
+      "output_schema_bytes": 7906,
+      "description_bytes": 311,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "set_inline_comment",
+      "total_bytes": 8574,
+      "input_schema_bytes": 236,
+      "output_schema_bytes": 7907,
+      "description_bytes": 221,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "set_comment",
+      "total_bytes": 8545,
+      "input_schema_bytes": 236,
+      "output_schema_bytes": 7907,
+      "description_bytes": 206,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "unset_bookmark",
+      "total_bytes": 8537,
+      "input_schema_bytes": 198,
+      "output_schema_bytes": 7907,
+      "description_bytes": 230,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "address_name",
+      "total_bytes": 8509,
+      "input_schema_bytes": 175,
+      "output_schema_bytes": 7915,
+      "description_bytes": 220,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "prev_address",
+      "total_bytes": 8500,
+      "input_schema_bytes": 175,
+      "output_schema_bytes": 7906,
+      "description_bytes": 220,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "comment",
+      "total_bytes": 8458,
+      "input_schema_bytes": 175,
+      "output_schema_bytes": 7915,
+      "description_bytes": 179,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "inline_comment",
+      "total_bytes": 8440,
+      "input_schema_bytes": 175,
+      "output_schema_bytes": 7915,
+      "description_bytes": 147,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "next_address",
+      "total_bytes": 8434,
+      "input_schema_bytes": 175,
+      "output_schema_bytes": 7906,
+      "description_bytes": 154,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "current_address",
+      "total_bytes": 8424,
+      "input_schema_bytes": 147,
+      "output_schema_bytes": 7906,
+      "description_bytes": 166,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "list_documents",
+      "total_bytes": 8404,
+      "input_schema_bytes": 119,
+      "output_schema_bytes": 7931,
+      "description_bytes": 151,
+      "input_properties": 0,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "export_environment_bundle",
+      "total_bytes": 8402,
+      "input_schema_bytes": 1262,
+      "output_schema_bytes": 5933,
+      "description_bytes": 981,
+      "input_properties": 6,
+      "has_output_schema": true,
+      "output_schema_definitions": 20
+    },
+    {
+      "name": "current_procedure",
+      "total_bytes": 8390,
+      "input_schema_bytes": 147,
+      "output_schema_bytes": 7906,
+      "description_bytes": 128,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "current_document",
+      "total_bytes": 8294,
+      "input_schema_bytes": 119,
+      "output_schema_bytes": 7906,
+      "description_bytes": 62,
+      "input_properties": 0,
+      "has_output_schema": true,
+      "output_schema_definitions": 33
+    },
+    {
+      "name": "record_unknown",
+      "total_bytes": 7463,
+      "input_schema_bytes": 2325,
+      "output_schema_bytes": 4769,
+      "description_bytes": 165,
+      "input_properties": 11,
+      "has_output_schema": true,
+      "output_schema_definitions": 22
+    },
+    {
+      "name": "update_unknown",
+      "total_bytes": 6540,
+      "input_schema_bytes": 1401,
+      "output_schema_bytes": 4769,
+      "description_bytes": 166,
+      "input_properties": 12,
+      "has_output_schema": true,
+      "output_schema_definitions": 22
+    },
+    {
+      "name": "list_unknowns",
+      "total_bytes": 6209,
+      "input_schema_bytes": 467,
+      "output_schema_bytes": 5149,
+      "description_bytes": 393,
+      "input_properties": 5,
+      "has_output_schema": true,
+      "output_schema_definitions": 22
+    },
+    {
+      "name": "open_binary",
+      "total_bytes": 6161,
+      "input_schema_bytes": 1308,
+      "output_schema_bytes": 3734,
+      "description_bytes": 923,
+      "input_properties": 6,
+      "has_output_schema": true,
+      "output_schema_definitions": 5
+    },
+    {
+      "name": "verify_unknown_resolution",
+      "total_bytes": 5594,
+      "input_schema_bytes": 206,
+      "output_schema_bytes": 4950,
+      "description_bytes": 214,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 22
+    },
+    {
+      "name": "evaluate_reconstruction_coverage",
+      "total_bytes": 3343,
+      "input_schema_bytes": 489,
+      "output_schema_bytes": 2317,
+      "description_bytes": 299,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 7
+    },
+    {
+      "name": "gdb_session_status",
+      "total_bytes": 2587,
+      "input_schema_bytes": 370,
+      "output_schema_bytes": 1814,
+      "description_bytes": 193,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 13
+    },
+    {
+      "name": "list_cutter_sessions",
+      "total_bytes": 2376,
+      "input_schema_bytes": 119,
+      "output_schema_bytes": 1550,
+      "description_bytes": 493,
+      "input_properties": 0,
+      "has_output_schema": true,
+      "output_schema_definitions": 4
+    },
+    {
+      "name": "inspect_address_context",
+      "total_bytes": 2333,
+      "input_schema_bytes": 226,
+      "output_schema_bytes": 1628,
+      "description_bytes": 258,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 2
+    },
+    {
+      "name": "start_frida_session",
+      "total_bytes": 2248,
+      "input_schema_bytes": 790,
+      "output_schema_bytes": 1005,
+      "description_bytes": 240,
+      "input_properties": 6,
+      "has_output_schema": true,
+      "output_schema_definitions": 6
+    },
+    {
+      "name": "close_binary",
+      "total_bytes": 2196,
+      "input_schema_bytes": 287,
+      "output_schema_bytes": 1016,
+      "description_bytes": 694,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 1
+    },
+    {
+      "name": "rizin_debug_session_status",
+      "total_bytes": 2059,
+      "input_schema_bytes": 370,
+      "output_schema_bytes": 1151,
+      "description_bytes": 311,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 7
+    },
+    {
+      "name": "start_rizin_debug_session",
+      "total_bytes": 1970,
+      "input_schema_bytes": 329,
+      "output_schema_bytes": 609,
+      "description_bytes": 808,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 2
+    },
+    {
+      "name": "guided_workflows",
+      "total_bytes": 1935,
+      "input_schema_bytes": 490,
+      "output_schema_bytes": 1089,
+      "description_bytes": 150,
+      "input_properties": 3,
+      "has_output_schema": true,
+      "output_schema_definitions": 2
+    },
+    {
+      "name": "list_frida_processes",
+      "total_bytes": 1821,
+      "input_schema_bytes": 676,
+      "output_schema_bytes": 744,
+      "description_bytes": 187,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 3
+    },
+    {
+      "name": "start_gdb_session",
+      "total_bytes": 1787,
+      "input_schema_bytes": 189,
+      "output_schema_bytes": 627,
+      "description_bytes": 762,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 2
+    },
+    {
+      "name": "open_bundle_resources",
+      "total_bytes": 1648,
+      "input_schema_bytes": 398,
+      "output_schema_bytes": 745,
+      "description_bytes": 288,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 1
+    },
+    {
+      "name": "export_evidence_bundle",
+      "total_bytes": 1547,
+      "input_schema_bytes": 503,
+      "output_schema_bytes": 639,
+      "description_bytes": 187,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 1
+    },
+    {
+      "name": "list_frida_devices",
+      "total_bytes": 1518,
+      "input_schema_bytes": 486,
+      "output_schema_bytes": 608,
+      "description_bytes": 214,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 2
+    },
+    {
+      "name": "close_gdb_session",
+      "total_bytes": 1476,
+      "input_schema_bytes": 370,
+      "output_schema_bytes": 365,
+      "description_bytes": 533,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 1
+    },
+    {
+      "name": "close_rizin_debug_session",
+      "total_bytes": 1457,
+      "input_schema_bytes": 370,
+      "output_schema_bytes": 348,
+      "description_bytes": 516,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 1
+    },
+    {
+      "name": "import_evidence_bundle",
+      "total_bytes": 1426,
+      "input_schema_bytes": 408,
+      "output_schema_bytes": 621,
+      "description_bytes": 178,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 1
+    },
+    {
+      "name": "unload_frida_script",
+      "total_bytes": 1276,
+      "input_schema_bytes": 607,
+      "output_schema_bytes": 336,
+      "description_bytes": 120,
+      "input_properties": 2,
+      "has_output_schema": true,
+      "output_schema_definitions": 1
+    },
+    {
+      "name": "close_frida_session",
+      "total_bytes": 1212,
+      "input_schema_bytes": 370,
+      "output_schema_bytes": 348,
+      "description_bytes": 282,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 1
+    },
+    {
+      "name": "get_navigation_context",
+      "total_bytes": 1136,
+      "input_schema_bytes": 161,
+      "output_schema_bytes": 504,
+      "description_bytes": 252,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 1
+    },
+    {
+      "name": "resume_frida_session",
+      "total_bytes": 1062,
+      "input_schema_bytes": 370,
+      "output_schema_bytes": 334,
+      "description_bytes": 144,
+      "input_properties": 1,
+      "has_output_schema": true,
+      "output_schema_definitions": 1
+    }
+  ],
+  "family_variants": [
+    {
+      "input_profile": "compact",
+      "output_profile": "full",
+      "families": [
+        {
+          "input_profile": "compact",
+          "output_profile": "full",
+          "families": ["direct"],
+          "tool_count": 41,
+          "tools_with_output_schema": 41,
+          "frame": {
+            "bytes": 456248,
+            "estimated_tokens_by_four_bytes": 114062,
+            "estimated_tokens_structural": 52044
+          },
+          "result_payload": {
+            "bytes": 456214,
+            "estimated_tokens_by_four_bytes": 114054,
+            "estimated_tokens_structural": 52038
+          },
+          "tools_array": {
+            "bytes": 456204,
+            "estimated_tokens_by_four_bytes": 114051,
+            "estimated_tokens_structural": 52037
+          },
+          "input_schemas_total_bytes": 8898,
+          "output_schemas_total_bytes": 423855,
+          "overhead_bytes": 23461,
+          "output_schema_structure": {
+            "output_schema_definitions": 1535,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          }
+        },
+        {
+          "input_profile": "compact",
+          "output_profile": "full",
+          "families": ["enhanced"],
+          "tool_count": 15,
+          "tools_with_output_schema": 15,
+          "frame": {
+            "bytes": 257648,
+            "estimated_tokens_by_four_bytes": 64412,
+            "estimated_tokens_structural": 28922
+          },
+          "result_payload": {
+            "bytes": 257614,
+            "estimated_tokens_by_four_bytes": 64404,
+            "estimated_tokens_structural": 28916
+          },
+          "tools_array": {
+            "bytes": 257604,
+            "estimated_tokens_by_four_bytes": 64401,
+            "estimated_tokens_structural": 28915
+          },
+          "input_schemas_total_bytes": 5274,
+          "output_schemas_total_bytes": 240989,
+          "overhead_bytes": 11351,
+          "output_schema_structure": {
+            "output_schema_definitions": 661,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 887
+          }
+        },
+        {
+          "input_profile": "compact",
+          "output_profile": "full",
+          "families": ["native"],
+          "tool_count": 32,
+          "tools_with_output_schema": 32,
+          "frame": {
+            "bytes": 369919,
+            "estimated_tokens_by_four_bytes": 92480,
+            "estimated_tokens_structural": 43361
+          },
+          "result_payload": {
+            "bytes": 369885,
+            "estimated_tokens_by_four_bytes": 92472,
+            "estimated_tokens_structural": 43355
+          },
+          "tools_array": {
+            "bytes": 369875,
+            "estimated_tokens_by_four_bytes": 92469,
+            "estimated_tokens_structural": 43354
+          },
+          "input_schemas_total_bytes": 16702,
+          "output_schemas_total_bytes": 322737,
+          "overhead_bytes": 30446,
+          "output_schema_structure": {
+            "output_schema_definitions": 1012,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          }
+        },
+        {
+          "input_profile": "compact",
+          "output_profile": "full",
+          "families": ["artifact"],
+          "tool_count": 23,
+          "tools_with_output_schema": 23,
+          "frame": {
+            "bytes": 456059,
+            "estimated_tokens_by_four_bytes": 114015,
+            "estimated_tokens_structural": 52205
+          },
+          "result_payload": {
+            "bytes": 456025,
+            "estimated_tokens_by_four_bytes": 114007,
+            "estimated_tokens_structural": 52199
+          },
+          "tools_array": {
+            "bytes": 456015,
+            "estimated_tokens_by_four_bytes": 114004,
+            "estimated_tokens_structural": 52198
+          },
+          "input_schemas_total_bytes": 16784,
+          "output_schemas_total_bytes": 412104,
+          "overhead_bytes": 27137,
+          "output_schema_structure": {
+            "output_schema_definitions": 1318,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 2969
+          }
+        },
+        {
+          "input_profile": "compact",
+          "output_profile": "full",
+          "families": ["managed"],
+          "tool_count": 7,
+          "tools_with_output_schema": 7,
+          "frame": {
+            "bytes": 145326,
+            "estimated_tokens_by_four_bytes": 36332,
+            "estimated_tokens_structural": 16824
+          },
+          "result_payload": {
+            "bytes": 145292,
+            "estimated_tokens_by_four_bytes": 36323,
+            "estimated_tokens_structural": 16818
+          },
+          "tools_array": {
+            "bytes": 145282,
+            "estimated_tokens_by_four_bytes": 36321,
+            "estimated_tokens_structural": 16817
+          },
+          "input_schemas_total_bytes": 3018,
+          "output_schemas_total_bytes": 136128,
+          "overhead_bytes": 6146,
+          "output_schema_structure": {
+            "output_schema_definitions": 362,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 1667
+          }
+        },
+        {
+          "input_profile": "compact",
+          "output_profile": "full",
+          "families": ["firmware"],
+          "tool_count": 2,
+          "tools_with_output_schema": 2,
+          "frame": {
+            "bytes": 25692,
+            "estimated_tokens_by_four_bytes": 6423,
+            "estimated_tokens_structural": 2969
+          },
+          "result_payload": {
+            "bytes": 25658,
+            "estimated_tokens_by_four_bytes": 6415,
+            "estimated_tokens_structural": 2963
+          },
+          "tools_array": {
+            "bytes": 25648,
+            "estimated_tokens_by_four_bytes": 6412,
+            "estimated_tokens_structural": 2962
+          },
+          "input_schemas_total_bytes": 2189,
+          "output_schemas_total_bytes": 21793,
+          "overhead_bytes": 1676,
+          "output_schema_structure": {
+            "output_schema_definitions": 73,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          }
+        },
+        {
+          "input_profile": "compact",
+          "output_profile": "full",
+          "families": ["android"],
+          "tool_count": 6,
+          "tools_with_output_schema": 6,
+          "frame": {
+            "bytes": 124900,
+            "estimated_tokens_by_four_bytes": 31225,
+            "estimated_tokens_structural": 14074
+          },
+          "result_payload": {
+            "bytes": 124866,
+            "estimated_tokens_by_four_bytes": 31217,
+            "estimated_tokens_structural": 14068
+          },
+          "tools_array": {
+            "bytes": 124856,
+            "estimated_tokens_by_four_bytes": 31214,
+            "estimated_tokens_structural": 14067
+          },
+          "input_schemas_total_bytes": 7845,
+          "output_schemas_total_bytes": 111170,
+          "overhead_bytes": 5851,
+          "output_schema_structure": {
+            "output_schema_definitions": 326,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          }
+        },
+        {
+          "input_profile": "compact",
+          "output_profile": "full",
+          "families": ["pcap"],
+          "tool_count": 2,
+          "tools_with_output_schema": 2,
+          "frame": {
+            "bytes": 29950,
+            "estimated_tokens_by_four_bytes": 7488,
+            "estimated_tokens_structural": 3449
+          },
+          "result_payload": {
+            "bytes": 29916,
+            "estimated_tokens_by_four_bytes": 7479,
+            "estimated_tokens_structural": 3443
+          },
+          "tools_array": {
+            "bytes": 29906,
+            "estimated_tokens_by_four_bytes": 7477,
+            "estimated_tokens_structural": 3442
+          },
+          "input_schemas_total_bytes": 377,
+          "output_schemas_total_bytes": 28116,
+          "overhead_bytes": 1423,
+          "output_schema_structure": {
+            "output_schema_definitions": 92,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          }
+        },
+        {
+          "input_profile": "compact",
+          "output_profile": "full",
+          "families": ["flutter"],
+          "tool_count": 2,
+          "tools_with_output_schema": 2,
+          "frame": {
+            "bytes": 26814,
+            "estimated_tokens_by_four_bytes": 6704,
+            "estimated_tokens_structural": 3164
+          },
+          "result_payload": {
+            "bytes": 26780,
+            "estimated_tokens_by_four_bytes": 6695,
+            "estimated_tokens_structural": 3158
+          },
+          "tools_array": {
+            "bytes": 26770,
+            "estimated_tokens_by_four_bytes": 6693,
+            "estimated_tokens_structural": 3157
+          },
+          "input_schemas_total_bytes": 538,
+          "output_schemas_total_bytes": 24158,
+          "overhead_bytes": 2084,
+          "output_schema_structure": {
+            "output_schema_definitions": 77,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          }
+        },
+        {
+          "input_profile": "compact",
+          "output_profile": "full",
+          "families": ["frida"],
+          "tool_count": 9,
+          "tools_with_output_schema": 9,
+          "frame": {
+            "bytes": 42440,
+            "estimated_tokens_by_four_bytes": 10610,
+            "estimated_tokens_structural": 5264
+          },
+          "result_payload": {
+            "bytes": 42406,
+            "estimated_tokens_by_four_bytes": 10602,
+            "estimated_tokens_structural": 5258
+          },
+          "tools_array": {
+            "bytes": 42396,
+            "estimated_tokens_by_four_bytes": 10599,
+            "estimated_tokens_structural": 5257
+          },
+          "input_schemas_total_bytes": 5269,
+          "output_schemas_total_bytes": 33065,
+          "overhead_bytes": 4072,
+          "output_schema_structure": {
+            "output_schema_definitions": 121,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 636
+          }
+        },
+        {
+          "input_profile": "compact",
+          "output_profile": "full",
+          "families": ["apktool"],
+          "tool_count": 2,
+          "tools_with_output_schema": 2,
+          "frame": {
+            "bytes": 21887,
+            "estimated_tokens_by_four_bytes": 5472,
+            "estimated_tokens_structural": 2596
+          },
+          "result_payload": {
+            "bytes": 21853,
+            "estimated_tokens_by_four_bytes": 5464,
+            "estimated_tokens_structural": 2590
+          },
+          "tools_array": {
+            "bytes": 21843,
+            "estimated_tokens_by_four_bytes": 5461,
+            "estimated_tokens_structural": 2589
+          },
+          "input_schemas_total_bytes": 828,
+          "output_schemas_total_bytes": 19638,
+          "overhead_bytes": 1387,
+          "output_schema_structure": {
+            "output_schema_definitions": 72,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          }
+        },
+        {
+          "input_profile": "compact",
+          "output_profile": "full",
+          "families": ["jeb"],
+          "tool_count": 4,
+          "tools_with_output_schema": 4,
+          "frame": {
+            "bytes": 37428,
+            "estimated_tokens_by_four_bytes": 9357,
+            "estimated_tokens_structural": 4347
+          },
+          "result_payload": {
+            "bytes": 37394,
+            "estimated_tokens_by_four_bytes": 9349,
+            "estimated_tokens_structural": 4341
+          },
+          "tools_array": {
+            "bytes": 37384,
+            "estimated_tokens_by_four_bytes": 9346,
+            "estimated_tokens_structural": 4340
+          },
+          "input_schemas_total_bytes": 939,
+          "output_schemas_total_bytes": 34562,
+          "overhead_bytes": 1893,
+          "output_schema_structure": {
+            "output_schema_definitions": 132,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          }
+        },
+        {
+          "input_profile": "compact",
+          "output_profile": "full",
+          "families": ["adb"],
+          "tool_count": 24,
+          "tools_with_output_schema": 24,
+          "frame": {
+            "bytes": 235173,
+            "estimated_tokens_by_four_bytes": 58794,
+            "estimated_tokens_structural": 27417
+          },
+          "result_payload": {
+            "bytes": 235139,
+            "estimated_tokens_by_four_bytes": 58785,
+            "estimated_tokens_structural": 27411
+          },
+          "tools_array": {
+            "bytes": 235129,
+            "estimated_tokens_by_four_bytes": 58783,
+            "estimated_tokens_structural": 27410
+          },
+          "input_schemas_total_bytes": 7724,
+          "output_schemas_total_bytes": 216155,
+          "overhead_bytes": 11260,
+          "output_schema_structure": {
+            "output_schema_definitions": 794,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 242
+          }
+        },
+        {
+          "input_profile": "compact",
+          "output_profile": "full",
+          "families": ["browser"],
+          "tool_count": 12,
+          "tools_with_output_schema": 12,
+          "frame": {
+            "bytes": 270345,
+            "estimated_tokens_by_four_bytes": 67587,
+            "estimated_tokens_structural": 31024
+          },
+          "result_payload": {
+            "bytes": 270311,
+            "estimated_tokens_by_four_bytes": 67578,
+            "estimated_tokens_structural": 31018
+          },
+          "tools_array": {
+            "bytes": 270301,
+            "estimated_tokens_by_four_bytes": 67576,
+            "estimated_tokens_structural": 31017
+          },
+          "input_schemas_total_bytes": 14090,
+          "output_schemas_total_bytes": 245827,
+          "overhead_bytes": 10394,
+          "output_schema_structure": {
+            "output_schema_definitions": 676,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 4850
+          }
+        },
+        {
+          "input_profile": "compact",
+          "output_profile": "full",
+          "families": ["electron"],
+          "tool_count": 6,
+          "tools_with_output_schema": 6,
+          "frame": {
+            "bytes": 155419,
+            "estimated_tokens_by_four_bytes": 38855,
+            "estimated_tokens_structural": 17673
+          },
+          "result_payload": {
+            "bytes": 155385,
+            "estimated_tokens_by_four_bytes": 38847,
+            "estimated_tokens_structural": 17667
+          },
+          "tools_array": {
+            "bytes": 155375,
+            "estimated_tokens_by_four_bytes": 38844,
+            "estimated_tokens_structural": 17666
+          },
+          "input_schemas_total_bytes": 4926,
+          "output_schemas_total_bytes": 145091,
+          "overhead_bytes": 5368,
+          "output_schema_structure": {
+            "output_schema_definitions": 438,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 1354
+          }
+        },
+        {
+          "input_profile": "compact",
+          "output_profile": "full",
+          "families": ["javascript-runtime"],
+          "tool_count": 2,
+          "tools_with_output_schema": 2,
+          "frame": {
+            "bytes": 25745,
+            "estimated_tokens_by_four_bytes": 6437,
+            "estimated_tokens_structural": 2964
+          },
+          "result_payload": {
+            "bytes": 25711,
+            "estimated_tokens_by_four_bytes": 6428,
+            "estimated_tokens_structural": 2958
+          },
+          "tools_array": {
+            "bytes": 25701,
+            "estimated_tokens_by_four_bytes": 6426,
+            "estimated_tokens_structural": 2957
+          },
+          "input_schemas_total_bytes": 645,
+          "output_schemas_total_bytes": 23306,
+          "overhead_bytes": 1760,
+          "output_schema_structure": {
+            "output_schema_definitions": 74,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          }
+        },
+        {
+          "input_profile": "compact",
+          "output_profile": "full",
+          "families": ["application"],
+          "tool_count": 19,
+          "tools_with_output_schema": 19,
+          "frame": {
+            "bytes": 854402,
+            "estimated_tokens_by_four_bytes": 213601,
+            "estimated_tokens_structural": 95971
+          },
+          "result_payload": {
+            "bytes": 854368,
+            "estimated_tokens_by_four_bytes": 213592,
+            "estimated_tokens_structural": 95965
+          },
+          "tools_array": {
+            "bytes": 854358,
+            "estimated_tokens_by_four_bytes": 213590,
+            "estimated_tokens_structural": 95964
+          },
+          "input_schemas_total_bytes": 14050,
+          "output_schemas_total_bytes": 810594,
+          "overhead_bytes": 29724,
+          "output_schema_structure": {
+            "output_schema_definitions": 1540,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 10012
+          }
+        },
+        {
+          "input_profile": "compact",
+          "output_profile": "full",
+          "families": ["session"],
+          "tool_count": 23,
+          "tools_with_output_schema": 23,
+          "frame": {
+            "bytes": 252025,
+            "estimated_tokens_by_four_bytes": 63007,
+            "estimated_tokens_structural": 28416
+          },
+          "result_payload": {
+            "bytes": 251991,
+            "estimated_tokens_by_four_bytes": 62998,
+            "estimated_tokens_structural": 28410
+          },
+          "tools_array": {
+            "bytes": 251981,
+            "estimated_tokens_by_four_bytes": 62996,
+            "estimated_tokens_structural": 28409
+          },
+          "input_schemas_total_bytes": 17099,
+          "output_schemas_total_bytes": 220698,
+          "overhead_bytes": 14194,
+          "output_schema_structure": {
+            "output_schema_definitions": 692,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 798
+          }
+        }
+      ]
+    },
+    {
+      "input_profile": "full",
+      "output_profile": "full",
+      "families": [
+        {
+          "input_profile": "full",
+          "output_profile": "full",
+          "families": ["direct"],
+          "tool_count": 41,
+          "tools_with_output_schema": 41,
+          "frame": {
+            "bytes": 467681,
+            "estimated_tokens_by_four_bytes": 116921,
+            "estimated_tokens_structural": 53528
+          },
+          "result_payload": {
+            "bytes": 467647,
+            "estimated_tokens_by_four_bytes": 116912,
+            "estimated_tokens_structural": 53522
+          },
+          "tools_array": {
+            "bytes": 467637,
+            "estimated_tokens_by_four_bytes": 116910,
+            "estimated_tokens_structural": 53521
+          },
+          "input_schemas_total_bytes": 20331,
+          "output_schemas_total_bytes": 423855,
+          "overhead_bytes": 23461,
+          "output_schema_structure": {
+            "output_schema_definitions": 1535,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          }
+        },
+        {
+          "input_profile": "full",
+          "output_profile": "full",
+          "families": ["enhanced"],
+          "tool_count": 15,
+          "tools_with_output_schema": 15,
+          "frame": {
+            "bytes": 261700,
+            "estimated_tokens_by_four_bytes": 65425,
+            "estimated_tokens_structural": 29440
+          },
+          "result_payload": {
+            "bytes": 261666,
+            "estimated_tokens_by_four_bytes": 65417,
+            "estimated_tokens_structural": 29434
+          },
+          "tools_array": {
+            "bytes": 261656,
+            "estimated_tokens_by_four_bytes": 65414,
+            "estimated_tokens_structural": 29433
+          },
+          "input_schemas_total_bytes": 9326,
+          "output_schemas_total_bytes": 240989,
+          "overhead_bytes": 11351,
+          "output_schema_structure": {
+            "output_schema_definitions": 661,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 887
+          }
+        },
+        {
+          "input_profile": "full",
+          "output_profile": "full",
+          "families": ["native"],
+          "tool_count": 32,
+          "tools_with_output_schema": 32,
+          "frame": {
+            "bytes": 382634,
+            "estimated_tokens_by_four_bytes": 95659,
+            "estimated_tokens_structural": 45086
+          },
+          "result_payload": {
+            "bytes": 382600,
+            "estimated_tokens_by_four_bytes": 95650,
+            "estimated_tokens_structural": 45080
+          },
+          "tools_array": {
+            "bytes": 382590,
+            "estimated_tokens_by_four_bytes": 95648,
+            "estimated_tokens_structural": 45079
+          },
+          "input_schemas_total_bytes": 29417,
+          "output_schemas_total_bytes": 322737,
+          "overhead_bytes": 30446,
+          "output_schema_structure": {
+            "output_schema_definitions": 1012,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          }
+        },
+        {
+          "input_profile": "full",
+          "output_profile": "full",
+          "families": ["artifact"],
+          "tool_count": 23,
+          "tools_with_output_schema": 23,
+          "frame": {
+            "bytes": 490657,
+            "estimated_tokens_by_four_bytes": 122665,
+            "estimated_tokens_structural": 56387
+          },
+          "result_payload": {
+            "bytes": 490623,
+            "estimated_tokens_by_four_bytes": 122656,
+            "estimated_tokens_structural": 56381
+          },
+          "tools_array": {
+            "bytes": 490613,
+            "estimated_tokens_by_four_bytes": 122654,
+            "estimated_tokens_structural": 56380
+          },
+          "input_schemas_total_bytes": 51382,
+          "output_schemas_total_bytes": 412104,
+          "overhead_bytes": 27137,
+          "output_schema_structure": {
+            "output_schema_definitions": 1318,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 2969
+          }
+        },
+        {
+          "input_profile": "full",
+          "output_profile": "full",
+          "families": ["managed"],
+          "tool_count": 7,
+          "tools_with_output_schema": 7,
+          "frame": {
+            "bytes": 212740,
+            "estimated_tokens_by_four_bytes": 53185,
+            "estimated_tokens_structural": 24980
+          },
+          "result_payload": {
+            "bytes": 212706,
+            "estimated_tokens_by_four_bytes": 53177,
+            "estimated_tokens_structural": 24974
+          },
+          "tools_array": {
+            "bytes": 212696,
+            "estimated_tokens_by_four_bytes": 53174,
+            "estimated_tokens_structural": 24973
+          },
+          "input_schemas_total_bytes": 70432,
+          "output_schemas_total_bytes": 136128,
+          "overhead_bytes": 6146,
+          "output_schema_structure": {
+            "output_schema_definitions": 362,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 1667
+          }
+        },
+        {
+          "input_profile": "full",
+          "output_profile": "full",
+          "families": ["firmware"],
+          "tool_count": 2,
+          "tools_with_output_schema": 2,
+          "frame": {
+            "bytes": 26366,
+            "estimated_tokens_by_four_bytes": 6592,
+            "estimated_tokens_structural": 3064
+          },
+          "result_payload": {
+            "bytes": 26332,
+            "estimated_tokens_by_four_bytes": 6583,
+            "estimated_tokens_structural": 3058
+          },
+          "tools_array": {
+            "bytes": 26322,
+            "estimated_tokens_by_four_bytes": 6581,
+            "estimated_tokens_structural": 3057
+          },
+          "input_schemas_total_bytes": 2863,
+          "output_schemas_total_bytes": 21793,
+          "overhead_bytes": 1676,
+          "output_schema_structure": {
+            "output_schema_definitions": 73,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          }
+        },
+        {
+          "input_profile": "full",
+          "output_profile": "full",
+          "families": ["android"],
+          "tool_count": 6,
+          "tools_with_output_schema": 6,
+          "frame": {
+            "bytes": 127595,
+            "estimated_tokens_by_four_bytes": 31899,
+            "estimated_tokens_structural": 14433
+          },
+          "result_payload": {
+            "bytes": 127561,
+            "estimated_tokens_by_four_bytes": 31891,
+            "estimated_tokens_structural": 14427
+          },
+          "tools_array": {
+            "bytes": 127551,
+            "estimated_tokens_by_four_bytes": 31888,
+            "estimated_tokens_structural": 14426
+          },
+          "input_schemas_total_bytes": 10540,
+          "output_schemas_total_bytes": 111170,
+          "overhead_bytes": 5851,
+          "output_schema_structure": {
+            "output_schema_definitions": 326,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          }
+        },
+        {
+          "input_profile": "full",
+          "output_profile": "full",
+          "families": ["pcap"],
+          "tool_count": 2,
+          "tools_with_output_schema": 2,
+          "frame": {
+            "bytes": 30346,
+            "estimated_tokens_by_four_bytes": 7587,
+            "estimated_tokens_structural": 3500
+          },
+          "result_payload": {
+            "bytes": 30312,
+            "estimated_tokens_by_four_bytes": 7578,
+            "estimated_tokens_structural": 3494
+          },
+          "tools_array": {
+            "bytes": 30302,
+            "estimated_tokens_by_four_bytes": 7576,
+            "estimated_tokens_structural": 3493
+          },
+          "input_schemas_total_bytes": 773,
+          "output_schemas_total_bytes": 28116,
+          "overhead_bytes": 1423,
+          "output_schema_structure": {
+            "output_schema_definitions": 92,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          }
+        },
+        {
+          "input_profile": "full",
+          "output_profile": "full",
+          "families": ["flutter"],
+          "tool_count": 2,
+          "tools_with_output_schema": 2,
+          "frame": {
+            "bytes": 27272,
+            "estimated_tokens_by_four_bytes": 6818,
+            "estimated_tokens_structural": 3225
+          },
+          "result_payload": {
+            "bytes": 27238,
+            "estimated_tokens_by_four_bytes": 6810,
+            "estimated_tokens_structural": 3219
+          },
+          "tools_array": {
+            "bytes": 27228,
+            "estimated_tokens_by_four_bytes": 6807,
+            "estimated_tokens_structural": 3218
+          },
+          "input_schemas_total_bytes": 996,
+          "output_schemas_total_bytes": 24158,
+          "overhead_bytes": 2084,
+          "output_schema_structure": {
+            "output_schema_definitions": 77,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          }
+        },
+        {
+          "input_profile": "full",
+          "output_profile": "full",
+          "families": ["frida"],
+          "tool_count": 9,
+          "tools_with_output_schema": 9,
+          "frame": {
+            "bytes": 43611,
+            "estimated_tokens_by_four_bytes": 10903,
+            "estimated_tokens_structural": 5407
+          },
+          "result_payload": {
+            "bytes": 43577,
+            "estimated_tokens_by_four_bytes": 10895,
+            "estimated_tokens_structural": 5401
+          },
+          "tools_array": {
+            "bytes": 43567,
+            "estimated_tokens_by_four_bytes": 10892,
+            "estimated_tokens_structural": 5400
+          },
+          "input_schemas_total_bytes": 6440,
+          "output_schemas_total_bytes": 33065,
+          "overhead_bytes": 4072,
+          "output_schema_structure": {
+            "output_schema_definitions": 121,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 636
+          }
+        },
+        {
+          "input_profile": "full",
+          "output_profile": "full",
+          "families": ["apktool"],
+          "tool_count": 2,
+          "tools_with_output_schema": 2,
+          "frame": {
+            "bytes": 22835,
+            "estimated_tokens_by_four_bytes": 5709,
+            "estimated_tokens_structural": 2728
+          },
+          "result_payload": {
+            "bytes": 22801,
+            "estimated_tokens_by_four_bytes": 5701,
+            "estimated_tokens_structural": 2722
+          },
+          "tools_array": {
+            "bytes": 22791,
+            "estimated_tokens_by_four_bytes": 5698,
+            "estimated_tokens_structural": 2721
+          },
+          "input_schemas_total_bytes": 1776,
+          "output_schemas_total_bytes": 19638,
+          "overhead_bytes": 1387,
+          "output_schema_structure": {
+            "output_schema_definitions": 72,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          }
+        },
+        {
+          "input_profile": "full",
+          "output_profile": "full",
+          "families": ["jeb"],
+          "tool_count": 4,
+          "tools_with_output_schema": 4,
+          "frame": {
+            "bytes": 38227,
+            "estimated_tokens_by_four_bytes": 9557,
+            "estimated_tokens_structural": 4459
+          },
+          "result_payload": {
+            "bytes": 38193,
+            "estimated_tokens_by_four_bytes": 9549,
+            "estimated_tokens_structural": 4453
+          },
+          "tools_array": {
+            "bytes": 38183,
+            "estimated_tokens_by_four_bytes": 9546,
+            "estimated_tokens_structural": 4452
+          },
+          "input_schemas_total_bytes": 1738,
+          "output_schemas_total_bytes": 34562,
+          "overhead_bytes": 1893,
+          "output_schema_structure": {
+            "output_schema_definitions": 132,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          }
+        },
+        {
+          "input_profile": "full",
+          "output_profile": "full",
+          "families": ["adb"],
+          "tool_count": 24,
+          "tools_with_output_schema": 24,
+          "frame": {
+            "bytes": 242731,
+            "estimated_tokens_by_four_bytes": 60683,
+            "estimated_tokens_structural": 28432
+          },
+          "result_payload": {
+            "bytes": 242697,
+            "estimated_tokens_by_four_bytes": 60675,
+            "estimated_tokens_structural": 28426
+          },
+          "tools_array": {
+            "bytes": 242687,
+            "estimated_tokens_by_four_bytes": 60672,
+            "estimated_tokens_structural": 28425
+          },
+          "input_schemas_total_bytes": 15282,
+          "output_schemas_total_bytes": 216155,
+          "overhead_bytes": 11260,
+          "output_schema_structure": {
+            "output_schema_definitions": 794,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 242
+          }
+        },
+        {
+          "input_profile": "full",
+          "output_profile": "full",
+          "families": ["browser"],
+          "tool_count": 12,
+          "tools_with_output_schema": 12,
+          "frame": {
+            "bytes": 319545,
+            "estimated_tokens_by_four_bytes": 79887,
+            "estimated_tokens_structural": 37280
+          },
+          "result_payload": {
+            "bytes": 319511,
+            "estimated_tokens_by_four_bytes": 79878,
+            "estimated_tokens_structural": 37274
+          },
+          "tools_array": {
+            "bytes": 319501,
+            "estimated_tokens_by_four_bytes": 79876,
+            "estimated_tokens_structural": 37273
+          },
+          "input_schemas_total_bytes": 63290,
+          "output_schemas_total_bytes": 245827,
+          "overhead_bytes": 10394,
+          "output_schema_structure": {
+            "output_schema_definitions": 676,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 4850
+          }
+        },
+        {
+          "input_profile": "full",
+          "output_profile": "full",
+          "families": ["electron"],
+          "tool_count": 6,
+          "tools_with_output_schema": 6,
+          "frame": {
+            "bytes": 180044,
+            "estimated_tokens_by_four_bytes": 45011,
+            "estimated_tokens_structural": 20662
+          },
+          "result_payload": {
+            "bytes": 180010,
+            "estimated_tokens_by_four_bytes": 45003,
+            "estimated_tokens_structural": 20656
+          },
+          "tools_array": {
+            "bytes": 180000,
+            "estimated_tokens_by_four_bytes": 45000,
+            "estimated_tokens_structural": 20655
+          },
+          "input_schemas_total_bytes": 29551,
+          "output_schemas_total_bytes": 145091,
+          "overhead_bytes": 5368,
+          "output_schema_structure": {
+            "output_schema_definitions": 438,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 1354
+          }
+        },
+        {
+          "input_profile": "full",
+          "output_profile": "full",
+          "families": ["javascript-runtime"],
+          "tool_count": 2,
+          "tools_with_output_schema": 2,
+          "frame": {
+            "bytes": 26029,
+            "estimated_tokens_by_four_bytes": 6508,
+            "estimated_tokens_structural": 3005
+          },
+          "result_payload": {
+            "bytes": 25995,
+            "estimated_tokens_by_four_bytes": 6499,
+            "estimated_tokens_structural": 2999
+          },
+          "tools_array": {
+            "bytes": 25985,
+            "estimated_tokens_by_four_bytes": 6497,
+            "estimated_tokens_structural": 2998
+          },
+          "input_schemas_total_bytes": 929,
+          "output_schemas_total_bytes": 23306,
+          "overhead_bytes": 1760,
+          "output_schema_structure": {
+            "output_schema_definitions": 74,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 0
+          }
+        },
+        {
+          "input_profile": "full",
+          "output_profile": "full",
+          "families": ["application"],
+          "tool_count": 19,
+          "tools_with_output_schema": 19,
+          "frame": {
+            "bytes": 1120031,
+            "estimated_tokens_by_four_bytes": 280008,
+            "estimated_tokens_structural": 127521
+          },
+          "result_payload": {
+            "bytes": 1119997,
+            "estimated_tokens_by_four_bytes": 280000,
+            "estimated_tokens_structural": 127515
+          },
+          "tools_array": {
+            "bytes": 1119987,
+            "estimated_tokens_by_four_bytes": 279997,
+            "estimated_tokens_structural": 127514
+          },
+          "input_schemas_total_bytes": 279679,
+          "output_schemas_total_bytes": 810594,
+          "overhead_bytes": 29724,
+          "output_schema_structure": {
+            "output_schema_definitions": 1540,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 10012
+          }
+        },
+        {
+          "input_profile": "full",
+          "output_profile": "full",
+          "families": ["session"],
+          "tool_count": 23,
+          "tools_with_output_schema": 23,
+          "frame": {
+            "bytes": 364600,
+            "estimated_tokens_by_four_bytes": 91150,
+            "estimated_tokens_structural": 42015
+          },
+          "result_payload": {
+            "bytes": 364566,
+            "estimated_tokens_by_four_bytes": 91142,
+            "estimated_tokens_structural": 42009
+          },
+          "tools_array": {
+            "bytes": 364556,
+            "estimated_tokens_by_four_bytes": 91139,
+            "estimated_tokens_structural": 42008
+          },
+          "input_schemas_total_bytes": 129674,
+          "output_schemas_total_bytes": 220698,
+          "overhead_bytes": 14194,
+          "output_schema_structure": {
+            "output_schema_definitions": 692,
+            "unreachable_definitions": 0,
+            "unreachable_definition_bytes": 0,
+            "repeated_subtree_ceiling_bytes": 798
+          }
+        }
+      ]
+    }
+  ],
+  "comparisons": {
+    "default_vs_full_advertisement": {
+      "default_frame_bytes": 3786655,
+      "full_frame_bytes": 4383879,
+      "saving_bytes": 597224,
+      "saving_percent": 13.6
+    },
+    "default_vs_smallest": {
+      "default_frame_bytes": 3786655,
+      "smallest_frame_bytes": 312973,
+      "smallest_variant": {
+        "input_profile": "compact",
+        "output_profile": "off"
+      },
+      "saving_bytes": 3473682,
+      "saving_percent": 91.7
+    }
+  }
+}
