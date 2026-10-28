@@ -2037,3 +2037,78 @@ it.each([false, true])(
     );
   },
 );
+
+// #7219: a descriptor's effective `value` follows JavaScript overwrite order.
+// `Object.defineProperty` used to index the descriptor with a first-match scan,
+// so both orders of a duplicate key could substitute the wrong export value.
+describe("defineProperty descriptor overwrite order", () => {
+  const sender = `function (channel) { return (...args) => send(channel, ...args); }`;
+  const noOp = `function () { return () => {}; }`;
+  const descriptorBundle = (descriptor: string) => `(() => {
+    const modules = {
+      2(module) { module.exports = require("electron"); },
+      5(module, exports, load) {
+        const electron = load(2);
+        Object.defineProperty(exports, "sender", ${descriptor});
+        function send(channel, ...args) { electron.ipcRenderer.send(channel, ...args); }
+      },
+      9(module, exports, load) {
+        const helper = load(5);
+        load(2).contextBridge.exposeInMainWorld("api", {copy: helper.sender("descriptor:copy")});
+      }
+    };
+    function load(id) { const m = {exports:{}}; modules[id].call(m.exports,m,m.exports,load); return m.exports; }
+    load(9);
+  })();`;
+  const observe = (descriptor: string) => {
+    const result = analyzeJavaScriptStaticSource(descriptorBundle(descriptor));
+    return {
+      entries: (result.electron.call_paths ?? [])
+        .filter(({ terminal }) => terminal === "electron.ipcRenderer.send")
+        .map(({ entry }) => entry),
+      channels: result.electron.ipc
+        .filter(
+          ({ resolution_basis }) => resolution_basis === "wrapper-substitution",
+        )
+        .map(({ channel }) => channel),
+    };
+  };
+
+  it.each([
+    ["a sender followed by a no-op", `{value: ${sender}, value: ${noOp}}`, []],
+    [
+      "a no-op followed by a sender",
+      `{value: ${noOp}, value: ${sender}}`,
+      ["descriptor:copy"],
+    ],
+    [
+      "a sender shadowed by a later literal spread",
+      `{value: ${sender}, ...{value: ${noOp}}}`,
+      [],
+    ],
+    [
+      "a no-op overridden by a later literal spread",
+      `{value: ${noOp}, ...{value: ${sender}}}`,
+      ["descriptor:copy"],
+    ],
+    [
+      "a sender overridden by a later computed key",
+      `{value: ${sender}, ["value"]: ${noOp}}`,
+      [],
+    ],
+    [
+      "a no-op overridden by a later computed key",
+      `{value: ${noOp}, ["value"]: ${sender}}`,
+      ["descriptor:copy"],
+    ],
+  ] as const)(
+    "resolves the effective export value for %s",
+    (_name, descriptor, expectedChannels) => {
+      const observed = observe(descriptor);
+      expect(observed.channels).toEqual([...expectedChannels]);
+      expect(observed.entries).toEqual(
+        expectedChannels.length === 0 ? [] : ["api.copy"],
+      );
+    },
+  );
+});
