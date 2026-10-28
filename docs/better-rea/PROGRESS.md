@@ -250,6 +250,19 @@ Source: master §6 Phase 5 M, source A B4, source B 2.4/2.5/13.x.
 
 ---
 
+## Fork identity — README watermark and definition
+
+| #   | Item                                                     | Status        | Evidence / notes                                                                                                                                                                                                                               |
+| --- | -------------------------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| N-1 | Watermark band on the English README and 22 translations | DONE-VERIFIED | `<sub>◆ BETTER-REA ◆ · a hardened fork of REA · evidence over guesses</sub>` under the language navigation, one occurrence per file; the 22 translations also carry `# Better-REA` as their title                                              |
+| N-2 | The fork defined in its own section                      | DONE-VERIFIED | `## What Better-REA is` states the contract it keeps, the four properties it adds and where it stays deliberately small                                                                                                                        |
+| N-3 | "Why it's better" tied to evidence already produced      | DONE-VERIFIED | `## Why it's better` — bounded answers (`out_of_range`), pinned catalog (`docs/better-rea/golden/mcp-catalog-digests.json`), measured `tools/list` cost; the item table keeps its commit-level claims                                          |
+| N-4 | Upstream marketing surfaces removed in every locale      | DONE-VERIFIED | Discord badge and community table, skills.sh badge, Trendshift badge, star-history chart, two `x.com` demo links and the website navigation line are gone; none of `discord.gg`, `trendshift.io`, `star-history`, `x.com`, `skills.sh/b` match |
+| N-5 | Setup, showcases, coverage and guides kept               | DONE-VERIFIED | Quick start, Set up your agent, Ask your agent, terminal, update, How it works, What you can analyze, Showcases, FAQ, Documentation and the RL sections keep their content                                                                     |
+| N-6 | Translations stay link- and command-identical            | DONE-VERIFIED | `node scripts/check-doc-facts.mjs` → exit 0; all 23 files carry the same seven `bash` blocks. The canonical definition prose is English-only; that limitation is deliberate and recorded here                                                  |
+
+---
+
 ## Golden / characterization snapshots (master §1.2)
 
 | #   | Snapshot                                              | Status                                                                             | Path                                                                                                            |
@@ -277,6 +290,7 @@ Source: master §6 Phase 5 M, source A B4, source B 2.4/2.5/13.x.
 | `1ba831586`              | `docs(better-rea)`: record the baseline and final reports                                 |
 | `454f22d73`              | `docs(better-rea)`: close the commit log and record the delivery state                    |
 | `6a0b83345`              | `docs(readme)`: present Better-REA as its own fork                                        |
+| `9b2b2090f`              | `docs(readme)`: rebrand around a Better-REA watermark, definition and why-better sections |
 
 ### Delivery state
 
@@ -338,3 +352,8 @@ The GitHub default branch is `better-rea/main-work` because it was pushed first;
 | after final docs | `node scripts/run-turbo.mjs run typecheck lint`                                                                                                                  | PASSED — 2 of 2 tasks, exit 0 (2m28s)                                                                                                                       |
 | after final docs | `node node_modules/oxfmt/bin/oxfmt --check .`                                                                                                                    | PASSED — 6,242 files already formatted                                                                                                                      |
 | after final docs | `node scripts/check-doc-facts.mjs`                                                                                                                               | PASSED — exit 0                                                                                                                                             |
+| after branding   | `node scripts/check-doc-facts.mjs`                                                                                                                               | PASSED — exit 0; README.md and the 22 translations share one link-target multiset                                                                           |
+| after branding   | `node node_modules/oxfmt/bin/oxfmt --check .`                                                                                                                    | PASSED — all matched files use the correct format                                                                                                           |
+| after branding   | bash-block comparison across the 23 README files                                                                                                                 | PASSED — seven `bash` blocks per file, byte-identical in every locale                                                                                       |
+| after branding   | `grep -rln -e discord.gg -e trendshift -e star-history -e x.com -e skills.sh README.md docs/readme`                                                              | PASSED — no matches; the upstream marketing surfaces are gone from all 23 files                                                                             |
+| after branding   | `grep -c "◆ BETTER-REA ◆" README.md docs/readme/*.md`                                                                                                            | PASSED — exactly one watermark per file (23)                                                                                                                |

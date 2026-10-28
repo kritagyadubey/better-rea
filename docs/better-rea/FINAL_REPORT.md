@@ -28,15 +28,16 @@ it, and the limitations section is part of the result.
 
 ## 2. What changed
 
-| Commit      | Change                                                                                   | Kind       |
-| ----------- | ---------------------------------------------------------------------------------------- | ---------- |
-| `45f2e6c66` | Resolve module-level `const` Electron options inside functions (#7227)                   | fix        |
-| `3d48437b1` | Measure the real `tools/list` catalog across all six profiles and record the report      | docs/tools |
-| `e42f4cbf9` | Guard `Object.defineProperty` descriptor overwrite order (#7219)                         | tests only |
-| `dc6533d16` | Report out-of-range `generated_position` as `out_of_range` with real bounds (#7132)      | fix        |
-| `19838a5ac` | Assert the same bounds through the MCP boundary                                          | tests      |
-| `caff390de` | Traverse `contentSchema` and keep mixed-enum member types in advertised schemas (#7123)  | fix        |
-| `1c0afcf90` | Snapshot the canonical catalog identity (231 names + six profile digests) with `--check` | safety net |
+| Commit      | Change                                                                                                                            | Kind       |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| `45f2e6c66` | Resolve module-level `const` Electron options inside functions (#7227)                                                            | fix        |
+| `3d48437b1` | Measure the real `tools/list` catalog across all six profiles and record the report                                               | docs/tools |
+| `e42f4cbf9` | Guard `Object.defineProperty` descriptor overwrite order (#7219)                                                                  | tests only |
+| `dc6533d16` | Report out-of-range `generated_position` as `out_of_range` with real bounds (#7132)                                               | fix        |
+| `19838a5ac` | Assert the same bounds through the MCP boundary                                                                                   | tests      |
+| `caff390de` | Traverse `contentSchema` and keep mixed-enum member types in advertised schemas (#7123)                                           | fix        |
+| `1c0afcf90` | Snapshot the canonical catalog identity (231 names + six profile digests) with `--check`                                          | safety net |
+| `9b2b2090f` | Rebrand the README around Better-REA (watermark, definition, why-better) and remove upstream marketing surfaces in all 23 locales | docs       |
 
 No MCP tool was renamed, removed or re-scoped. No CLI flag, package name or
 Evidence field changed. Advertised schemas changed only for schemas that use a
