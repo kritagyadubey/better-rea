@@ -3,7 +3,11 @@
 [English](../../README.md) · [简体中文](README_zh.md) · [繁體中文](README_zh-TW.md) · [日本語](README_ja.md) · [한국어](README_ko.md) · [Türkçe](README_tr.md) · [Русский](README_ru.md) · [Tiếng Việt](README_vi.md) · [ไทย](README_th.md) · [Deutsch](README_de.md) · [Español](README_es.md) · [Français](README_fr.md) · [Українська](README_uk.md) · [Polski](README_pl.md) · [Português (Brasil)](README_pt-BR.md) · [العربية](README_ar.md) · [فارسی](README_fa.md) · [Bahasa Indonesia](README_id.md) · [Italiano](README_it.md)
 · [Ελληνικά](README_el.md) · **മലയാളം** · [Roman Urdu](README_ur-Latn.md) · [Română](README_ro.md)
 
-# REA: എന്തും Reverse Engineer ചെയ്യുക
+<br />
+
+<sub><strong>◆ BETTER-REA ◆</strong> · a hardened fork of REA · evidence over guesses</sub>
+
+# Better-REA
 
 ### Binaries, applications, runtime behavior എന്നിവയുടെ Reverse Engineering-നായി ഒരൊറ്റ MCP.
 
@@ -12,13 +16,7 @@
 [![npm version](https://img.shields.io/npm/v/rea-agents?style=flat-square&color=cb3837)](https://www.npmjs.com/package/rea-agents)
 [![MCP tool catalog](https://img.shields.io/badge/MCP-tool_catalog-5c4ee5?style=flat-square)](../mcp-contracts.md#generated-catalog)
 [![Node.js requirements](https://img.shields.io/badge/Node.js-requirements-339933?style=flat-square&logo=nodedotjs&logoColor=white)](#എന്തൊക്കെ-വിശകലനം-ചെയ്യാം)
-[![skills.sh](https://skills.sh/b/morluto/rea?style=flat-square)](https://skills.sh/morluto/rea/reverse-engineer-anything)
 [![MIT license](https://img.shields.io/badge/license-MIT-f4c430?style=flat-square)](../../LICENSE)
-[![Discord](https://img.shields.io/discord/1556595354999332884?logo=discord&logoColor=white&label=Discord&color=5865F2)](https://discord.gg/GkcryMnJDM)
-
-<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="morluto%2Frea | Trendshift" width="250" height="55"/></a>
-
-**[വെബ്സൈറ്റ്](https://rea.tools/) · [ഗൈഡുകൾ](https://rea.tools/guides/) · [ഉദാഹരണങ്ങൾ](https://rea.tools/showcase/)**
 
 [ദ്രുതാരംഭം](#ദ്രുതാരംഭം) · [REA എങ്ങനെ പ്രവർത്തിക്കുന്നു](#rea-എങ്ങനെ-പ്രവർത്തിക്കുന്നു) · [എന്തൊക്കെ വിശകലനം ചെയ്യാം](#എന്തൊക്കെ-വിശകലനം-ചെയ്യാം) · [ഉദാഹരണങ്ങൾ](#ഉദാഹരണങ്ങൾ) · [RL പരിതസ്ഥിതികൾ നിർമ്മിക്കുക](#build-rl-environments) · [പതിവുചോദ്യങ്ങൾ](#പതിവുചോദ്യങ്ങൾ) · [ഡോക്യുമെന്റേഷൻ](#ഡോക്യുമെന്റേഷൻ)
 
@@ -37,22 +35,6 @@
 <br />
 
 <img src="../assets/rea-hopper-analysis.png" alt="ഒരു native binary പരിശോധിക്കുന്നതിനിടെ Hopper-ൽ REA അതിന്റെ analysis bridge ആരംഭിക്കുന്നു" width="1200" />
-
-<br /><br />
-
-<table aria-label="REA community">
-<tr>
-<td align="center" width="360">
-  <a href="https://discord.gg/GkcryMnJDM">
-    <img src="../assets/discord.svg" height="42" alt="Discord" /><br />
-    <strong>Reverse Engineering കമ്മ്യൂണിറ്റിയിൽ ചേരുക</strong>
-  </a><br />
-  <sub>Discord · ചോദ്യോത്തരങ്ങൾ · അനുഭവങ്ങളും കണ്ടെത്തലുകളും പങ്കിടുക</sub>
-</td>
-</tr>
-</table>
-
-<br />
 
 </div>
 
@@ -233,8 +215,7 @@ Renderer-ന്റെ clipboard API കണ്ടെത്തി, അതിനെ
 
 വെബ് ആപ്പ് സെഷൻ റെക്കോർഡ് ചെയ്ത് API ടൂളുകളാക്കി AI ഏജന്റിന് ഉപയോഗിക്കാവുന്ന പരിതസ്ഥിതി എക്‌സ്‌പോർട്ട് ചെയ്യുക. AgentEnv ഉപയോഗിച്ച് പ്രവർത്തിപ്പിച്ച ശേഷം RL പരിശീലനത്തിനോ മൂല്യനിർണയത്തിനോ ടാസ്‌ക്കുകളും റിവാർഡ് പരിശോധനകളും ചേർക്കുക.
 
-[പരിതസ്ഥിതി നിർമ്മാണ മാർഗ്ഗദർശി](https://rea.tools/guides/rl-environments/) ·
-[X-ൽ ഡെമോ കാണുക](https://x.com/reatools/status/2112574822584918075?s=20)
+[പരിതസ്ഥിതി നിർമ്മാണ മാർഗ്ഗദർശി](https://rea.tools/guides/rl-environments/)
 
 REA ഉപയോഗിച്ച് നിങ്ങൾ രസകരമായ എന്തെങ്കിലും പരിശോധിച്ചിട്ടുണ്ടെങ്കിൽ അത് കാണാൻ ഞങ്ങൾ ആഗ്രഹിക്കുന്നു. പരിശോധിച്ച target, നിങ്ങളുടെ ചോദ്യം, REA എങ്ങനെ സഹായിച്ചു, നിങ്ങൾ കണ്ടെത്തിയത് എന്നിവ ഉൾപ്പെടുത്തി [issue](https://github.com/morluto/rea/issues) അല്ലെങ്കിൽ [pull request](https://github.com/morluto/rea/pulls) വഴി നിങ്ങളുടെ case പങ്കിടുക.
 
@@ -271,8 +252,7 @@ agent-env run ./my-env
 പ്രവർത്തനം തുടങ്ങുന്നതും പ്രതികരിക്കുന്നതും പരിശോധിക്കുന്ന അടിസ്ഥാന ടെസ്റ്റിനൊപ്പം പ്രവർത്തിപ്പിക്കാവുന്ന പരിതസ്ഥിതി REA എക്‌സ്‌പോർട്ട് ചെയ്യുന്നു. ടാസ്‌ക് ലക്ഷ്യങ്ങളും റിവാർഡ് പരിശോധനകളും നിർവചിക്കാനും പരിശീലനം നടത്താനും RL ഫ്രെയിംവർക്കുമായി ബന്ധിപ്പിക്കുക.
 
 [പരിതസ്ഥിതി നിർമ്മാണ മാർഗ്ഗദർശി](https://rea.tools/guides/rl-environments/) ·
-[പരിതസ്ഥിതി റഫറൻസ്](../agent-environments.md) ·
-[X-ൽ ഡെമോ കാണുക](https://x.com/reatools/status/2112574822584918075?s=20)
+[പരിതസ്ഥിതി റഫറൻസ്](../agent-environments.md)
 
 ## പതിവുചോദ്യങ്ങൾ
 
@@ -352,20 +332,6 @@ npx rea-agents@latest setup
 - [Roadmap](../roadmap.md): ആസൂത്രണം ചെയ്ത പ്രവർത്തനങ്ങളും capability trackers-ഉം.
 
 സുരക്ഷാ ദുർബലതകൾ [SECURITY.md](../../SECURITY.md) വഴി റിപ്പോർട്ട് ചെയ്യുക.
-
-## Star ചരിത്രം
-
-🎉 **250,000 GitHub stars — നന്ദി!**
-
-REA ഉപയോഗിക്കുന്നവർക്കും, bugs റിപ്പോർട്ട് ചെയ്യുന്നവർക്കും, features ആവശ്യപ്പെടുന്നവർക്കും, builds പരിശോധിക്കുന്നവർക്കും, fixes സംഭാവന ചെയ്യുന്നവർക്കും നന്ദി.
-
-<a href="https://www.star-history.com/?repos=morluto%2Frea&amp;type=date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=morluto/rea&amp;type=date&amp;theme=dark&amp;legend=top-left" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=morluto/rea&amp;type=date" />
-    <img alt="REA GitHub star ചരിത്രം" src="https://api.star-history.com/chart?repos=morluto/rea&amp;type=date" />
-  </picture>
-</a>
 
 ## നിരാകരണം
 

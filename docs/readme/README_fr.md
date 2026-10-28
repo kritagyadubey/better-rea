@@ -3,7 +3,11 @@
 [English](../../README.md) · [简体中文](README_zh.md) · [繁體中文](README_zh-TW.md) · [日本語](README_ja.md) · [한국어](README_ko.md) · [Türkçe](README_tr.md) · [Русский](README_ru.md) · [Tiếng Việt](README_vi.md) · [ไทย](README_th.md) · [Deutsch](README_de.md) · [Español](README_es.md) · **Français** · [Українська](README_uk.md) · [Polski](README_pl.md) · [Português (Brasil)](README_pt-BR.md) · [العربية](README_ar.md) · [فارسی](README_fa.md) · [Bahasa Indonesia](README_id.md) · [Italiano](README_it.md)
 · [Ελληνικά](README_el.md) · [മലയാളം](README_ml.md) · [Roman Urdu](README_ur-Latn.md) · [Română](README_ro.md)
 
-# REA : rétro-ingénierie de tout
+<br />
+
+<sub><strong>◆ BETTER-REA ◆</strong> · a hardened fork of REA · evidence over guesses</sub>
+
+# Better-REA
 
 ### Un seul MCP pour la rétro-ingénierie des binaires, des applications et du comportement à l'exécution.
 
@@ -12,13 +16,7 @@
 [![npm version](https://img.shields.io/npm/v/rea-agents?style=flat-square&color=cb3837)](https://www.npmjs.com/package/rea-agents)
 [![MCP tool catalog](https://img.shields.io/badge/MCP-tool_catalog-5c4ee5?style=flat-square)](../mcp-contracts.md#generated-catalog)
 [![Node.js requirements](https://img.shields.io/badge/Node.js-requirements-339933?style=flat-square&logo=nodedotjs&logoColor=white)](#current-status)
-[![skills.sh](https://skills.sh/b/morluto/rea?style=flat-square)](https://skills.sh/morluto/rea/reverse-engineer-anything)
 [![MIT license](https://img.shields.io/badge/license-MIT-f4c430?style=flat-square)](../../LICENSE)
-[![Discord](https://img.shields.io/discord/1556595354999332884?logo=discord&logoColor=white&label=Discord&color=5865F2)](https://discord.gg/GkcryMnJDM)
-
-<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="morluto%2Frea | Trendshift" width="250" height="55"/></a>
-
-**[Site web](https://rea.tools/fr/) · [Guides](https://rea.tools/fr/guides/) · [Études de cas](https://rea.tools/fr/showcase/)**
 
 [Démarrage rapide](#démarrage-rapide) · [Comment fonctionne REA](#comment-fonctionne-rea) · [Ce que vous pouvez analyser](#ce-que-vous-pouvez-analyser) · [Études de cas](#études-de-cas) · [Créer des environnements RL](#build-rl-environments) · [Questions fréquentes](#questions-fréquentes) · [Outils GNU objdump et Rizin](../reverse-engineering-tools.md) · [Documentation](#documentation)
 
@@ -35,22 +33,6 @@
 <br />
 
 <img src="../assets/rea-hopper-analysis.png" alt="REA lance son pont d'analyse dans Hopper pendant l'inspection d'un binaire natif" width="1200" />
-
-<br /><br />
-
-<table aria-label="REA community">
-<tr>
-<td align="center" width="360">
-  <a href="https://discord.gg/GkcryMnJDM">
-    <img src="../assets/discord.svg" height="42" alt="Discord" /><br />
-    <strong>Rejoignez la communauté de rétro-ingénierie</strong>
-  </a><br />
-  <sub>Discord · Questions et réponses · Partage de projets</sub>
-</td>
-</tr>
-</table>
-
-<br />
 
 </div>
 
@@ -224,8 +206,7 @@ Inspectez les instructions 16 bits du jeu PC-98 d'origine, retrouvez les calculs
 
 Enregistrez une session d’application web, transformez son API en outils et exportez un environnement utilisable par un agent IA. Exécutez-le avec AgentEnv, puis ajoutez des tâches et des vérifications de récompense pour l’entraînement RL ou l’évaluation.
 
-[Guide de création d’un environnement](https://rea.tools/guides/rl-environments/) ·
-[Voir la démo sur X](https://x.com/reatools/status/2112574822584918075?s=20)
+[Guide de création d’un environnement](https://rea.tools/guides/rl-environments/)
 
 Si vous avez utilisé REA sur un projet intéressant, nous serions ravis de le découvrir. Partagez votre cas dans une [issue](https://github.com/morluto/rea/issues) ou une [pull request](https://github.com/morluto/rea/pulls), en précisant la cible, votre question, la manière dont REA vous a aidé et ce que vous avez découvert.
 
@@ -262,8 +243,7 @@ agent-env run ./my-env
 REA exporte un environnement exécutable avec un test de base qui vérifie qu’il démarre et répond. Utilisez-le avec votre framework RL pour définir les objectifs, ajouter les vérifications de récompense et lancer l’entraînement.
 
 [Guide de création d’un environnement](https://rea.tools/guides/rl-environments/) ·
-[Référence des environnements](../agent-environments.md) ·
-[Voir la démo sur X](https://x.com/reatools/status/2112574822584918075?s=20)
+[Référence des environnements](../agent-environments.md)
 
 ## Questions fréquentes
 
@@ -342,20 +322,6 @@ Commencez par les [guides pas à pas](https://rea.tools/fr/guides/) du site web.
 - [Feuille de route](../roadmap.md) : travaux prévus et suivi des capacités.
 
 Signalez les vulnérabilités via [SECURITY.md](../../SECURITY.md).
-
-## Historique des étoiles
-
-🎉 **300 000 étoiles GitHub — merci !**
-
-Merci à toutes les personnes qui utilisent REA, signalent des bugs, proposent des fonctionnalités, testent les builds et contribuent des correctifs.
-
-<a href="https://www.star-history.com/?repos=morluto%2Frea&amp;type=date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=morluto/rea&amp;type=date&amp;theme=dark&amp;legend=top-left" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=morluto/rea&amp;type=date" />
-    <img alt="Historique des étoiles GitHub de REA" src="https://api.star-history.com/chart?repos=morluto/rea&amp;type=date" />
-  </picture>
-</a>
 
 ## Avertissement
 

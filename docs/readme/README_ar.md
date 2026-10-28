@@ -3,7 +3,11 @@
 [English](../../README.md) · [简体中文](README_zh.md) · [繁體中文](README_zh-TW.md) · [日本語](README_ja.md) · [한국어](README_ko.md) · [Türkçe](README_tr.md) · [Русский](README_ru.md) · [Tiếng Việt](README_vi.md) · [ไทย](README_th.md) · [Deutsch](README_de.md) · [Español](README_es.md) · [Français](README_fr.md) · [Українська](README_uk.md) · [Polski](README_pl.md) · [Português (Brasil)](README_pt-BR.md) · **العربية** · [فارسی](README_fa.md) · [Bahasa Indonesia](README_id.md) · [Italiano](README_it.md)
 · [Ελληνικά](README_el.md) · [മലയാളം](README_ml.md) · [Roman Urdu](README_ur-Latn.md) · [Română](README_ro.md)
 
-# REA: هندسة عكسية لأي شيء
+<br />
+
+<sub><strong>◆ BETTER-REA ◆</strong> · a hardened fork of REA · evidence over guesses</sub>
+
+# Better-REA
 
 ### خادم MCP واحد للهندسة العكسية للملفات الثنائية والتطبيقات والسلوك أثناء التشغيل.
 
@@ -12,13 +16,7 @@
 [![npm version](https://img.shields.io/npm/v/rea-agents?style=flat-square&color=cb3837)](https://www.npmjs.com/package/rea-agents)
 [![MCP tool catalog](https://img.shields.io/badge/MCP-tool_catalog-5c4ee5?style=flat-square)](../mcp-contracts.md#generated-catalog)
 [![Node.js requirements](https://img.shields.io/badge/Node.js-requirements-339933?style=flat-square&logo=nodedotjs&logoColor=white)](#current-status)
-[![skills.sh](https://skills.sh/b/morluto/rea?style=flat-square)](https://skills.sh/morluto/rea/reverse-engineer-anything)
 [![MIT license](https://img.shields.io/badge/license-MIT-f4c430?style=flat-square)](../../LICENSE)
-[![Discord](https://img.shields.io/discord/1556595354999332884?logo=discord&logoColor=white&label=Discord&color=5865F2)](https://discord.gg/GkcryMnJDM)
-
-<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="morluto%2Frea | Trendshift" width="250" height="55"/></a>
-
-**[الموقع](https://rea.tools/ar/) · [الأدلة](https://rea.tools/ar/guides/) · [دراسات الحالة](https://rea.tools/ar/showcase/)**
 
 [البدء السريع](#البدء-السريع) · [كيف يعمل REA](#كيف-يعمل-rea) · [ما الذي يمكنك تحليله](#ما-الذي-يمكنك-تحليله) · [دراسات الحالة](#دراسات-الحالة) · [إنشاء بيئات التعلم المعزز](#build-rl-environments) · [الأسئلة الشائعة](#الأسئلة-الشائعة) · [أدوات GNU objdump وRizin](../reverse-engineering-tools.md) · [التوثيق](#التوثيق)
 
@@ -35,22 +33,6 @@
 <br />
 
 <img src="../assets/rea-hopper-analysis.png" alt="REA يشغّل جسر التحليل داخل Hopper لفحص ملف ثنائي للشيفرة الأصلية" width="1200" />
-
-<br /><br />
-
-<table aria-label="مجتمع REA">
-<tr>
-<td align="center" width="360">
-  <a href="https://discord.gg/GkcryMnJDM">
-    <img src="../assets/discord.svg" height="42" alt="Discord" /><br />
-    <strong>انضم إلى مجتمع الهندسة العكسية</strong>
-  </a><br />
-  <sub>Discord · أسئلة وأجوبة · مشاركة النتائج</sub>
-</td>
-</tr>
-</table>
-
-<br />
 
 </div>
 
@@ -229,8 +211,7 @@ npx rea-agents@latest setup
 
 سجّل جلسة لتطبيق ويب، وحوّل API إلى أدوات، وصدّر بيئة يستطيع وكيل الذكاء الاصطناعي استخدامها. شغّلها باستخدام AgentEnv، ثم أضف المهام وفحوص المكافآت للتدريب بالتعلم المعزز أو التقييم.
 
-[دليل إنشاء بيئة](https://rea.tools/guides/rl-environments/) ·
-[شاهد العرض على X](https://x.com/reatools/status/2112574822584918075?s=20)
+[دليل إنشاء بيئة](https://rea.tools/guides/rl-environments/)
 
 إذا استخدمت REA لفحص هدف مثير للاهتمام، فنود الاطلاع عليه. شارك حالتك في [issue](https://github.com/morluto/rea/issues) أو [pull request](https://github.com/morluto/rea/pulls)، مع ذكر الهدف، وسؤالك، وكيف ساعدك REA، وما توصلت إليه.
 
@@ -267,8 +248,7 @@ agent-env run ./my-env
 يصدّر REA بيئة قابلة للتشغيل مع اختبار أساسي يتحقق من بدء تشغيلها واستجابتها. استخدمها مع إطار التعلم المعزز لتحديد أهداف المهام وإضافة فحوص المكافآت وتشغيل التدريب.
 
 [دليل إنشاء بيئة](https://rea.tools/guides/rl-environments/) ·
-[مرجع البيئات](../agent-environments.md) ·
-[شاهد العرض على X](https://x.com/reatools/status/2112574822584918075?s=20)
+[مرجع البيئات](../agent-environments.md)
 
 ## الأسئلة الشائعة
 
@@ -347,20 +327,6 @@ npx rea-agents@latest setup
 - [خطة العمل](../roadmap.md): الأعمال المخطط لها ومتابعة القدرات.
 
 أبلغ عن الثغرات وفق [SECURITY.md](../../SECURITY.md).
-
-## سجل النجوم
-
-🎉 **300,000 نجمة على GitHub — شكرًا لكم!**
-
-شكرًا لكل من يستخدم REA، ويبلّغ عن الأخطاء، ويقترح ميزات، ويختبر إصدارات البناء، ويساهم بالإصلاحات.
-
-<a href="https://www.star-history.com/?repos=morluto%2Frea&amp;type=date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=morluto/rea&amp;type=date&amp;theme=dark&amp;legend=top-left" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=morluto/rea&amp;type=date" />
-    <img alt="سجل نجوم REA على GitHub" src="https://api.star-history.com/chart?repos=morluto/rea&amp;type=date" />
-  </picture>
-</a>
 
 ## إخلاء المسؤولية
 

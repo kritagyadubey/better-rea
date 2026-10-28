@@ -3,7 +3,11 @@
 [English](../../README.md) · [简体中文](README_zh.md) · [繁體中文](README_zh-TW.md) · [日本語](README_ja.md) · [한국어](README_ko.md) · [Türkçe](README_tr.md) · [Русский](README_ru.md) · [Tiếng Việt](README_vi.md) · [ไทย](README_th.md) · [Deutsch](README_de.md) · [Español](README_es.md) · [Français](README_fr.md) · [Українська](README_uk.md) · [Polski](README_pl.md) · [Português (Brasil)](README_pt-BR.md) · [العربية](README_ar.md) · [فارسی](README_fa.md) · [Bahasa Indonesia](README_id.md) · [Italiano](README_it.md)
 · [Ελληνικά](README_el.md) · [മലയാളം](README_ml.md) · [Roman Urdu](README_ur-Latn.md) · **Română**
 
-# REA: Reverse Engineer Anything
+<br />
+
+<sub><strong>◆ BETTER-REA ◆</strong> · a hardened fork of REA · evidence over guesses</sub>
+
+# Better-REA
 
 ### Un singur server MCP pentru inginerie inversă: fișiere binare, aplicații și comportament în timpul execuției.
 
@@ -12,13 +16,7 @@
 [![Versiunea npm](https://img.shields.io/npm/v/rea-agents?style=flat-square&color=cb3837)](https://www.npmjs.com/package/rea-agents)
 [![Catalogul uneltelor MCP](https://img.shields.io/badge/MCP-tool_catalog-5c4ee5?style=flat-square)](../mcp-contracts.md#generated-catalog)
 [![Cerințe Node.js](https://img.shields.io/badge/Node.js-requirements-339933?style=flat-square&logo=nodedotjs&logoColor=white)](#ce-poți-analiza)
-[![skills.sh](https://skills.sh/b/morluto/rea?style=flat-square)](https://skills.sh/morluto/rea/reverse-engineer-anything)
 [![Licența MIT](https://img.shields.io/badge/license-MIT-f4c430?style=flat-square)](../../LICENSE)
-[![Discord](https://img.shields.io/discord/1556595354999332884?logo=discord&logoColor=white&label=Discord&color=5865F2)](https://discord.gg/GkcryMnJDM)
-
-<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="morluto%2Frea | Trendshift" width="250" height="55"/></a>
-
-**[Site web](https://rea.tools/) · [Ghiduri](https://rea.tools/guides/) · [Studii de caz](https://rea.tools/showcase/)**
 
 [Pornire rapidă](#pornire-rapidă) · [Cum funcționează REA](#cum-funcționează-rea) · [Ce poți analiza](#ce-poți-analiza) · [Studii de caz](#studii-de-caz) · [Construiește medii RL](#build-rl-environments) · [Întrebări frecvente](#întrebări-frecvente) · [Documentație](#documentație)
 
@@ -37,22 +35,6 @@
 <br />
 
 <img src="../assets/rea-hopper-analysis.png" alt="REA pornește componenta de legătură pentru analiză în Hopper în timp ce inspectează un fișier binar nativ" width="1200" />
-
-<br /><br />
-
-<table aria-label="Comunitatea REA">
-<tr>
-<td align="center" width="360">
-  <a href="https://discord.gg/GkcryMnJDM">
-    <img src="../assets/discord.svg" height="42" alt="Discord" /><br />
-    <strong>Alătură-te comunității de inginerie inversă</strong>
-  </a><br />
-  <sub>Discord · Întrebări și răspunsuri · Prezentări și demonstrații</sub>
-</td>
-</tr>
-</table>
-
-<br />
 
 </div>
 
@@ -286,8 +268,7 @@ compară codul C++ reconstruit cu rezultatul compilatorului folosit la acea vrem
 
 Înregistrează o sesiune de aplicație web, transformă API-ul în instrumente și exportă un mediu pe care un agent AI îl poate folosi. Rulează cu AgentEnv, apoi adaugă sarcini și verificări de recompensă pentru antrenare RL sau evaluare.
 
-[Ghid pentru construirea unui mediu](https://rea.tools/guides/rl-environments/) ·
-[Vezi demonstrația pe X](https://x.com/reatools/status/2112574822584918075?s=20)
+[Ghid pentru construirea unui mediu](https://rea.tools/guides/rl-environments/)
 
 Dacă ai folosit REA pentru ceva interesant, ne-ar plăcea să vedem rezultatul.
 Prezintă cazul într-un [issue](https://github.com/morluto/rea/issues) sau într-un
@@ -327,8 +308,7 @@ agent-env run ./my-env
 REA exportă un mediu executabil cu un test de bază care verifică pornirea și răspunsurile. Conectează-l la frameworkul RL pentru a defini obiectivele, a adăuga verificări de recompensă și a rula antrenarea.
 
 [Ghid pentru construirea unui mediu](https://rea.tools/guides/rl-environments/) ·
-[Referință pentru medii](../agent-environments.md) ·
-[Vezi demonstrația pe X](https://x.com/reatools/status/2112574822584918075?s=20)
+[Referință pentru medii](../agent-environments.md)
 
 ## Întrebări frecvente
 
@@ -426,21 +406,6 @@ Pentru opțiunile exacte, cerințele preliminare și contractele rezultatelor:
 - [Plan de dezvoltare](../roadmap.md): lucrări planificate și urmărirea progresului funcționalităților.
 
 Raportează vulnerabilitățile conform [SECURITY.md](../../SECURITY.md).
-
-## Istoricul stelelor
-
-🎉 **300.000 de stele pe GitHub — vă mulțumim!**
-
-Mulțumim tuturor celor care folosesc REA, raportează erori, propun funcționalități,
-testează versiuni și contribuie cu remedieri.
-
-<a href="https://www.star-history.com/?repos=morluto%2Frea&amp;type=date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=morluto/rea&amp;type=date&amp;theme=dark&amp;legend=top-left" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=morluto/rea&amp;type=date" />
-    <img alt="Istoricul stelelor REA pe GitHub" src="https://api.star-history.com/chart?repos=morluto/rea&amp;type=date" />
-  </picture>
-</a>
 
 ## Precizări privind utilizarea
 

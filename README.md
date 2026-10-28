@@ -3,6 +3,10 @@
 **English** · [简体中文](docs/readme/README_zh.md) · [繁體中文](docs/readme/README_zh-TW.md) · [日本語](docs/readme/README_ja.md) · [한국어](docs/readme/README_ko.md) · [Türkçe](docs/readme/README_tr.md) · [Русский](docs/readme/README_ru.md) · [Tiếng Việt](docs/readme/README_vi.md) · [ไทย](docs/readme/README_th.md) · [Deutsch](docs/readme/README_de.md) · [Español](docs/readme/README_es.md) · [Français](docs/readme/README_fr.md) · [Українська](docs/readme/README_uk.md) · [Polski](docs/readme/README_pl.md) · [Português (Brasil)](docs/readme/README_pt-BR.md) · [العربية](docs/readme/README_ar.md) · [فارسی](docs/readme/README_fa.md) · [Bahasa Indonesia](docs/readme/README_id.md) · [Italiano](docs/readme/README_it.md)
 · [Ελληνικά](docs/readme/README_el.md) · [മലയാളം](docs/readme/README_ml.md) · [Roman Urdu](docs/readme/README_ur-Latn.md) · [Română](docs/readme/README_ro.md)
 
+<br />
+
+<sub><strong>◆ BETTER-REA ◆</strong> · a hardened fork of REA · evidence over guesses</sub>
+
 # Better-REA
 
 ### A hardened fork of REA: same MCP tools, fewer dead ends.
@@ -13,29 +17,21 @@ claim carries its evidence and its gaps.**
 [![npm version](https://img.shields.io/npm/v/rea-agents?style=flat-square&color=cb3837)](https://www.npmjs.com/package/rea-agents)
 [![MCP tool catalog](https://img.shields.io/badge/MCP-tool_catalog-5c4ee5?style=flat-square)](docs/mcp-contracts.md#generated-catalog)
 [![Node.js requirements](https://img.shields.io/badge/Node.js-requirements-339933?style=flat-square&logo=nodedotjs&logoColor=white)](#what-you-can-analyze)
-[![skills.sh](https://skills.sh/b/morluto/rea?style=flat-square)](https://skills.sh/morluto/rea/reverse-engineer-anything)
 [![MIT license](https://img.shields.io/badge/license-MIT-f4c430?style=flat-square)](LICENSE)
-[![Discord](https://img.shields.io/discord/1556595354999332884?logo=discord&logoColor=white&label=Discord&color=5865F2)](https://discord.gg/GkcryMnJDM)
 
-**[Website](https://rea.tools/) · [Guides](https://rea.tools/guides/) · [Showcases](https://rea.tools/showcase/)**
-
-[Quick start](#quick-start) · [What's new here](#whats-new-here) · [How it works](#how-it-works) · [What you can analyze](#what-you-can-analyze) · [Showcases](#showcases) · [Build RL environments](#build-rl-environments) · [FAQ](#faq) · [Documentation](#documentation)
+[Quick start](#quick-start) · [What Better-REA is](#what-better-rea-is) · [Why it's better](#why-its-better) · [How it works](#how-it-works) · [What you can analyze](#what-you-can-analyze) · [Showcases](#showcases) · [Build RL environments](#build-rl-environments) · [FAQ](#faq) · [Documentation](#documentation)
 
 <code>npx rea-agents setup</code>
 
 </div>
 
 > [!NOTE]
-> Better-REA is my fork of [REA](https://github.com/morluto/rea) by morluto, which
-> remains the upstream project and the source of the tools, guides and packaged
-> skill. The fork keeps the public contract unchanged — same MCP tool names, same
-> schemas, same CLI flags, same `rea-agents` package — and concentrates on the
-> defects and verification gaps I could reproduce and fix locally. Upstream is
-> still the place for the full product story — start at the
-> [project website](https://rea.tools/) — and its
-> [issue tracker](https://github.com/morluto/rea/issues) is still the right
-> place for problems in the shared workflows. This file tells you what the fork
-> actually changes.
+> **Better-REA is a fork of [REA](https://github.com/morluto/rea) by morluto.** The
+> upstream project remains the source of the shared tools, guides and packaged
+> skill: its [project website](https://rea.tools/) is still the full product story,
+> and its [issue tracker](https://github.com/morluto/rea/issues) is still the place
+> for problems in the shared workflows. This file covers what the fork keeps, what
+> it fixes, and why that is worth a separate repository.
 
 <div align="center">
 
@@ -43,32 +39,54 @@ claim carries its evidence and its gaps.**
 
 <img src="docs/assets/rea-hopper-analysis.png" alt="REA launching its analysis bridge inside Hopper while inspecting a native binary" width="1200" />
 
-<br /><br />
-
-<table aria-label="REA community">
-<tr>
-<td align="center" width="360">
-  <a href="https://discord.gg/GkcryMnJDM">
-    <img src="docs/assets/discord.svg" height="42" alt="Discord" /><br />
-    <strong>Join the Reverse Engineering Community</strong>
-  </a><br />
-  <sub>Discord · Q&amp;A · Show and Tell</sub>
-</td>
-</tr>
-</table>
-
 <br />
 
 </div>
 
 ---
 
-## What's new here
+## What Better-REA is
 
-This fork started as a review of REA at `9593bc536` (`rea-agents@6.8.0`) with one
-rule: change nothing that another tool already depends on. No tool was renamed,
-removed or re-scoped, no CLI flag changed, no Evidence field moved, and no
-advertised schema byte changed for REA's own 231 contracts.
+**Better-REA is a hardened fork of REA.** It is the same product on the same
+contract — every MCP tool name, every advertised schema, every CLI flag and the
+`rea-agents` package name are upstream's — with a review pass applied on top. The
+review began at `9593bc536` (`rea-agents@6.8.0`) under one rule: change nothing
+that another tool already depends on. No tool was renamed, removed or re-scoped,
+no CLI flag changed, no Evidence field moved, and no advertised schema byte changed
+for REA's own 231 contracts.
+
+- **Fixed, not re-described.** Defects this host could reproduce now behave
+  correctly, and each fix carries a regression test that fails without it.
+- **Pinned, not hoped-for.** The advertised catalog is snapshotted per profile, so
+  a schema that silently changes shape fails a check instead of surprising a user.
+- **Measured, not assumed.** What an agent pays for `tools/list` is recorded per
+  profile with a reproducible harness.
+- **Honest about edges.** Anything that needed a provider, a platform or an install
+  this host does not have is recorded as NOT RUN, not reported as passing.
+
+It is deliberately small: where an upstream issue was already fixed, the fork adds
+coverage or says so instead of re-implementing it, and where a change would alter
+what agents are advertised, it is measured and written down as a recommendation
+rather than shipped.
+
+## Why it's better
+
+Three properties, in the order they matter to someone debugging real software:
+
+1. **A wrong answer becomes a bounded answer.** A generated position past the end
+   of the retained script text used to return `invalid_format` with no coordinate
+   and no limits. It now returns `out_of_range` with inclusive `minimum`/`maximum`
+   on the offending component and keeps the incomplete observation, so the caller
+   can see exactly what was known.
+2. **The contract cannot drift silently.** 231 tool names and six profile digests
+   are pinned in `docs/better-rea/golden/mcp-catalog-digests.json`, and `--check`
+   names the profile that moved.
+3. **The cost is a number, not a feeling.** The default `tools/list` frame is
+   measured at 3.79 MB across six profiles, 91.6% of it output schemas — which is
+   why both schema profiles exist and why choosing one is documented instead of
+   guessed.
+
+### What changed, item by item
 
 | Area               | What was wrong                                                                                                          | What the fork does now                                                                                                                                                    |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -288,9 +306,8 @@ for features added since the latest npm release.
 ## Showcases
 
 These case studies were produced with upstream REA and are the clearest
-demonstration of what the shared workflow is for. The
-[recorded walkthrough](https://x.com/reatools/status/2112574822584918075?s=20)
-covers one of them end to end.
+demonstration of what the shared workflow is for. They are the part of the product
+this fork deliberately does not change.
 
 <a href="https://rea.tools/showcase/">
   <picture>
@@ -330,9 +347,7 @@ Record a web app session, turn its API into tools, and export an environment an
 AI agent can use. Run it with AgentEnv, then add tasks and reward checks for RL
 training or evaluation. The
 [RL-environment guide](https://rea.tools/guides/rl-environments/) walks through
-the full loop, and
-[the video](https://x.com/reatools/status/2112574822584918075?s=20) shows a
-recorded session end to end.
+the full loop.
 
 If you've used REA on something interesting, share it in an
 [issue](https://github.com/morluto/rea/issues) or
@@ -405,25 +420,14 @@ For this fork specifically:
 
 The [roadmap](docs/roadmap.md) tracks what is planned next.
 
-## Upstream, community and project links
+## Upstream and project links
 
 Better-REA is unaffiliated with the upstream project; these links belong to it,
 not to this fork.
 
-- [Website](https://rea.tools/) · [Guides](https://rea.tools/guides/)
+- [Project website](https://rea.tools/) · [Guides](https://rea.tools/guides/)
 - [npm package](https://www.npmjs.com/package/rea-agents)
 - [Upstream issues](https://github.com/morluto/rea/issues) · [Upstream pull requests](https://github.com/morluto/rea/pulls)
-
-<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="morluto%2Frea | Trendshift" width="250" height="55"/></a>
-
-## Star history
-
-<a href="https://www.star-history.com/?repos=morluto%2Frea&amp;type=date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=morluto/rea&amp;type=date" />
-    <img alt="Star history of the upstream REA repository" src="https://api.star-history.com/chart?repos=morluto/rea&amp;type=date" />
-  </picture>
-</a>
 
 ## Disclaimer
 
