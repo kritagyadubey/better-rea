@@ -31,6 +31,21 @@ cliTest(
       manifest = `${root}/lexical/link/../manifest.json`;
     }
     await writeFile(map, fixture.sourceMap.text);
+    const refused = (line: string, column: string) =>
+      cli.run({
+        arguments: [
+          "trace-web-source-location",
+          manifest,
+          "0",
+          map,
+          fixture.sourceMap.url,
+          line,
+          column,
+          "--json",
+        ],
+        environment: { REA_LOG_LEVEL: "silent" },
+        timeoutMs: 45000,
+      });
     const response = await cli.run({
       arguments: [
         "trace-web-source-location",
@@ -105,25 +120,19 @@ cliTest(
     });
     expect(mcpResponse.isError, JSON.stringify(mcpResponse)).not.toBe(true);
     expect(mcpResponse.structuredContent).toEqual(response.json);
-    const invalid = await cli.run({
-      arguments: [
-        "trace-web-source-location",
-        manifest,
-        "0",
-        map,
-        fixture.sourceMap.url,
-        "2",
-        "0",
-        "--json",
-      ],
-      environment: { REA_LOG_LEVEL: "silent" },
-      timeoutMs: 45000,
-    });
+    const invalid = await refused("2", "0");
     expect(invalid.exitCode).toBe(1);
     expect(invalid.json).toMatchObject({
       code: "invalid_request",
       details: {
-        issues: [{ path: ["generated_position"] }],
+        issues: [
+          {
+            path: ["generated_position", "line"],
+            reason: "out_of_range",
+            minimum: 1,
+            maximum: 1,
+          },
+        ],
         partial_observation: {
           kind: "web-trace-observation",
           analysis: "incomplete",
@@ -136,6 +145,21 @@ cliTest(
               .digest("hex"),
           },
         },
+      },
+    });
+    const column = await refused("1", String(fixture.source.length + 1));
+    expect(column.exitCode).toBe(1);
+    expect(column.json).toMatchObject({
+      code: "invalid_request",
+      details: {
+        issues: [
+          {
+            path: ["generated_position", "column"],
+            reason: "out_of_range",
+            minimum: 0,
+            maximum: fixture.source.length,
+          },
+        ],
       },
     });
   },

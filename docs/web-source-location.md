@@ -15,7 +15,11 @@ rea trace-web-source-location \
 
 The six positional arguments select the manifest, zero-based script index,
 absolute map path, absolute map URL context, one-based generated line and
-zero-based UTF-16 column. The MCP arguments are:
+zero-based UTF-16 column. A position outside the retained script text is refused
+as `out_of_range` at `["generated_position","line"]` or
+`["generated_position","column"]`, reporting the inclusive `minimum` and
+`maximum` that text supports. The final empty line after a trailing terminator
+is a valid line. The MCP arguments are:
 
 ```json
 {

@@ -81,6 +81,49 @@ it.each([
     expect(projectAnalysisError(response.error).code).toBe("invalid_request");
   },
 );
+
+it.each([
+  {
+    generated_position: { line: 4, column: 0 },
+    issue: {
+      path: ["generated_position", "line"],
+      reason: "out_of_range",
+      minimum: 1,
+      maximum: 3,
+      message: "Selected generated line 4 is outside the retained script text",
+    },
+  },
+  {
+    generated_position: { line: 2, column: 5 },
+    issue: {
+      path: ["generated_position", "column"],
+      reason: "out_of_range",
+      minimum: 0,
+      maximum: 2,
+      message: "Selected generated column 5 is outside line 2",
+    },
+  },
+])(
+  "reports retained-text bounds for an out-of-range generated position: %j",
+  async ({ generated_position, issue }) => {
+    const response = await service(
+      webSourceLocationFixture(undefined, "a\nbc\nd"),
+    ).trace({ ...args, generated_position });
+    if (response.ok) throw new Error("expected invalid input");
+    const projection = projectAnalysisError(response.error);
+    expect(projection.code).toBe("invalid_request");
+    expect(projection.details?.issues).toEqual([
+      {
+        ...issue,
+        message: expect.stringContaining(issue.message) as unknown as string,
+      },
+    ]);
+    expect(projection.details?.partial_observation).toMatchObject({
+      kind: "web-trace-observation",
+      analysis: "incomplete",
+    });
+  },
+);
 it.each([
   "file:///analysis/app.map",
   "webpack:///bundle/app.map",

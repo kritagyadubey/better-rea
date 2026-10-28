@@ -9,6 +9,7 @@ import {
   AnalysisCancelledError,
   AnalysisInputError,
   AnalysisOutputError,
+  type AnalysisInputIssue,
 } from "../domain/analysisErrorCore.js";
 import { createEvidence, type Evidence } from "../domain/evidence.js";
 import { err, ok, type Result } from "../domain/result.js";
@@ -26,7 +27,11 @@ import {
   type WebSourceMapReport,
 } from "../domain/webSourceLocation.js";
 import type { WebTraceObservation } from "../domain/webTraceObservation.js";
-import { webSourceOffset } from "../domain/webSourcePosition.js";
+import {
+  webSourcePositionOutcome,
+  type WebSourcePosition,
+  type WebSourcePositionOutcome,
+} from "../domain/webSourcePosition.js";
 import type { ExecutionOptions } from "./AnalysisProvider.js";
 import {
   capturedWebManifestIdentity,
@@ -144,21 +149,17 @@ export class WebSourceLocationService {
     const pairing = verifyPairing(input, data);
     if (!pairing.ok) return incomplete(pairing.error);
     observation.source_map = map.file;
-    const generatedOffset = webSourceOffset(
+    const generatedPosition = webSourcePositionOutcome(
       data.source,
       input.generated_position,
     );
-    if (generatedOffset === undefined)
+    if (generatedPosition.kind !== "resolved")
       return incomplete(
         new AnalysisInputError(OPERATION, undefined, [
-          {
-            path: ["generated_position"],
-            reason: "invalid_format",
-            message:
-              "Selected generated position is outside the retained script text (one-based lines; zero-based UTF-16 columns).",
-          },
+          generatedPositionIssue(generatedPosition, input.generated_position),
         ]),
       );
+    const generatedOffset = generatedPosition.offset;
     if (options?.signal?.aborted)
       return incomplete(
         new AnalysisCancelledError(OPERATION, { cause: options.signal.reason }),
@@ -249,6 +250,34 @@ const invalid = (
       { path, reason: "invalid_format", message },
     ]),
   );
+
+/**
+ * Report which retained-text limit refused the selected point. The domain
+ * outcome owns the bounds; this projection only names them for the caller.
+ */
+const generatedPositionIssue = (
+  rejection: Exclude<WebSourcePositionOutcome, { readonly kind: "resolved" }>,
+  selected: WebSourcePosition,
+): AnalysisInputIssue => {
+  if (rejection.kind === "invalid")
+    return {
+      path: ["generated_position"],
+      reason: "invalid_format",
+      message:
+        "Expected a one-based line and a zero-based UTF-16 column within the retained script text.",
+    };
+  const range = `${String(rejection.minimum)}-${String(rejection.maximum)}`;
+  return {
+    path: ["generated_position", rejection.coordinate],
+    reason: "out_of_range",
+    minimum: rejection.minimum,
+    maximum: rejection.maximum,
+    message:
+      rejection.coordinate === "line"
+        ? `Selected generated line ${String(selected.line)} is outside the retained script text, which has ${String(rejection.maximum)} ${rejection.maximum === 1 ? "line" : "lines"}. Choose ${range} (one-based lines).`
+        : `Selected generated column ${String(selected.column)} is outside line ${String(selected.line)} of the retained script text, which has ${String(rejection.maximum)} UTF-16 ${rejection.maximum === 1 ? "column" : "columns"}. Choose ${range} (zero-based columns).`,
+  };
+};
 
 const admitContext = (
   input: WebSourceLocationInput,
