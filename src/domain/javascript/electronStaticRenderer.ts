@@ -5,7 +5,7 @@ import {
   semanticStaticPropertyKey,
   unwrapJavaScriptExpression,
 } from "./javascriptAstValues.js";
-import { semanticBindingAtRead } from "./javascriptSemanticMutationInitializers.js";
+import { semanticConstValueAtRead } from "./javascriptSemanticMutationInitializers.js";
 import {
   semanticStableInitializer,
   type JavaScriptBindingIndex,
@@ -75,8 +75,7 @@ export const resolveElectronBrowserWindowReceiver = (
     if (
       initializer === undefined ||
       initializer.projection.length !== 0 ||
-      !semanticBindingAtRead(binding, receiver, index.bindings.parentsByNode)
-        .hasDefiniteInitializer
+      !semanticConstValueAtRead(binding, receiver, index.bindings.parentsByNode)
     )
       return undefined;
     aliases.push({ receiver, path: [...path] });

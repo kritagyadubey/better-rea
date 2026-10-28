@@ -927,6 +927,66 @@ export const semanticBindingAtRead = (
   };
 };
 
+/**
+ * A `const` binding is initialized exactly once, and a read only observes its
+ * value once that initialization has run: reaching the same read earlier in the
+ * same activation throws a TDZ `ReferenceError` instead of producing a value.
+ * Positional analysis cannot express that for a read inside a function nested
+ * below the declaration, so it reports an unknown order across the boundary.
+ *
+ * Promotion stays narrow: the declaration must be `const`, the initializer must
+ * be the binding's only write, and the read's innermost function must sit below
+ * the declaration rather than contain it.
+ */
+const semanticConstInitializedBeforeRead = (
+  binding: JavaScriptSemanticBindingState,
+  read: t.Node,
+  parents: WeakMap<t.Node, t.Node>,
+): boolean => {
+  if (binding.mutable) return false;
+  if (binding.declarationKinds.size !== 1) return false;
+  if (!binding.declarationKinds.has("const")) return false;
+  if (binding.initializers.length !== 1) return false;
+  if (binding.referenceInitializers.length !== 0) return false;
+  const initializer = binding.initializers[0]?.node;
+  if (initializer === undefined) return false;
+  let current = read;
+  for (
+    let parent = parents.get(current);
+    parent !== undefined;
+    parent = parents.get(current)
+  ) {
+    // A computed method key runs while the enclosing body is still evaluating,
+    // so it keeps the positional ordering rule.
+    if (t.isFunction(parent) && !semanticComputedMethodKey(parent, current)) {
+      // A declaration inside this function shares its activation; only an outer
+      // declaration is initialized before every call can reach this read.
+      for (
+        let ancestor = parents.get(initializer);
+        ancestor !== undefined;
+        ancestor = parents.get(ancestor)
+      )
+        if (ancestor === parent) return false;
+      return true;
+    }
+    current = parent;
+  }
+  return false;
+};
+
+/**
+ * Whether this read observes the binding's single inert `const` initializer.
+ * Positional proof inside one activation, or `const` initialization across a
+ * function boundary, both establish it; anything else stays unknown.
+ */
+export const semanticConstValueAtRead = (
+  binding: JavaScriptSemanticBindingState,
+  read: t.Node,
+  parents: WeakMap<t.Node, t.Node>,
+): boolean =>
+  semanticBindingAtRead(binding, read, parents).hasDefiniteInitializer ||
+  semanticConstInitializedBeforeRead(binding, read, parents);
+
 const selectInitializers = (
   binding: JavaScriptSemanticBindingState,
   position: StatementPosition | null,

@@ -582,4 +582,19 @@ describe("static callee boundary matching", () => {
         .map(({ value }) => value),
     ).toEqual(["https://app.example.test", "https://optional.example.test"]);
   });
+
+  it("attributes a module-level window alias load inside a function to that window", () => {
+    const analysis = analyzeJavaScriptStaticSource(`
+      const {BrowserWindow} = require("electron");
+      const win = new BrowserWindow();
+      const alias = win;
+      function open() {
+        alias.loadURL("https://alias.example.test");
+      }
+    `);
+
+    expect(analysis.role_paths.map(({ path }) => path)).toEqual([
+      "https://alias.example.test",
+    ]);
+  });
 });

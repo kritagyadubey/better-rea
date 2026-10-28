@@ -1,6 +1,6 @@
 import * as t from "@babel/types";
 import { unwrapJavaScriptExpression } from "./javascriptAstValues.js";
-import { semanticBindingAtRead } from "./javascriptSemanticMutationInitializers.js";
+import { semanticConstValueAtRead } from "./javascriptSemanticMutationInitializers.js";
 import {
   semanticStableInitializer,
   type JavaScriptBindingIndex,
@@ -32,8 +32,7 @@ const optionObjectCandidate = (
       !binding.declarationKinds.has("const") ||
       initializer === undefined ||
       initializer.projection.length !== 0 ||
-      !semanticBindingAtRead(binding, node, index.bindings.parentsByNode)
-        .hasDefiniteInitializer
+      !semanticConstValueAtRead(binding, node, index.bindings.parentsByNode)
     )
       return undefined;
     references.push(node);

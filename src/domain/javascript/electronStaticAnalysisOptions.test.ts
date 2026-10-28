@@ -473,3 +473,140 @@ describe("Electron empty option keys", () => {
     },
   );
 });
+
+describe("Electron options declared outside a function", () => {
+  it.each([
+    [
+      "a function declaration",
+      `
+      const { BrowserWindow } = require("electron");
+      const webPreferences = { nodeIntegration: true, contextIsolation: false };
+      function createWindow() {
+        return new BrowserWindow({ webPreferences });
+      }
+      `,
+    ],
+    [
+      "an app.whenReady() callback",
+      `
+      const { app, BrowserWindow } = require("electron");
+      const webPreferences = { nodeIntegration: true, contextIsolation: false };
+      app.whenReady().then(() => {
+        new BrowserWindow({ webPreferences });
+      });
+      `,
+    ],
+  ])(
+    "resolves a module-level immutable preferences object inside %s",
+    (_label, source) => {
+      const analysis = analyzeJavaScriptStaticSource(source);
+
+      expect(analysis.electron.browser_windows).toMatchObject([
+        {
+          options_status: "object-literal",
+          web_preferences_status: "object-literal",
+          web_preferences: [
+            {
+              name: "contextIsolation",
+              value: { status: "literal", value: false },
+            },
+            {
+              name: "nodeIntegration",
+              value: { status: "literal", value: true },
+            },
+          ],
+        },
+      ]);
+      // The resolved literal is the declaration, not the constructor call.
+      expect(
+        analysis.electron.browser_windows[0]?.resolution_sources,
+      ).toHaveLength(1);
+    },
+  );
+
+  it("resolves a module-level whole-options object through a function", () => {
+    const analysis = analyzeJavaScriptStaticSource(`
+      const { BrowserWindow } = require("electron");
+      const options = { webPreferences: { nodeIntegration: true, contextIsolation: false } };
+      function createWindow() {
+        return new BrowserWindow(options);
+      }
+    `);
+
+    expect(analysis.electron.browser_windows).toMatchObject([
+      {
+        options_status: "object-literal",
+        web_preferences_status: "object-literal",
+        web_preferences: [
+          {
+            name: "contextIsolation",
+            value: { status: "literal", value: false },
+          },
+          {
+            name: "nodeIntegration",
+            value: { status: "literal", value: true },
+          },
+        ],
+      },
+    ]);
+    expect(
+      analysis.electron.browser_windows[0]?.resolution_sources,
+    ).toHaveLength(1);
+  });
+
+  it.each([
+    [
+      "a member write after the declaration",
+      `const webPreferences = { sandbox: true };
+       webPreferences.sandbox = false;`,
+    ],
+    [
+      "an escape to an unknown callee",
+      `const webPreferences = { sandbox: true };
+       mutate(webPreferences);`,
+    ],
+    [
+      "an exported binding",
+      `const webPreferences = { sandbox: true };
+       module.exports = { webPreferences };
+       escape(module.exports);`,
+    ],
+  ])(
+    "keeps a module-level preferences object unknown after %s",
+    (_label, body) => {
+      const analysis = analyzeJavaScriptStaticSource(`
+        const { BrowserWindow } = require("electron");
+        ${body}
+        function createWindow() {
+          return new BrowserWindow({ webPreferences });
+        }
+      `);
+
+      expect(analysis.electron.browser_windows).toMatchObject([
+        {
+          web_preferences_status: "dynamic",
+          web_preferences: [],
+          preload_path: null,
+        },
+      ]);
+    },
+  );
+
+  it("does not resolve a const read before its declaration in the same function", () => {
+    const analysis = analyzeJavaScriptStaticSource(`
+      const { BrowserWindow } = require("electron");
+      function createWindow() {
+        new BrowserWindow({ webPreferences });
+        const webPreferences = { sandbox: true };
+      }
+    `);
+
+    expect(analysis.electron.browser_windows).toMatchObject([
+      {
+        options_status: "object-literal",
+        web_preferences_status: "dynamic",
+        web_preferences: [],
+      },
+    ]);
+  });
+});
