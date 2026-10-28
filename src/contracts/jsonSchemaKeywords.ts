@@ -19,6 +19,8 @@ export const schemaChildren = new Set([
   "if",
   "then",
   "else",
+  // Draft 2020-12 string content schema; its value is a schema like `items`.
+  "contentSchema",
 ]);
 
 /** Instance values, unless explicitly reached by a schema reference. */

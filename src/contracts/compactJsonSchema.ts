@@ -30,7 +30,10 @@ const jsonValueTypes = [
 // if a tool would advertise this presentation.
 export const jsonValueSchema = () => ({ type: [...jsonValueTypes], items: {} });
 
-const enumValueTypes = (values: readonly unknown[]): readonly string[] => [
+/** JSON Schema type names of the enum members, in first-seen order. */
+export const enumValueTypes = (
+  values: readonly unknown[],
+): readonly string[] => [
   ...new Set(
     values.map((value) => {
       if (value === null) return "null";

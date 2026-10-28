@@ -1305,7 +1305,10 @@ the advertised strings alone do not express those rules.
 Boolean and empty-string literal constraints in input schemas are relaxed only
 in this advertisement. Boolean `const` becomes `type: boolean`; empty-string
 `const` or an enum containing an empty string is widened without dropping the
-accepted empty value. Defaults and descriptions remain intact.
+accepted empty value, and a mixed primitive enum keeps its member types as
+`type` (an array when they differ) instead of advertising an untyped property.
+Nested draft 2020-12 `contentSchema` subschemas follow the same rules as other
+schema children. Defaults and descriptions remain intact.
 An affected `not` is omitted, conditional predicates and their branches are
 omitted together, pure boolean-literal `oneOf` branches collapse to a boolean,
 and other affected `oneOf` branches are presented as `anyOf` to retain branch

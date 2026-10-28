@@ -4,6 +4,7 @@ import {
 } from "./jsonSchemaReferences.js";
 import { isDeepStrictEqual } from "node:util";
 
+import { enumValueTypes } from "./compactJsonSchema.js";
 import {
   schemaArrays,
   schemaChildren,
@@ -279,11 +280,12 @@ const normalizeAdvertisedSchema = (value: unknown): SchemaNormalization => {
     // Gemini transports turn const into enum and refuse empty enum members.
     const values = node.enum;
     delete node.enum;
-    if (
-      node.type === undefined &&
-      values.every((item) => typeof item === "string")
-    )
-      node.type = "string";
+    if (node.type === undefined) {
+      // Keep the member types as guidance: an untyped advertised property is
+      // also gateway-incompatible and loses the accepted primitive types.
+      const types = enumValueTypes(values);
+      node.type = types.length === 1 ? types[0] : types;
+    }
     changed = true;
   }
 
