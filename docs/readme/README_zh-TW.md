@@ -386,3 +386,10 @@ REA 自行編寫的程式碼採用 MIT 授權；第三方內容保留各自的�
 Hopper 和 JEB，並遵守各自授權。REA 不提供工具授權、金鑰或啟用權利；試用版和
 展示版也須遵守廠商對使用者、功能、自動化及輸出分享的限制。不得使用破解副本、
 竊取或違規共用金鑰，也不得繞過授權限制。本指引不變更 MIT 或第三方授權。
+
+---
+
+**Better-REA** (this fork): [what changed](../better-rea/FINAL_REPORT.md) ·
+[status ledger](../better-rea/PROGRESS.md) ·
+[baseline](../better-rea/baseline-report.md) ·
+[catalog benchmarks](../better-rea/benchmarks/mcp-catalog.md)

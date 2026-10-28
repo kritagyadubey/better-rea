@@ -372,3 +372,10 @@ and bypassing license restrictions are not authorized. This guidance does not
 amend MIT or third-party licenses.
 
 </div>
+
+---
+
+**Better-REA** (this fork): [what changed](../better-rea/FINAL_REPORT.md) ·
+[status ledger](../better-rea/PROGRESS.md) ·
+[baseline](../better-rea/baseline-report.md) ·
+[catalog benchmarks](../better-rea/benchmarks/mcp-catalog.md)

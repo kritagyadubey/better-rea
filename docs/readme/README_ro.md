@@ -483,3 +483,10 @@ condițiilor furnizorilor, inclusiv restricțiilor privind utilizatorii,
 funcționalitățile, automatizarea și partajarea rezultatelor. Nu sunt autorizate
 copiile piratate, cheile furate, partajarea neautorizată a cheilor sau ocolirea
 restricțiilor de licențiere. Aceste îndrumări nu modifică licența MIT sau licențele terților.
+
+---
+
+**Better-REA** (this fork): [what changed](../better-rea/FINAL_REPORT.md) ·
+[status ledger](../better-rea/PROGRESS.md) ·
+[baseline](../better-rea/baseline-report.md) ·
+[catalog benchmarks](../better-rea/benchmarks/mcp-catalog.md)

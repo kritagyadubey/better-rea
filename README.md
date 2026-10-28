@@ -3,11 +3,12 @@
 **English** · [简体中文](docs/readme/README_zh.md) · [繁體中文](docs/readme/README_zh-TW.md) · [日本語](docs/readme/README_ja.md) · [한국어](docs/readme/README_ko.md) · [Türkçe](docs/readme/README_tr.md) · [Русский](docs/readme/README_ru.md) · [Tiếng Việt](docs/readme/README_vi.md) · [ไทย](docs/readme/README_th.md) · [Deutsch](docs/readme/README_de.md) · [Español](docs/readme/README_es.md) · [Français](docs/readme/README_fr.md) · [Українська](docs/readme/README_uk.md) · [Polski](docs/readme/README_pl.md) · [Português (Brasil)](docs/readme/README_pt-BR.md) · [العربية](docs/readme/README_ar.md) · [فارسی](docs/readme/README_fa.md) · [Bahasa Indonesia](docs/readme/README_id.md) · [Italiano](docs/readme/README_it.md)
 · [Ελληνικά](docs/readme/README_el.md) · [മലയാളം](docs/readme/README_ml.md) · [Roman Urdu](docs/readme/README_ur-Latn.md) · [Română](docs/readme/README_ro.md)
 
-# REA: Reverse Engineer Anything
+# Better-REA
 
-### One MCP for reverse engineering across binaries, applications, and runtime behavior.
+### A hardened fork of REA: same MCP tools, fewer dead ends.
 
-**See a feature you like. Understand how it works, down to the binary level.**
+**Understand a feature down to the binary — and trust the answer, because every
+claim carries its evidence and its gaps.**
 
 [![npm version](https://img.shields.io/npm/v/rea-agents?style=flat-square&color=cb3837)](https://www.npmjs.com/package/rea-agents)
 [![MCP tool catalog](https://img.shields.io/badge/MCP-tool_catalog-5c4ee5?style=flat-square)](docs/mcp-contracts.md#generated-catalog)
@@ -16,21 +17,25 @@
 [![MIT license](https://img.shields.io/badge/license-MIT-f4c430?style=flat-square)](LICENSE)
 [![Discord](https://img.shields.io/discord/1556595354999332884?logo=discord&logoColor=white&label=Discord&color=5865F2)](https://discord.gg/GkcryMnJDM)
 
-<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="morluto%2Frea | Trendshift" width="250" height="55"/></a>
-
 **[Website](https://rea.tools/) · [Guides](https://rea.tools/guides/) · [Showcases](https://rea.tools/showcase/)**
 
-[Quick start](#quick-start) · [How REA works](#how-rea-works) · [What you can analyze](#what-you-can-analyze) · [Showcases](#showcases) · [Build RL environments](#build-rl-environments) · [FAQ](#faq) · [Documentation](#documentation)
+[Quick start](#quick-start) · [What's new here](#whats-new-here) · [How it works](#how-it-works) · [What you can analyze](#what-you-can-analyze) · [Showcases](#showcases) · [Build RL environments](#build-rl-environments) · [FAQ](#faq) · [Documentation](#documentation)
 
 <code>npx rea-agents setup</code>
 
 </div>
 
-> [!IMPORTANT]
-> Get REA from [morluto/rea](https://github.com/morluto/rea),
-> [rea.tools](https://rea.tools/), or the [rea-agents npm package](https://www.npmjs.com/package/rea-agents).
-> Follow the installation and release links from these official sources. A similar
-> repository name or copied README does not establish that a download is official.
+> [!NOTE]
+> Better-REA is my fork of [REA](https://github.com/morluto/rea) by morluto, which
+> remains the upstream project and the source of the tools, guides and packaged
+> skill. The fork keeps the public contract unchanged — same MCP tool names, same
+> schemas, same CLI flags, same `rea-agents` package — and concentrates on the
+> defects and verification gaps I could reproduce and fix locally. Upstream is
+> still the place for the full product story — start at the
+> [project website](https://rea.tools/) — and its
+> [issue tracker](https://github.com/morluto/rea/issues) is still the right
+> place for problems in the shared workflows. This file tells you what the fork
+> actually changes.
 
 <div align="center">
 
@@ -58,13 +63,33 @@
 
 ---
 
-See a feature in an app that you want in your own product? Ask your agent to investigate it with REA. It can inspect the app without its source code, explain how the feature works, show the evidence, and build a version for your project.
+## What's new here
 
-REA connects your agent to tools for inspecting native binaries, JavaScript and Electron apps, .NET assemblies, and websites. You can also use the same tools from your terminal. Analysis runs locally, and results include the evidence and limitations behind each conclusion.
+This fork started as a review of REA at `9593bc536` (`rea-agents@6.8.0`) with one
+rule: change nothing that another tool already depends on. No tool was renamed,
+removed or re-scoped, no CLI flag changed, no Evidence field moved, and no
+advertised schema byte changed for REA's own 231 contracts.
 
-Setup registers REA with your agent and installs matching workflow instructions. Native analysis can use an existing Hopper, Ghidra, or IDA installation; setup can optionally install Hopper with approval. Static JavaScript analysis needs no native analysis engine.
+| Area               | What was wrong                                                                                                          | What the fork does now                                                                                                                                                    |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Electron analysis  | `const webPreferences` declared outside a function was reported as `"dynamic"` when read inside it (#7227)              | Resolves the module-level value at the read site; the option object is classified again instead of being written off                                                      |
+| Source locations   | A position past the retained script text was rejected as `invalid_format` with no coordinate and no bounds (#7132)      | Returns `out_of_range` on `["generated_position","line"]` or `\["generated_position","column"\]` with inclusive `minimum`/`maximum`, and keeps the incomplete observation |
+| Advertised schemas | Draft 2020-12 `contentSchema` was invisible to the schema walk, and a mixed enum like `["", 1]` advertised `{}` (#7123) | `contentSchema` is traversed like `items`; mixed enums keep every member type (`{"type":["string","number"]}`)                                                            |
+| Catalog identity   | Nothing stopped a schema from silently changing shape between commits                                                   | `docs/better-rea/golden/mcp-catalog-digests.json` pins 231 tool names and six profile digests; `--check` names the drifting profile                                       |
+| `defineProperty`   | Descriptor overwrite order had no regression coverage (#7219)                                                           | Six descriptor orders are pinned, including literal spreads and uncertainty cases                                                                                         |
+| Catalog cost       | Nobody had measured what an agent actually pays for `tools/list`                                                        | Measured across all six profiles: 3.79 MB default, 91.6% of it output schemas; recorded with a reproducible harness                                                       |
 
-> **[Visit the REA website](https://rea.tools/)** for setup instructions, illustrated guides, and real case studies.
+The work is deliberately conservative: where a reported issue was already fixed
+upstream, the fork adds coverage or says so instead of re-implementing it. Where
+a change would have altered the public advertisement — the default output schema
+profile, for instance — it is measured and documented as a recommendation rather
+than shipped.
+
+Everything above is reproducible: `docs/better-rea/FINAL_REPORT.md` lists each
+commit with the command that verified it, `docs/better-rea/PROGRESS.md` tracks
+every item and its honest status, and `docs/better-rea/baseline-report.md`
+records the failures that already existed before the first change. The links are
+in [Documentation](#documentation).
 
 ## Quick start
 
@@ -91,19 +116,27 @@ project. Installation and recovery details are in the setup guide below.
 Setup supports Claude Code, Codex, Cursor, Gemini CLI, Grok Build and
 [other agents](docs/installation.md#supported-agents). See
 [installation and setup](docs/installation.md) for provider configuration and
-manual MCP registration and Claude Code/Codex plugin installation.
+manual MCP registration and Claude Code/Codex plugin installation, including a
+[skill-only install](docs/installation.md#skill-only-installation). The same guide
+covers the [MCP registry](docs/installation.md#mcp-registry) entry, and
+[launcher paths and troubleshooting](docs/installation.md#launcher-paths-and-troubleshooting)
+when a registered entry stops resolving.
 
 MCP uses compact input schemas by default to reduce context overhead. Set
 `REA_MCP_INPUT_SCHEMA_PROFILE=full` in your MCP registration when you need the
 complete advertised field guidance and nested validation details. Both profiles
 keep the full tool set and canonical server validation. See
-"Compact input schema profile" in the MCP contracts guide.
+"Compact input schema profile" in the
+[MCP contracts guide](docs/mcp-contracts.md), which also documents the
+generated catalog.
 
 Complete output schemas are advertised by default. If your client caps the
 complete `tools/list` frame, set `REA_MCP_OUTPUT_SCHEMA_PROFILE=compact` to
 bound each advertised output schema, or `off` to omit output schemas entirely.
 Both settings keep canonical server-side validation and complete structured
-results. See "Output schemas" in the MCP contracts guide.
+results. See "Output schemas" in the MCP contracts guide. The fork's
+`docs/better-rea/benchmarks/mcp-catalog.md` report shows what each profile costs
+on this tree.
 
 ### Ask your agent
 
@@ -171,7 +204,7 @@ Review the setup changes and restart your agent. For one-off CLI commands,
 use `npx rea-agents@latest` followed by the command. With Bun, use
 `bunx rea-agents@latest` in place of `npx rea-agents@latest`.
 
-## How REA works
+## How it works
 
 Your agent calls REA through MCP to inspect the target and trace relevant code.
 REA returns findings with their evidence. The agent uses them to ask follow-up
@@ -240,7 +273,8 @@ or update either provider.
 <a id="choosing-a-deep-analysis-provider"></a>
 
 Native formats and host support vary by provider. See
-[Hopper and Ghidra setup](docs/installation.md#hopper), the
+[Hopper and Ghidra setup](docs/installation.md#hopper) for installation, or the
+[Hopper notes](docs/installation.md#hopper) in the setup guide, the
 [IDA guide](docs/ida-provider.md) (including an optional native MCP bridge), the
 [Kuna decompiler guide](docs/kuna-provider.md), and
 [experimental Windows Ghidra support](docs/windows-ghidra-p0.md).
@@ -252,6 +286,11 @@ Check [release availability](docs/installation.md#released-package-and-main)
 for features added since the latest npm release.
 
 ## Showcases
+
+These case studies were produced with upstream REA and are the clearest
+demonstration of what the shared workflow is for. The
+[recorded walkthrough](https://x.com/reatools/status/2112574822584918075?s=20)
+covers one of them end to end.
 
 <a href="https://rea.tools/showcase/">
   <picture>
@@ -287,192 +326,122 @@ historical compiler output.
 
 ### Build RL environments with REA
 
-Record a web app session, turn its API into tools, and export an environment an AI agent can use. Run it with AgentEnv, then add tasks and reward checks for RL training or evaluation.
+Record a web app session, turn its API into tools, and export an environment an
+AI agent can use. Run it with AgentEnv, then add tasks and reward checks for RL
+training or evaluation. The
+[RL-environment guide](https://rea.tools/guides/rl-environments/) walks through
+the full loop, and
+[the video](https://x.com/reatools/status/2112574822584918075?s=20) shows a
+recorded session end to end.
 
-[Read the guide](https://rea.tools/guides/rl-environments/) ·
-[Watch the video](https://x.com/reatools/status/2112574822584918075?s=20)
-
-If you've used REA on something interesting, we'd love to see it. Share your
-case in an [issue](https://github.com/morluto/rea/issues) or a
-[pull request](https://github.com/morluto/rea/pulls), including the target,
-your question, how REA helped, and what you found.
-
-## Build RL environments
-
-Give an AI agent a local environment to practice tasks such as finding an issue or creating a folder, without running the original app. Use it for reinforcement learning (RL) or to test how well an agent completes tasks.
-
-REA turns recorded API requests and responses into tools the agent can call. The environment uses the recorded data and supports changes only when the recording confirms their effects.
-
-With REA set up in your agent, replace the example URL and folder tasks below with your own:
-
-```text
-Use REA to build an RL environment from my test web app at
-http://127.0.0.1:3000.
-Cover listing, creating, renaming, and deleting folders. You may create and
-remove test folders. Leave existing data unchanged.
-Save it in a folder named my-env. Check which operations work and tell me
-how to run it.
-```
-
-<details>
-<summary>Use the command line instead</summary>
-
-Use these commands if you already have a file containing the app’s recorded browser requests and responses. Running the result also requires AgentEnv and Docker.
-
-```sh
-rea environment-build ./session.har ./my-env --name my-env --json
-agent-env run ./my-env
-```
-
-</details>
-
-REA exports a runnable environment with a basic test to check that it starts and responds. Use it with your RL framework to define task goals, add reward checks, and run training.
-
-[Build an environment](https://rea.tools/guides/rl-environments/) ·
-[Environment reference](docs/agent-environments.md) ·
-[Watch the demo on X](https://x.com/reatools/status/2112574822584918075?s=20)
+If you've used REA on something interesting, share it in an
+[issue](https://github.com/morluto/rea/issues) or
+[pull request](https://github.com/morluto/rea/pulls). The
+[RL guide](https://rea.tools/guides/rl-environments/) covers the full loop.
 
 ## FAQ
 
-<details>
-<summary><strong>Which agents can use REA?</strong></summary>
+**Is this a different tool?** No. It is REA with a review pass and a test-first
+fix set. The MCP tool names, schemas, CLI flags and package name are the
+upstream ones; install it exactly as you install REA.
 
-Any agent that supports local MCP servers. Setup configures the
-[supported agents](docs/installation.md#supported-agents); other clients can use
-[manual MCP registration](docs/installation.md#mcp-registry).
+**Should I use this fork or upstream?** Upstream, unless you specifically want
+the fixes and the verification trail recorded here. Every change is small,
+reviewable and reproducible from the report and ledger linked under
+[Documentation](#documentation).
 
-</details>
+**Does it change what my agent sees?** For REA's own 231 contracts, no: the
+measured `tools/list` frame is byte-identical to the baseline. The schema fixes
+only affect third-party schemas that use `contentSchema` or a mixed enum.
 
-<details>
-<summary><strong>Do I need Hopper, Ghidra or IDA?</strong></summary>
+**Can it analyze everything upstream can?** Yes, with the same provider
+requirements. Nothing was removed. What this host could not exercise is listed
+as NOT RUN rather than claimed as passing — see §5 of
+`docs/better-rea/FINAL_REPORT.md`.
 
-Deep native analysis uses one of them. Static JavaScript and .NET inspection
-work without a native analysis engine. Setup can install Hopper after approval;
-Ghidra and IDA use your existing installations. See [provider setup](docs/installation.md#hopper).
+**Quick start** and **Update REA** are above; **Documentation** is below.
 
-</details>
+## Build RL environments
 
-<details>
-<summary><strong>Do I need to start Hopper first?</strong></summary>
+Export a recorded session as an AgentEnv bundle, define tasks and reward checks,
+then run the bundle with the AgentEnv runner. See the
+[AgentEnv guide](docs/agent-environments.md).
 
-REA starts Hopper when an operation needs it. On macOS, a first-run dialog may
-ask you to choose demo mode or activate your license. Complete that prompt in the
-same user session before your first CLI/MCP operation or unattended job. Open
-Hopper manually if needed. See
-[Hopper startup and troubleshooting](docs/installation.md#launcher-paths-and-troubleshooting).
+## Keeping the fork current
 
-</details>
-
-<details>
-<summary><strong>What does installing the skill from skills.sh do?</strong></summary>
-
-The skill supplies investigation instructions for your agent. Use `npx rea-agents setup`
-to register REA's MCP server and install the matching instructions, then restart
-your agent. See [skill-only installation](docs/installation.md#skill-only-installation).
-
-</details>
-
-<details>
-<summary><strong>What code does REA return?</strong></summary>
-
-Native analysis returns pseudocode and assembly. JavaScript/Electron analysis
-recovers modules and their relationships. Your agent uses these findings to
-write and test an implementation; the [showcases](#showcases) give worked examples.
-
-</details>
-
-<details>
-<summary><strong>Does REA upload my app?</strong></summary>
-
-REA analyzes targets locally. Your agent receives the tool results, and its
-model provider has its own data policy.
-
-</details>
-
-<details>
-<summary><strong>What should I do if I hit a bug?</strong></summary>
-
-Update first; a recent release may already fix it.
-
-For a CLI installed with `npm install --global` or `bun add --global`:
+The fork tracks upstream, so the update flow is unchanged. For a global
+install:
 
 ```bash
 rea update
 ```
 
-For agent setup through `npx`:
+For an `npx` setup, refresh the agent registration and skill after updating:
 
 ```bash
 npx rea-agents@latest setup
 ```
 
-If you're using an agent, complete the [setup refresh](#update-rea) and restart
-it. Retry the same task. If the problem persists, [open an issue](https://github.com/morluto/rea/issues)
-with your REA version, target type, steps to reproduce and error output.
-
-</details>
-
 ## Documentation
 
-Start with the website's [worked guides](https://rea.tools/guides/).
-For exact options, prerequisites and result contracts:
+Start with the [installation and setup guide](docs/installation.md#check-readiness-for-your-task),
+then pick the guide for your target above. The
+[CLI guide](docs/cli.md) covers every command and its output,
+the [MCP contracts guide](docs/mcp-contracts.md#generated-catalog) covers tools,
+schemas and the generated catalog, and
+[MCP prompts](docs/mcp-prompts.md) covers the prompt surface.
 
-- [Installation and setup](docs/installation.md): agent registration, provider configuration, updates and uninstall.
-- [Readiness and troubleshooting](docs/installation.md#check-readiness-for-your-task): diagnose one agent or analysis engine.
-- [CLI and Evidence](docs/cli.md): commands, provider selection, snapshots, import/export and exit statuses.
-- [MCP contracts](docs/mcp-contracts.md) and [agent prompts](docs/mcp-prompts.md): tool results, sessions and guided investigations.
-- [Tool catalog](docs/mcp-contracts.md#generated-catalog): generated inventory of tools, providers and CLI commands.
-- [Roadmap](docs/roadmap.md): planned work and capability trackers.
+Setup details, including
+[supported agents](docs/installation.md#supported-agents) and the
+[full installation guide](docs/installation.md), are kept in one place so the
+fork does not restate them.
 
-Report vulnerabilities through [SECURITY.md](SECURITY.md).
+For this fork specifically:
+
+- [Final report](docs/better-rea/FINAL_REPORT.md) — what changed and how it was verified
+- [Progress ledger](docs/better-rea/PROGRESS.md) — every item, its status and its evidence
+- [Baseline report](docs/better-rea/baseline-report.md) — the failures that predate the fork
+- [Catalog benchmarks](docs/better-rea/benchmarks/mcp-catalog.md) — what `tools/list` costs per profile
+
+The [roadmap](docs/roadmap.md) tracks what is planned next.
+
+## Upstream, community and project links
+
+Better-REA is unaffiliated with the upstream project; these links belong to it,
+not to this fork.
+
+- [Website](https://rea.tools/) · [Guides](https://rea.tools/guides/)
+- [npm package](https://www.npmjs.com/package/rea-agents)
+- [Upstream issues](https://github.com/morluto/rea/issues) · [Upstream pull requests](https://github.com/morluto/rea/pulls)
+
+<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="morluto%2Frea | Trendshift" width="250" height="55"/></a>
 
 ## Star history
 
-🎉 **300,000 GitHub stars — thank you!**
-
-Thanks to everyone using REA, reporting bugs, requesting features, testing builds, and contributing fixes.
-
 <a href="https://www.star-history.com/?repos=morluto%2Frea&amp;type=date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=morluto/rea&amp;type=date&amp;theme=dark&amp;legend=top-left" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=morluto/rea&amp;type=date" />
-    <img alt="REA GitHub star history" src="https://api.star-history.com/chart?repos=morluto/rea&amp;type=date" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=morluto/rea&amp;type=date" />
+    <img alt="Star history of the upstream REA repository" src="https://api.star-history.com/chart?repos=morluto/rea&amp;type=date" />
   </picture>
 </a>
 
 ## Disclaimer
 
-See [DISCLAIMER.md](DISCLAIMER.md) for responsible-use guidance.
-
-The project's position on illegal or unauthorized use covers all REA versions,
-distribution channels, and platforms; each copy retains its applicable licenses.
-
-REA is for lawful research, education, interoperability, software preservation,
-and analysis of software you own or are authorized to examine.
+Analysis runs under your user permissions and can execute or interact with the
+target during runtime capture. Only analyze software you are allowed to inspect.
+The full terms are in [DISCLAIMER.md](DISCLAIMER.md), and security reports go
+through [SECURITY.md](SECURITY.md).
 
 ## Contributing
 
-We'd love your help with REA! [Open an issue](https://github.com/morluto/rea/issues) to
-report a bug or suggest a feature, or [send a pull request](https://github.com/morluto/rea/pulls)
-to improve the code or docs.
+Contributions to the fork are welcome when they keep the public contract intact.
+Read [CONTRIBUTING.md](CONTRIBUTING.md) for scope, the fail-closed integration
+rule and the readiness requirements. Tests and provider claims follow
+[the testing guide](docs/testing.md), and architecture changes should start from
+[the architecture map](docs/architecture.mermaid).
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup and checks,
-[testing](docs/testing.md) for verification lanes, and the
-[architecture map](docs/architecture.mermaid) for selected layers and dependency paths.
+Third-party components are listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## License
 
-[MIT](LICENSE)
-
-REA-authored code is licensed under MIT. Third-party material retains its own
-licenses and copyright notices; see
-[Third-party notices](THIRD_PARTY_NOTICES.md) for the dependency inventory,
-preserved license texts, and external-tool terms.
-
-**You must legally obtain and be authorized to use commercial tools**, including
-IDA Pro / Hex-Rays decompilers, Hopper, and JEB, under their applicable
-licenses. REA grants no tool license, key, or activation entitlement. Trials and
-demos remain subject to vendor terms, including user, feature, automation, and
-output sharing restrictions. Cracked copies, stolen keys, unauthorized key
-sharing, and bypassing license restrictions are not authorized. This guidance
-does not amend MIT or third-party licenses.
+MIT. See [LICENSE](LICENSE).

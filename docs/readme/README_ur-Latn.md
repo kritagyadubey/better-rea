@@ -484,3 +484,10 @@ feature, automation aur output sharing ki pabandiyan bhi shamil hain. Cracked
 copies, chori ki hui keys, ghair ijazati key sharing aur license restrictions
 bypass karne ki ijazat nahi. Yeh guidance MIT ya third-party licenses ko
 tabdeel nahi karti.
+
+---
+
+**Better-REA** (this fork): [what changed](../better-rea/FINAL_REPORT.md) ·
+[status ledger](../better-rea/PROGRESS.md) ·
+[baseline](../better-rea/baseline-report.md) ·
+[catalog benchmarks](../better-rea/benchmarks/mcp-catalog.md)

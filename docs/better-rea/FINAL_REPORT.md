@@ -139,14 +139,18 @@ Pre-existing failures, reproduced on the baseline with the changes stashed:
 
 | Workstream                           | Status here                                                                                          |
 | ------------------------------------ | ---------------------------------------------------------------------------------------------------- |
-| D — Ghidra truncated bodies          | NOT RUN: no Ghidra; regression coverage confirmed to exist but not re-verified on a live cache       |
+| D — Ghidra truncated bodies          | BLOCKED: no Ghidra; a search for truncated-body coverage found no Ghidra-specific test to point at   |
 | E — performance profiling            | NOT STARTED: no bounded factorial benchmark identified; profiling needs a provider lane here         |
 | F — agent usability evaluation       | PARTIAL: catalog cost measured; no model-in-the-loop trial was run                                   |
-| G — provider readiness / diagnostics | PARTIAL: the catalog identity snapshot exists; `doctor` behaviour was not re-derived on a provider   |
+| G — provider readiness / diagnostics | NOT STARTED: readiness and `doctor` need an installed provider; the catalog snapshot is separate G-1 |
 | H — resource limits and typed errors | PARTIAL: error reasons and bounds verified for the changed workflows only                            |
 | J — Windows boundaries               | PARTIAL: the honest status is recorded in this report; native lanes untestable here                  |
-| K — browser connect/launch parity    | NOT RUN: no Chromium or launched browser                                                             |
+| K — browser connect/launch parity    | BLOCKED: no Chromium or launched browser                                                             |
 | X — cross-cutting documentation      | PARTIAL: touched docs updated (`web-source-location.md`, `mcp-contracts.md`); docs fact check passes |
+
+Per-item status, reason and evidence for every row above (and for the 13
+cross-cutting items and golden G-2 to G-4) live in `PROGRESS.md`; nothing is
+left as a bare "not started" without saying what would unblock it.
 
 ## 7. Reproduce
 

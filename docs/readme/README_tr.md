@@ -389,3 +389,10 @@ paylaşımı kısıtlamaları dahil olmak üzere satıcı koşullarına tabidir.
 kopyalar, çalınmış anahtarlar, yetkisiz anahtar paylaşımı ve lisans
 kısıtlamalarını aşma yetkili kullanım kapsamında değildir. Bu yönlendirme MIT
 veya üçüncü taraf lisanslarını değiştirmez.
+
+---
+
+**Better-REA** (this fork): [what changed](../better-rea/FINAL_REPORT.md) ·
+[status ledger](../better-rea/PROGRESS.md) ·
+[baseline](../better-rea/baseline-report.md) ·
+[catalog benchmarks](../better-rea/benchmarks/mcp-catalog.md)
